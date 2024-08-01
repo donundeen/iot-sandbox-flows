@@ -371,7 +371,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 22",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -461,7 +461,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 27",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -478,7 +478,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 28",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -497,11 +497,12 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 290,
+        "x": 230,
         "y": 140,
         "wires": [
             [
-                "05c6e88af96d8fbf"
+                "05c6e88af96d8fbf",
+                "b3664aa62511cdcf"
             ]
         ]
     },
@@ -518,7 +519,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 480,
         "y": 140,
         "wires": []
     },
@@ -567,9 +568,132 @@
         "z": "9529f2fd9052e78b",
         "name": "Look in the debug window to see what kind of messages are coming in",
         "info": "",
-        "x": 910,
+        "x": 830,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "b3664aa62511cdcf",
+        "type": "switch",
+        "z": "9529f2fd9052e78b",
+        "name": "/joltd883/buttonPressCount",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/joltd883/buttonPressCount",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "d95291ead096abd9"
+            ],
+            [
+                "8cc41e8ca166cd4b",
+                "012fd8313d1e7747"
+            ]
+        ]
+    },
+    {
+        "id": "6a7fb0eb03efb21c",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "add INCOMING ROUTES based on the OSC topics",
+        "info": "",
+        "x": 230,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d95291ead096abd9",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8cc41e8ca166cd4b",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5dcceb5b7c97fbb9",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Top output if it matches",
+        "info": "",
+        "x": 400,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "495e8da81d6f0da4",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "bottom output if it doesn't; pass to the next SWITCH",
+        "info": "",
+        "x": 490,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "012fd8313d1e7747",
+        "type": "switch",
+        "z": "9529f2fd9052e78b",
+        "name": "/next/topic",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/topic/name/here",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [],
+            []
+        ]
     },
     {
         "id": "4b0a61b5914709ec",
