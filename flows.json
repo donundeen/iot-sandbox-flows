@@ -320,7 +320,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -328,7 +328,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
+        "x": 460,
         "y": 160,
         "wires": []
     },
@@ -343,7 +343,7 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 80,
+        "x": 100,
         "y": 160,
         "wires": [
             [
@@ -357,7 +357,7 @@
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
         "x": 120,
-        "y": 580,
+        "y": 440,
         "wires": [
             [],
             [
@@ -379,10 +379,10 @@
         "id": "41759bd8c50d792e",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
+        "name": "when creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
         "info": "",
-        "x": 360,
-        "y": 400,
+        "x": 470,
+        "y": 260,
         "wires": []
     },
     {
@@ -398,7 +398,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 580,
+        "y": 440,
         "wires": [
             [
                 "3a0809e5bc51860d"
@@ -413,7 +413,7 @@
         "path": "",
         "metadata": false,
         "x": 830,
-        "y": 580,
+        "y": 440,
         "wires": [
             [
                 "8afcf8bbf6025b2d"
@@ -433,7 +433,7 @@
         "base64": false,
         "multicast": "broad",
         "x": 1010,
-        "y": 580,
+        "y": 440,
         "wires": []
     },
     {
@@ -443,7 +443,7 @@
         "name": "each device property gets their own section here",
         "info": "# each device property gets their own section here",
         "x": 220,
-        "y": 480,
+        "y": 340,
         "wires": []
     },
     {
@@ -453,7 +453,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 140,
-        "y": 540,
+        "y": 400,
         "wires": []
     },
     {
@@ -463,7 +463,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 560,
-        "y": 540,
+        "y": 400,
         "wires": []
     },
     {
@@ -473,7 +473,17 @@
         "name": "send over UDP to the OSC Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1220,
-        "y": 540,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "528a29e47b1dce71",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "this is for debug purposes, to see if the messages you're generating below are going through",
+        "info": "# each device property gets their own section here",
+        "x": 880,
+        "y": 160,
         "wires": []
     },
     {
@@ -790,7 +800,8 @@
         "y": 200,
         "wires": [
             [
-                "cac007d4d384dc89"
+                "cac007d4d384dc89",
+                "5a8517e6da2e8117"
             ]
         ]
     },
@@ -811,7 +822,7 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 290,
+        "x": 470,
         "y": 340,
         "wires": [
             []
@@ -835,6 +846,22 @@
                 "ff89a7754694aeed"
             ]
         ]
+    },
+    {
+        "id": "5a8517e6da2e8117",
+        "type": "debug",
+        "z": "bb01535f48abe2ce",
+        "name": "debug 31",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 220,
+        "wires": []
     },
     {
         "id": "60a86d3823f3f5db",
