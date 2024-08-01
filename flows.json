@@ -692,6 +692,82 @@
         ]
     },
     {
+        "id": "d55586562ead6344",
+        "type": "inject",
+        "z": "9529f2fd9052e78b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "LED2.reset();",
+        "payloadType": "str",
+        "x": 830,
+        "y": 480,
+        "wires": [
+            [
+                "1fc427d225ff174d"
+            ]
+        ]
+    },
+    {
+        "id": "1fc427d225ff174d",
+        "type": "function",
+        "z": "9529f2fd9052e78b",
+        "name": "function 3",
+        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 480,
+        "wires": [
+            [
+                "fdc39f1c5c5d984b"
+            ]
+        ]
+    },
+    {
+        "id": "fdc39f1c5c5d984b",
+        "type": "osc",
+        "z": "9529f2fd9052e78b",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 1210,
+        "y": 480,
+        "wires": [
+            [
+                "779250f6eb6937e7"
+            ]
+        ]
+    },
+    {
+        "id": "779250f6eb6937e7",
+        "type": "udp out",
+        "z": "9529f2fd9052e78b",
+        "name": "bcast7779 to OSCBLE Bridge",
+        "addr": "192.168.73.69",
+        "iface": "",
+        "port": "7779",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 1430,
+        "y": 480,
+        "wires": []
+    },
+    {
         "id": "4b0a61b5914709ec",
         "type": "inject",
         "z": "bb01535f48abe2ce",
@@ -800,8 +876,7 @@
         "y": 200,
         "wires": [
             [
-                "cac007d4d384dc89",
-                "5a8517e6da2e8117"
+                "cac007d4d384dc89"
             ]
         ]
     },
@@ -825,7 +900,9 @@
         "x": 470,
         "y": 340,
         "wires": [
-            []
+            [
+                "0a6d5f071d64714c"
+            ]
         ]
     },
     {
@@ -848,7 +925,7 @@
         ]
     },
     {
-        "id": "5a8517e6da2e8117",
+        "id": "0a6d5f071d64714c",
         "type": "debug",
         "z": "bb01535f48abe2ce",
         "name": "debug 31",
@@ -859,8 +936,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 220,
+        "x": 600,
+        "y": 440,
         "wires": []
     },
     {
