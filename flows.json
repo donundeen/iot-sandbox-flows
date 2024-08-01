@@ -699,6 +699,11 @@
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "foo",
+                "v": "bar",
+                "vt": "str"
             }
         ],
         "repeat": "",
