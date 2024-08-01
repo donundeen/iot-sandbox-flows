@@ -722,7 +722,7 @@
         "type": "function",
         "z": "9529f2fd9052e78b",
         "name": "function 3",
-        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nreturn msg;",
+        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nmsg.foo = \"far\";\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
