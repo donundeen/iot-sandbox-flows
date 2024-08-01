@@ -1086,15 +1086,5 @@
                 "cac007d4d384dc89"
             ]
         ]
-    },
-    {
-        "id": "9ae421e5536f7831",
-        "type": "comment",
-        "z": "bb01535f48abe2ce",
-        "name": "This flow Runs on the oscble bridge pi, not the IoT Sandbox",
-        "info": "This machine needs to have EspruinoHub installed.",
-        "x": 480,
-        "y": 20,
-        "wires": []
     }
 ]
