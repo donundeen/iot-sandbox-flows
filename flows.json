@@ -175,7 +175,7 @@
         "type": "udp out",
         "z": "63e4ca87ec15e7b6",
         "name": "bcast7777",
-        "addr": "192.168.73.255",
+        "addr": "192.168.73.88",
         "iface": "",
         "port": "7777",
         "ipv": "udp4",
@@ -361,7 +361,8 @@
         "wires": [
             [],
             [
-                "07c7b147c409a6f9"
+                "07c7b147c409a6f9",
+                "0d246c6d36f59726"
             ]
         ]
     },
@@ -378,7 +379,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 220,
+        "x": 120,
         "y": 640,
         "wires": []
     },
@@ -403,13 +404,64 @@
         "wires": []
     },
     {
+        "id": "0d246c6d36f59726",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/joltd883/buttonPressCount",
+        "func": "let newmsg = {topic: \"/joltd883/buttonPressCount\",\n            payload: msg.payload.txCount};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 520,
+        "wires": [
+            [
+                "3a0809e5bc51860d"
+            ]
+        ]
+    },
+    {
+        "id": "3a0809e5bc51860d",
+        "type": "osc",
+        "z": "943e204f81529182",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 570,
+        "y": 520,
+        "wires": [
+            [
+                "8afcf8bbf6025b2d"
+            ]
+        ]
+    },
+    {
+        "id": "8afcf8bbf6025b2d",
+        "type": "udp out",
+        "z": "943e204f81529182",
+        "name": "bcast7777",
+        "addr": "192.168.73.88",
+        "iface": "",
+        "port": "7777",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 750,
+        "y": 520,
+        "wires": []
+    },
+    {
         "id": "900f707651e7b243",
         "type": "osc",
         "z": "9529f2fd9052e78b",
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 250,
+        "x": 290,
         "y": 140,
         "wires": [
             [
@@ -422,7 +474,7 @@
         "type": "debug",
         "z": "9529f2fd9052e78b",
         "name": "debug 23",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
