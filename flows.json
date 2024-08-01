@@ -627,7 +627,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 400,
         "y": 260,
         "wires": []
     },
@@ -644,7 +644,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 500,
         "y": 340,
         "wires": []
     },
@@ -654,7 +654,7 @@
         "z": "9529f2fd9052e78b",
         "name": "Top output if it matches",
         "info": "",
-        "x": 400,
+        "x": 240,
         "y": 260,
         "wires": []
     },
@@ -664,7 +664,7 @@
         "z": "9529f2fd9052e78b",
         "name": "bottom output if it doesn't; pass to the next SWITCH",
         "info": "",
-        "x": 490,
+        "x": 250,
         "y": 340,
         "wires": []
     },
