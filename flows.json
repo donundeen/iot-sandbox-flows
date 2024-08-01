@@ -711,9 +711,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "LED2.reset();",
+        "payload": "LED2.set();",
         "payloadType": "str",
-        "x": 830,
+        "x": 820,
         "y": 480,
         "wires": [
             [
