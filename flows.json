@@ -526,7 +526,7 @@
         "rules": [
             {
                 "t": "hask",
-                "v": "isButtonPressed",
+                "v": "pressCount",
                 "vt": "str"
             },
             {
@@ -555,7 +555,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.advDecoded.isButtonPressed",
+                "to": "payload.advDecoded.pressCount",
                 "tot": "msg",
                 "dc": true
             }
