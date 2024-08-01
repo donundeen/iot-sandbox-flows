@@ -357,31 +357,13 @@
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
         "x": 120,
-        "y": 520,
+        "y": 580,
         "wires": [
             [],
             [
-                "07c7b147c409a6f9",
                 "0d246c6d36f59726"
             ]
         ]
-    },
-    {
-        "id": "07c7b147c409a6f9",
-        "type": "debug",
-        "z": "943e204f81529182",
-        "name": "debug 22",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 120,
-        "y": 640,
-        "wires": []
     },
     {
         "id": "57c7f54bd83b1b4a",
@@ -400,7 +382,7 @@
         "name": "use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
         "info": "",
         "x": 360,
-        "y": 460,
+        "y": 400,
         "wires": []
     },
     {
@@ -415,12 +397,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 520,
+        "x": 500,
+        "y": 580,
         "wires": [
             [
-                "3a0809e5bc51860d",
-                "d00a5842f78f437b"
+                "3a0809e5bc51860d"
             ]
         ]
     },
@@ -431,12 +412,11 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 570,
-        "y": 520,
+        "x": 830,
+        "y": 580,
         "wires": [
             [
-                "8afcf8bbf6025b2d",
-                "c60c98fb21e6f826"
+                "8afcf8bbf6025b2d"
             ]
         ]
     },
@@ -452,42 +432,48 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 750,
-        "y": 520,
+        "x": 1010,
+        "y": 580,
         "wires": []
     },
     {
-        "id": "c60c98fb21e6f826",
-        "type": "debug",
+        "id": "4cfe56bd16725cf3",
+        "type": "comment",
         "z": "943e204f81529182",
-        "name": "debug 27",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 620,
+        "name": "each device property gets their own section here",
+        "info": "# each device property gets their own section here",
+        "x": 220,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "d00a5842f78f437b",
-        "type": "debug",
+        "id": "5d85724301b80d54",
+        "type": "comment",
         "z": "943e204f81529182",
-        "name": "debug 28",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 620,
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 140,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b663a9463fb05cf2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 560,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "25e7c3bfc958a671",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send over UDP to the OSC Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1220,
+        "y": 540,
         "wires": []
     },
     {
@@ -757,8 +743,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 100,
+        "x": 820,
+        "y": 120,
         "wires": [
             [
                 "8faaa0ac08c81b8f"
@@ -779,8 +765,8 @@
         "correl": "",
         "expiry": "",
         "broker": "16dd31f690be98d3",
-        "x": 630,
-        "y": 100,
+        "x": 1050,
+        "y": 120,
         "wires": []
     },
     {
@@ -817,6 +803,38 @@
         "x": 480,
         "y": 20,
         "wires": []
+    },
+    {
+        "id": "ff89a7754694aeed",
+        "type": "osc",
+        "z": "bb01535f48abe2ce",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d63311a25fa17e3b",
+        "type": "udp in",
+        "z": "bb01535f48abe2ce",
+        "name": "",
+        "iface": "",
+        "port": "7779",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "ff89a7754694aeed"
+            ]
+        ]
     },
     {
         "id": "60a86d3823f3f5db",
