@@ -2,7 +2,7 @@
     {
         "id": "63e4ca87ec15e7b6",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "MicroBit <-> OSC Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,7 +10,7 @@
     {
         "id": "943e204f81529182",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Pareto Anywhere to OSC",
         "disabled": false,
         "info": "",
         "env": []
@@ -18,7 +18,7 @@
     {
         "id": "9529f2fd9052e78b",
         "type": "tab",
-        "label": "Flow 3",
+        "label": "OSC Switchboard",
         "disabled": false,
         "info": "",
         "env": []
@@ -26,7 +26,7 @@
     {
         "id": "bb01535f48abe2ce",
         "type": "tab",
-        "label": "Flow 4",
+        "label": "OSCBLE Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -120,29 +120,12 @@
         "name": "serialp",
         "serial": "4ecaa01218566e73",
         "x": 70,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
-                "a7cb5d8e8603f53b",
                 "832e51e1892d2dee"
             ]
         ]
-    },
-    {
-        "id": "a7cb5d8e8603f53b",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 140,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "8273d38b742461d1",
@@ -152,11 +135,10 @@
         "path": "",
         "metadata": true,
         "x": 410,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
-                "ce86589b352c2c71",
-                "74d8288b48bd17f1"
+                "ce86589b352c2c71"
             ]
         ]
     },
@@ -173,30 +155,12 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
-                "f4c013a4766df6fb",
                 "8273d38b742461d1"
             ]
         ]
-    },
-    {
-        "id": "f4c013a4766df6fb",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "ce86589b352c2c71",
@@ -210,24 +174,8 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 630,
+        "x": 610,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "74d8288b48bd17f1",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 220,
         "wires": []
     },
     {
@@ -237,11 +185,10 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 270,
-        "y": 440,
+        "x": 210,
+        "y": 300,
         "wires": [
             [
-                "28b2bdb09e90a85f",
                 "a3b3ff78fa377765"
             ]
         ]
@@ -257,48 +204,13 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 100,
-        "y": 440,
+        "x": 80,
+        "y": 300,
         "wires": [
             [
-                "5ff5a5cb5150699d",
-                "ab6abb3b4739a12d"
+                "5ff5a5cb5150699d"
             ]
         ]
-    },
-    {
-        "id": "ab6abb3b4739a12d",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 100,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "28b2bdb09e90a85f",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 280,
-        "y": 520,
-        "wires": []
     },
     {
         "id": "02190d58f95b35a6",
@@ -306,8 +218,8 @@
         "z": "63e4ca87ec15e7b6",
         "name": "toMicroBit",
         "serial": "4ecaa01218566e73",
-        "x": 660,
-        "y": 440,
+        "x": 610,
+        "y": 300,
         "wires": []
     },
     {
@@ -322,30 +234,62 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 440,
+        "x": 420,
+        "y": 300,
         "wires": [
             [
-                "02190d58f95b35a6",
-                "d329ebe6d56ba24c"
+                "02190d58f95b35a6"
             ]
         ]
     },
     {
-        "id": "d329ebe6d56ba24c",
-        "type": "debug",
+        "id": "533c9463e67d2fee",
+        "type": "comment",
         "z": "63e4ca87ec15e7b6",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
+        "name": "This flow Runs on the IoT Sandbox",
+        "info": "This Flow translates Microbits Radio messages to/from OSC ",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "230cb2ed91a44c36",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3016901ca21ed23b",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Send UDP messages over Serial to a dedicated Microbits device attached to this computer",
+        "info": "",
+        "x": 330,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "af14cac50388c72e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Then send them over UDP to the OSC Switchboard with a common naming convention",
+        "info": "",
+        "x": 320,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5ac4fb824a5f6e19",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Route the messages with the OSC Switchboard!",
+        "info": "",
         "x": 620,
-        "y": 520,
+        "y": 340,
         "wires": []
     },
     {
@@ -355,7 +299,7 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 250,
+        "x": 270,
         "y": 160,
         "wires": [
             [
@@ -376,8 +320,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 80,
+        "x": 680,
+        "y": 120,
         "wires": []
     },
     {
@@ -405,7 +349,7 @@
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/90dd5dbbdf15/2",
         "x": 100,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "37cced4db9e2a227",
@@ -469,8 +413,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 200,
+        "x": 840,
+        "y": 280,
         "wires": [
             []
         ]
@@ -701,32 +645,36 @@
         "wires": []
     },
     {
-        "id": "6d562d5b3cce4689",
-        "type": "mqtt in",
+        "id": "57c7f54bd83b1b4a",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This flow Runs on IoT Sandbox, with ParetoAnywhere Installed",
+        "info": "This machine needs to have ParetoAnywhere installed.",
+        "x": 250,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "900f707651e7b243",
+        "type": "osc",
         "z": "9529f2fd9052e78b",
         "name": "",
-        "topic": "/ble/#",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "16dd31f690be98d3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 90,
+        "path": "",
+        "metadata": false,
+        "x": 250,
         "y": 140,
         "wires": [
             [
-                "1ea2e2096ff3eb6f"
+                "05c6e88af96d8fbf"
             ]
         ]
     },
     {
-        "id": "1ea2e2096ff3eb6f",
+        "id": "05c6e88af96d8fbf",
         "type": "debug",
         "z": "9529f2fd9052e78b",
-        "name": "debug 12",
-        "active": true,
+        "name": "debug 23",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -734,245 +682,58 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
+        "x": 560,
         "y": 140,
         "wires": []
     },
     {
-        "id": "55f9360fa20f4de0",
-        "type": "mqtt in",
+        "id": "287e700b6d46a2a0",
+        "type": "udp in",
         "z": "9529f2fd9052e78b",
         "name": "",
-        "topic": "/ble/advertise/c8:c8:75:1d:d8:83/ffff",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "16dd31f690be98d3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
+        "iface": "",
+        "port": "7777",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "900f707651e7b243"
+            ]
+        ]
+    },
+    {
+        "id": "1cd3d5b24f25cefe",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "OSC Messages come in here, over port 7777",
+        "info": "",
+        "x": 210,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5347604aa986a9b3",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "This flow Runs on the IoT Sandbox",
+        "info": "",
         "x": 180,
-        "y": 400,
-        "wires": [
-            [
-                "617de9b54f2d2667",
-                "a075e44ffe8dfa9f"
-            ]
-        ]
-    },
-    {
-        "id": "a8c943cc60904e09",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 13",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 560,
+        "y": 40,
         "wires": []
     },
     {
-        "id": "617de9b54f2d2667",
-        "type": "rbe",
+        "id": "5865022dfbe01843",
+        "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 250,
-        "y": 480,
-        "wires": [
-            [
-                "a8c943cc60904e09"
-            ]
-        ]
-    },
-    {
-        "id": "a075e44ffe8dfa9f",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 16",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 400,
+        "name": "Look in the debug window to see what kind of messages are coming in",
+        "info": "",
+        "x": 910,
+        "y": 140,
         "wires": []
-    },
-    {
-        "id": "d27f5bc9b3277f8a",
-        "type": "mqtt in",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "topic": "/ble/presence/c8:c8:75:1d:d8:83/#",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "16dd31f690be98d3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 180,
-        "y": 220,
-        "wires": [
-            [
-                "5f0bc388e5361f7a"
-            ]
-        ]
-    },
-    {
-        "id": "5f0bc388e5361f7a",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "6c950beeb69c4b8c",
-        "type": "mqtt in",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "topic": "/ble/advertise/c8:c8:75:1d:d8:83/#",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "16dd31f690be98d3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 180,
-        "y": 300,
-        "wires": [
-            [
-                "51542e9481ef30d8"
-            ]
-        ]
-    },
-    {
-        "id": "51542e9481ef30d8",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "583f1996f87c187a",
-        "type": "mqtt out",
-        "z": "9529f2fd9052e78b",
-        "name": "send to jolt",
-        "topic": "/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "9d0c9e13c6e1254b",
-        "x": 1090,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "e2e89bcc5db7f5c5",
-        "type": "inject",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "LED1.set();",
-        "payloadType": "str",
-        "x": 700,
-        "y": 600,
-        "wires": [
-            [
-                "2668e2785ad98817"
-            ]
-        ]
-    },
-    {
-        "id": "00c5b5eeb3230e78",
-        "type": "inject",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "LED1.reset();",
-        "payloadType": "str",
-        "x": 730,
-        "y": 680,
-        "wires": [
-            [
-                "2668e2785ad98817"
-            ]
-        ]
-    },
-    {
-        "id": "2668e2785ad98817",
-        "type": "function",
-        "z": "9529f2fd9052e78b",
-        "name": "function 2",
-        "func": "msg.payload += \"\\n\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 640,
-        "wires": [
-            [
-                "583f1996f87c187a"
-            ]
-        ]
     },
     {
         "id": "4b0a61b5914709ec",
