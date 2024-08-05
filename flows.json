@@ -320,7 +320,9 @@
         "x": 375,
         "y": 500,
         "wires": [
-            []
+            [
+                "d3f56a97527fb425"
+            ]
         ]
     },
     {
@@ -784,8 +786,8 @@
         "z": "943e204f81529182",
         "name": "when creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
         "info": "",
-        "x": 470,
-        "y": 220,
+        "x": 450,
+        "y": 140,
         "wires": []
     },
     {
@@ -1773,7 +1775,7 @@
         "z": "943e204f81529182",
         "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
         "info": "",
-        "x": 380,
+        "x": 360,
         "y": 1660,
         "wires": []
     },
