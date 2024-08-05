@@ -202,7 +202,7 @@
             "627021b995a2a0ef",
             "e56477c26cb0cacc"
         ],
-        "x": 295,
+        "x": 355,
         "y": 380,
         "wires": [
             [
@@ -216,7 +216,7 @@
         "z": "9529f2fd9052e78b",
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
-        "x": 140,
+        "x": 200,
         "y": 380,
         "wires": []
     },
@@ -317,7 +317,7 @@
         "links": [
             "39d6698f6076b1cf"
         ],
-        "x": 295,
+        "x": 355,
         "y": 440,
         "wires": [
             []
@@ -327,9 +327,9 @@
         "id": "4d8dca2999c440b2",
         "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "/motionE8DA/isMotionDetected",
+        "name": "/motionE8DA/isMotionDetected [true/false]",
         "info": "",
-        "x": 130,
+        "x": 160,
         "y": 440,
         "wires": []
     },
@@ -337,9 +337,9 @@
         "id": "7efd13165909c947",
         "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "/motionE8DA/temperature",
+        "name": "/motionE8DA/temperature [float]",
         "info": "",
-        "x": 150,
+        "x": 190,
         "y": 500,
         "wires": []
     },
@@ -351,7 +351,7 @@
         "links": [
             "3f8a8d4cc887a6a0"
         ],
-        "x": 295,
+        "x": 355,
         "y": 500,
         "wires": [
             []
@@ -361,9 +361,9 @@
         "id": "db43857d6fddb21f",
         "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "/motionE8DA/illuminance",
+        "name": "/motionE8DA/illuminance [int]",
         "info": "",
-        "x": 150,
+        "x": 200,
         "y": 560,
         "wires": []
     },
@@ -375,7 +375,7 @@
         "links": [
             "0fb34d273a62d5fd"
         ],
-        "x": 295,
+        "x": 355,
         "y": 560,
         "wires": [
             []
@@ -385,9 +385,9 @@
         "id": "0f1793047f7fd9ad",
         "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "/motionE8DA/acceleration",
+        "name": "/motionE8DA/acceleration [x,y,x]",
         "info": "",
-        "x": 150,
+        "x": 190,
         "y": 620,
         "wires": []
     },
@@ -399,7 +399,7 @@
         "links": [
             "be8df522c0e4f250"
         ],
-        "x": 295,
+        "x": 355,
         "y": 620,
         "wires": [
             []
@@ -409,9 +409,9 @@
         "id": "68fd9537b6ef4f90",
         "type": "comment",
         "z": "9529f2fd9052e78b",
-        "name": "/motionE8DA/batteryPercentage",
+        "name": "/motionE8DA/batteryPercentage [int]",
         "info": "",
-        "x": 130,
+        "x": 180,
         "y": 680,
         "wires": []
     },
@@ -423,8 +423,32 @@
         "links": [
             "214448f98c24559e"
         ],
-        "x": 295,
+        "x": 355,
         "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ff2431630703949",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/realtiveHumidity [float]",
+        "info": "",
+        "x": 180,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "61fe7ef84007a447",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/relativeHumidity",
+        "links": [
+            "0be064a2c659c9a6"
+        ],
+        "x": 355,
+        "y": 740,
         "wires": [
             []
         ]
@@ -743,7 +767,7 @@
         "name": "/devices/c8c8751dd883/3",
         "info": "",
         "x": 150,
-        "y": 480,
+        "y": 500,
         "wires": []
     },
     {
@@ -801,8 +825,8 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c300000ae8da/3",
-        "name": "Pareto JoltJS c8c8751dd883/3",
-        "x": 170,
+        "name": "Pareto Motion Sensor c300000ae8da/3",
+        "x": 150,
         "y": 640,
         "wires": [
             [],
@@ -810,7 +834,9 @@
                 "5d9fe62628055011",
                 "c0ccf5de0c27300a",
                 "baf140ce5e927807",
-                "361ad2d00306f22a"
+                "361ad2d00306f22a",
+                "0272f77e16f24d35",
+                "1690eba349907604"
             ]
         ]
     },
@@ -891,10 +917,10 @@
         "id": "c233950c6c0eb923",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "/devices/c8c8751dd883/3",
+        "name": "/devices/c300000ae8da/3",
         "info": "",
         "x": 150,
-        "y": 680,
+        "y": 700,
         "wires": []
     },
     {
@@ -1363,6 +1389,109 @@
         "wires": [
             [
                 "5a4b5a79e428cbb3"
+            ]
+        ]
+    },
+    {
+        "id": "ca258975bff086ad",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/relativeHumidity",
+        "func": "let newmsg = {\n    topic: \"/motionE8DA/relativeHumidity\",\n    payload: msg.payload.relativeHumidity\n};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1340,
+        "wires": [
+            [
+                "0be064a2c659c9a6"
+            ]
+        ]
+    },
+    {
+        "id": "e7ddb14183259592",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 940,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "d2c7fdcdd04d3f20",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1570,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "0be064a2c659c9a6",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/relativeHumidity",
+        "mode": "link",
+        "links": [
+            "61fe7ef84007a447"
+        ],
+        "x": 1255,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "63a114fae52c35ee",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/relativeHumidity",
+        "info": "",
+        "x": 1400,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "b03bb3fd59e08dc5",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 520,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "ecfb01f11626f7c1",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "1690eba349907604",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it relativeHumidity?",
+        "func": "if (msg.payload.relativeHumidity){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1340,
+        "wires": [
+            [
+                "ca258975bff086ad"
             ]
         ]
     },
