@@ -1,8 +1,16 @@
 [
     {
+        "id": "9529f2fd9052e78b",
+        "type": "tab",
+        "label": "IoT Playground: Message Switchboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "63e4ca87ec15e7b6",
         "type": "tab",
-        "label": "MicroBit <-> OSC Bridge",
+        "label": "MicroBit  Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,15 +18,15 @@
     {
         "id": "943e204f81529182",
         "type": "tab",
-        "label": "Pareto Anywhere to OSC",
+        "label": "BLE in with Pareto Anywhere",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "9529f2fd9052e78b",
+        "id": "9d6a628240034869",
         "type": "tab",
-        "label": "OSC Switchboard",
+        "label": "OSC Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -26,7 +34,7 @@
     {
         "id": "bb01535f48abe2ce",
         "type": "tab",
-        "label": "OSCBLE Bridge",
+        "label": "BLE OUT Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -120,6 +128,186 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "331b204cd9aa204f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.73.69",
+        "port": "1880",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5347604aa986a9b3",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "This flow Runs on the IoT Sandbox",
+        "info": "",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "093e2453d12cd821",
+        "type": "link out",
+        "z": "9529f2fd9052e78b",
+        "name": "/joltjsd883/javascript",
+        "mode": "link",
+        "links": [
+            "cb332d7f29f9638f"
+        ],
+        "x": 1235,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f05765e5ad2a800a",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/joltjsd883/javascript",
+        "info": "",
+        "x": 1350,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a991b79e982ec38f",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/joltjsd883/buttonPressCount",
+        "links": [
+            "627021b995a2a0ef",
+            "e56477c26cb0cacc"
+        ],
+        "x": 275,
+        "y": 380,
+        "wires": [
+            [
+                "d3f56a97527fb425"
+            ]
+        ]
+    },
+    {
+        "id": "15157771cd44e6fd",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 120,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d3f56a97527fb425",
+        "type": "template",
+        "z": "9529f2fd9052e78b",
+        "name": "LED2.set();",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "LED2.set();",
+        "output": "str",
+        "x": 770,
+        "y": 380,
+        "wires": [
+            [
+                "093e2453d12cd821"
+            ]
+        ]
+    },
+    {
+        "id": "74b8931c4f169699",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "THE OUTPUTS",
+        "info": "",
+        "x": 1300,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "daa87bb343e14c6c",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "This is the message playground, let's play!",
+        "info": "",
+        "x": 160,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "508f43dc2bdec049",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "LinkIn and LinkOut nodes here match LinkOut and LinkIn nodes in other tabs, dependoing on what protocols the originally come via.",
+        "info": "",
+        "x": 440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5cedde4270e55d73",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Use Debug nodes to see what kind of data come out of the LinkOuts (the INPUTS)",
+        "info": "",
+        "x": 290,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "26d04fb560039b57",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Then (optionally)modify those messages and pass them along to the named LinkIn nodes (the OUTPUTS)",
+        "info": "",
+        "x": 360,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4bce475a36d6fe42",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "THE INPUTS",
+        "info": "",
+        "x": 70,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "77aa25dc3e466eef",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "PLAY HAPPENS HERE",
+        "info": "",
+        "x": 760,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "87cef86360be7223",
@@ -301,6 +489,16 @@
         "wires": []
     },
     {
+        "id": "c899758bf59368aa",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in teh Message Switchboard",
+        "info": "",
+        "x": 560,
+        "y": 380,
+        "wires": []
+    },
+    {
         "id": "38cc5b4c5f2098c0",
         "type": "osc",
         "z": "943e204f81529182",
@@ -401,40 +599,9 @@
         "y": 440,
         "wires": [
             [
-                "3a0809e5bc51860d"
+                "627021b995a2a0ef"
             ]
         ]
-    },
-    {
-        "id": "3a0809e5bc51860d",
-        "type": "osc",
-        "z": "943e204f81529182",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 830,
-        "y": 440,
-        "wires": [
-            [
-                "8afcf8bbf6025b2d"
-            ]
-        ]
-    },
-    {
-        "id": "8afcf8bbf6025b2d",
-        "type": "udp out",
-        "z": "943e204f81529182",
-        "name": "bcast7777",
-        "addr": "192.168.73.88",
-        "iface": "",
-        "port": "7777",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 1010,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "4cfe56bd16725cf3",
@@ -470,9 +637,9 @@
         "id": "25e7c3bfc958a671",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "send over UDP to the OSC Switchboard running in another flow on this computer ",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
-        "x": 1220,
+        "x": 1190,
         "y": 400,
         "wires": []
     },
@@ -487,14 +654,67 @@
         "wires": []
     },
     {
+        "id": "627021b995a2a0ef",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/joltjsd883/buttonPressCount",
+        "mode": "link",
+        "links": [
+            "a991b79e982ec38f"
+        ],
+        "x": 875,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6c4de670e0e62f9b",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 1020,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8c84e08698db7ccb",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c8c8751dd883/3",
+        "info": "",
+        "x": 150,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9f33f6c8963e1e03",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "This Flow maps OSC messages to named linkOuts and LinkIns, usually of the same name, or could be simplified. ",
+        "info": "",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "13c54424b5ca53d5",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "this is so the Messages Swithboard looks clean and easy to play with",
+        "info": "",
+        "x": 330,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "900f707651e7b243",
         "type": "osc",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 230,
-        "y": 140,
+        "x": 270,
+        "y": 200,
         "wires": [
             [
                 "05c6e88af96d8fbf",
@@ -505,7 +725,7 @@
     {
         "id": "05c6e88af96d8fbf",
         "type": "debug",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "debug 23",
         "active": true,
         "tosidebar": true,
@@ -515,14 +735,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 140,
+        "x": 520,
+        "y": 160,
         "wires": []
     },
     {
         "id": "287e700b6d46a2a0",
         "type": "udp in",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "",
         "iface": "",
         "port": "7777",
@@ -530,8 +750,8 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 100,
-        "y": 140,
+        "x": 140,
+        "y": 200,
         "wires": [
             [
                 "900f707651e7b243"
@@ -541,37 +761,27 @@
     {
         "id": "1cd3d5b24f25cefe",
         "type": "comment",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "OSC Messages come in here, over port 7777",
         "info": "",
-        "x": 210,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "5347604aa986a9b3",
-        "type": "comment",
-        "z": "9529f2fd9052e78b",
-        "name": "This flow Runs on the IoT Sandbox",
-        "info": "",
-        "x": 180,
-        "y": 40,
+        "x": 250,
+        "y": 160,
         "wires": []
     },
     {
         "id": "5865022dfbe01843",
         "type": "comment",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "Look in the debug window to see what kind of messages are coming in",
         "info": "",
-        "x": 830,
-        "y": 140,
+        "x": 630,
+        "y": 200,
         "wires": []
     },
     {
         "id": "b3664aa62511cdcf",
         "type": "switch",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "/joltd883/buttonPressCount",
         "property": "topic",
         "propertyType": "msg",
@@ -588,11 +798,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 160,
-        "y": 300,
+        "x": 200,
+        "y": 360,
         "wires": [
             [
-                "d95291ead096abd9"
+                "d95291ead096abd9",
+                "e56477c26cb0cacc"
             ],
             [
                 "8cc41e8ca166cd4b",
@@ -603,17 +814,17 @@
     {
         "id": "6a7fb0eb03efb21c",
         "type": "comment",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "add INCOMING ROUTES based on the OSC topics",
         "info": "",
-        "x": 230,
-        "y": 200,
+        "x": 270,
+        "y": 260,
         "wires": []
     },
     {
         "id": "d95291ead096abd9",
         "type": "debug",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "debug 29",
         "active": true,
         "tosidebar": true,
@@ -623,14 +834,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 260,
+        "x": 440,
+        "y": 320,
         "wires": []
     },
     {
         "id": "8cc41e8ca166cd4b",
         "type": "debug",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "debug 30",
         "active": true,
         "tosidebar": true,
@@ -640,34 +851,34 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 340,
+        "x": 520,
+        "y": 400,
         "wires": []
     },
     {
         "id": "5dcceb5b7c97fbb9",
         "type": "comment",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "Top output if it matches",
         "info": "",
-        "x": 240,
-        "y": 260,
+        "x": 280,
+        "y": 320,
         "wires": []
     },
     {
         "id": "495e8da81d6f0da4",
         "type": "comment",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "bottom output if it doesn't; pass to the next SWITCH",
         "info": "",
-        "x": 250,
-        "y": 340,
+        "x": 270,
+        "y": 400,
         "wires": []
     },
     {
         "id": "012fd8313d1e7747",
         "type": "switch",
-        "z": "9529f2fd9052e78b",
+        "z": "9d6a628240034869",
         "name": "/next/topic",
         "property": "topic",
         "propertyType": "msg",
@@ -684,182 +895,78 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 110,
-        "y": 400,
+        "x": 150,
+        "y": 520,
         "wires": [
             [],
             []
         ]
     },
     {
-        "id": "d55586562ead6344",
-        "type": "inject",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "foo",
-                "v": "bar",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "LED2.set();",
-        "payloadType": "str",
-        "x": 820,
-        "y": 480,
-        "wires": [
-            [
-                "1fc427d225ff174d",
-                "fdded2cda564485f"
-            ]
-        ]
-    },
-    {
-        "id": "1fc427d225ff174d",
-        "type": "function",
-        "z": "9529f2fd9052e78b",
-        "name": "function 3",
-        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nmsg.foo = \"far\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 480,
-        "wires": [
-            [
-                "fdc39f1c5c5d984b",
-                "63300b57f458400c"
-            ]
-        ]
-    },
-    {
-        "id": "fdc39f1c5c5d984b",
-        "type": "osc",
-        "z": "9529f2fd9052e78b",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 1210,
-        "y": 480,
-        "wires": [
-            [
-                "779250f6eb6937e7"
-            ]
-        ]
-    },
-    {
-        "id": "779250f6eb6937e7",
-        "type": "udp out",
-        "z": "9529f2fd9052e78b",
-        "name": "bcast7779 to OSCBLE Bridge",
-        "addr": "192.168.73.69",
-        "iface": "",
-        "port": "7779",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 1430,
+        "id": "f8c47f490b92c220",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Top output if it matches",
+        "info": "",
+        "x": 320,
         "y": 480,
         "wires": []
     },
     {
-        "id": "fdded2cda564485f",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 32",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
+        "id": "8cd53727e847c1f2",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "bottom output if it doesn't; pass to the next SWITCH, and so on...",
+        "info": "",
+        "x": 320,
         "y": 560,
         "wires": []
     },
     {
-        "id": "63300b57f458400c",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 33",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 560,
+        "id": "e56477c26cb0cacc",
+        "type": "link out",
+        "z": "9d6a628240034869",
+        "name": "/joltjsd883/buttonPressCount",
+        "mode": "link",
+        "links": [
+            "a991b79e982ec38f"
+        ],
+        "x": 1005,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "4b0a61b5914709ec",
-        "type": "inject",
-        "z": "bb01535f48abe2ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "LED2.reset();",
-        "payloadType": "str",
-        "x": 170,
-        "y": 120,
-        "wires": [
-            [
-                "cac007d4d384dc89"
-            ]
-        ]
+        "id": "d7492a1d84fcb97b",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 1140,
+        "y": 360,
+        "wires": []
     },
     {
-        "id": "908ac2aac00dd830",
-        "type": "inject",
+        "id": "fd53c2c93801bd9d",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Pass on to named LinkOut node, to match a LinkIn in the Message Switchboard",
+        "info": "",
+        "x": 1240,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9ae421e5536f7831",
+        "type": "comment",
         "z": "bb01535f48abe2ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "LED2.set();",
-        "payloadType": "str",
-        "x": 160,
+        "name": "This Flow sends messages to BLE via EspruinoHub, running on another machine",
+        "info": "This machine needs to have EspruinoHub installed.",
+        "x": 300,
         "y": 40,
-        "wires": [
-            [
-                "cac007d4d384dc89"
-            ]
-        ]
+        "wires": []
     },
     {
-        "id": "cac007d4d384dc89",
+        "id": "f6b281495b76fde7",
         "type": "function",
         "z": "bb01535f48abe2ce",
         "name": "Add a newline",
@@ -870,20 +977,20 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 120,
+        "x": 620,
+        "y": 320,
         "wires": [
             [
-                "8faaa0ac08c81b8f"
+                "7943ebafb2ca2e96"
             ]
         ]
     },
     {
-        "id": "8faaa0ac08c81b8f",
+        "id": "cb70afc7d117c778",
         "type": "mqtt out",
         "z": "bb01535f48abe2ce",
-        "name": "mqtt to c8:c8:75:1d:d8:83",
-        "topic": "/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx",
+        "name": "mqtt to BLE on EspruinoHub",
+        "topic": "",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -891,94 +998,162 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "16dd31f690be98d3",
-        "x": 1050,
-        "y": 120,
+        "broker": "331b204cd9aa204f",
+        "x": 1120,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "02d9ab698812bb8e",
-        "type": "inject",
-        "z": "bb01535f48abe2ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "setFreq(500);",
-        "payloadType": "str",
-        "x": 170,
-        "y": 200,
-        "wires": [
-            [
-                "cac007d4d384dc89"
-            ]
-        ]
-    },
-    {
-        "id": "9ae421e5536f7831",
-        "type": "comment",
-        "z": "bb01535f48abe2ce",
-        "name": "This flow Runs on the oscble bridge pi, not the IoT Sandbox",
-        "info": "This machine needs to have EspruinoHub installed.",
-        "x": 480,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "ff89a7754694aeed",
-        "type": "osc",
-        "z": "bb01535f48abe2ce",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 470,
-        "y": 340,
-        "wires": [
-            [
-                "0a6d5f071d64714c"
-            ]
-        ]
-    },
-    {
-        "id": "d63311a25fa17e3b",
-        "type": "udp in",
-        "z": "bb01535f48abe2ce",
-        "name": "",
-        "iface": "",
-        "port": "7779",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "buffer",
-        "x": 140,
-        "y": 340,
-        "wires": [
-            [
-                "ff89a7754694aeed"
-            ]
-        ]
-    },
-    {
-        "id": "0a6d5f071d64714c",
+        "id": "014e6de00a067bc8",
         "type": "debug",
         "z": "bb01535f48abe2ce",
-        "name": "debug 31",
+        "name": "debug 33",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 400,
+        "x": 1060,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cb332d7f29f9638f",
+        "type": "link in",
+        "z": "bb01535f48abe2ce",
+        "name": "/joltjsd883/javascript",
+        "links": [
+            "093e2453d12cd821"
+        ],
+        "x": 135,
+        "y": 320,
+        "wires": [
+            [
+                "c44e45d42a819c43"
+            ]
+        ]
+    },
+    {
+        "id": "d22bd9554f7807d0",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "/joltjsd883/javascript",
+        "info": "",
+        "x": 250,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c44e45d42a819c43",
+        "type": "function",
+        "z": "bb01535f48abe2ce",
+        "name": "set d883 topic",
+        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "f6b281495b76fde7"
+            ]
+        ]
+    },
+    {
+        "id": "39500dc75d27d485",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "name a link in with an OSC style address, so we can use simplenames in the OSC switchboard",
+        "info": "",
+        "x": 450,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f8fb605f6e78c5a3",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "set the topic to the device ID",
+        "info": "",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "182e3454d1caf7c1",
+        "type": "link in",
+        "z": "bb01535f48abe2ce",
+        "name": "/sendToEspruinoHub",
+        "links": [
+            "7943ebafb2ca2e96"
+        ],
+        "x": 955,
+        "y": 160,
+        "wires": [
+            [
+                "cb70afc7d117c778",
+                "014e6de00a067bc8"
+            ]
+        ]
+    },
+    {
+        "id": "7943ebafb2ca2e96",
+        "type": "link out",
+        "z": "bb01535f48abe2ce",
+        "name": "/sendToEspruinoHub",
+        "mode": "link",
+        "links": [
+            "182e3454d1caf7c1"
+        ],
+        "x": 815,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "657c82024d773bb7",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "get all links to /sendToEspruinoHub ",
+        "info": "",
+        "x": 1080,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e6f9c32fbb9fe219",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "send to sendToEspruinoHub LinkIn",
+        "info": "",
+        "x": 980,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "387d401d3118970a",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "get all links to /sendToEspruinoHub ",
+        "info": "",
+        "x": 1080,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "015cfaecce74dd97",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "set EspruinoHub server IP:Port on this node",
+        "info": "",
+        "x": 1430,
+        "y": 160,
         "wires": []
     },
     {

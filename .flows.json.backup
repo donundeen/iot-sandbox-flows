@@ -711,9 +711,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "LED2.reset();",
+        "payload": "LED2.set();",
         "payloadType": "str",
-        "x": 830,
+        "x": 820,
         "y": 480,
         "wires": [
             [
@@ -938,11 +938,12 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 470,
+        "x": 350,
         "y": 340,
         "wires": [
             [
-                "0a6d5f071d64714c"
+                "0a6d5f071d64714c",
+                "f6b281495b76fde7"
             ]
         ]
     },
@@ -961,7 +962,8 @@
         "y": 340,
         "wires": [
             [
-                "ff89a7754694aeed"
+                "ff89a7754694aeed",
+                "55986b527b32eb1c"
             ]
         ]
     },
@@ -974,11 +976,85 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
         "y": 400,
+        "wires": []
+    },
+    {
+        "id": "55986b527b32eb1c",
+        "type": "debug",
+        "z": "bb01535f48abe2ce",
+        "name": "debug 32",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f6b281495b76fde7",
+        "type": "function",
+        "z": "bb01535f48abe2ce",
+        "name": "Add a newline",
+        "func": "msg.payload += \"\\n\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "cb70afc7d117c778",
+                "014e6de00a067bc8"
+            ]
+        ]
+    },
+    {
+        "id": "cb70afc7d117c778",
+        "type": "mqtt out",
+        "z": "bb01535f48abe2ce",
+        "name": "mqtt to BLE",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "16dd31f690be98d3",
+        "x": 910,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "014e6de00a067bc8",
+        "type": "debug",
+        "z": "bb01535f48abe2ce",
+        "name": "debug 33",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 460,
         "wires": []
     },
     {
