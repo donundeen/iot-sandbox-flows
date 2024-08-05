@@ -167,7 +167,7 @@
         "name": "This flow Runs on the IoT Sandbox",
         "info": "",
         "x": 140,
-        "y": 40,
+        "y": 20,
         "wires": []
     },
     {
@@ -202,7 +202,7 @@
             "627021b995a2a0ef",
             "e56477c26cb0cacc"
         ],
-        "x": 355,
+        "x": 375,
         "y": 380,
         "wires": [
             [
@@ -216,7 +216,7 @@
         "z": "9529f2fd9052e78b",
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
-        "x": 200,
+        "x": 220,
         "y": 380,
         "wires": []
     },
@@ -256,7 +256,7 @@
         "name": "This is the message playground, let's play!",
         "info": "",
         "x": 160,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -266,7 +266,7 @@
         "name": "LinkIn and LinkOut nodes here match LinkOut and LinkIn nodes in other tabs, dependoing on what protocols the originally come via.",
         "info": "",
         "x": 440,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -276,7 +276,7 @@
         "name": "Use Debug nodes to see what kind of data come out of the LinkOuts (the INPUTS)",
         "info": "",
         "x": 290,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -286,7 +286,7 @@
         "name": "Then (optionally)modify those messages and pass them along to the named LinkIn nodes (the OUTPUTS)",
         "info": "",
         "x": 360,
-        "y": 220,
+        "y": 200,
         "wires": []
     },
     {
@@ -315,11 +315,10 @@
         "z": "9529f2fd9052e78b",
         "name": "link in 1",
         "links": [
-            "39d6698f6076b1cf",
-            "12f3f5b83580a23d"
+            "39d6698f6076b1cf"
         ],
-        "x": 355,
-        "y": 440,
+        "x": 375,
+        "y": 500,
         "wires": [
             []
         ]
@@ -330,8 +329,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/isMotionDetected [true/false]",
         "info": "",
-        "x": 160,
-        "y": 440,
+        "x": 180,
+        "y": 500,
         "wires": []
     },
     {
@@ -340,8 +339,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/temperature [float]",
         "info": "",
-        "x": 190,
-        "y": 500,
+        "x": 210,
+        "y": 560,
         "wires": []
     },
     {
@@ -352,8 +351,8 @@
         "links": [
             "3f8a8d4cc887a6a0"
         ],
-        "x": 355,
-        "y": 500,
+        "x": 375,
+        "y": 560,
         "wires": [
             []
         ]
@@ -364,8 +363,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/illuminance [int]",
         "info": "",
-        "x": 200,
-        "y": 560,
+        "x": 220,
+        "y": 620,
         "wires": []
     },
     {
@@ -376,8 +375,8 @@
         "links": [
             "0fb34d273a62d5fd"
         ],
-        "x": 355,
-        "y": 560,
+        "x": 375,
+        "y": 620,
         "wires": [
             []
         ]
@@ -388,8 +387,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/acceleration [x,y,x]",
         "info": "",
-        "x": 190,
-        "y": 620,
+        "x": 210,
+        "y": 680,
         "wires": []
     },
     {
@@ -400,8 +399,8 @@
         "links": [
             "be8df522c0e4f250"
         ],
-        "x": 355,
-        "y": 620,
+        "x": 375,
+        "y": 680,
         "wires": [
             []
         ]
@@ -412,8 +411,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/batteryPercentage [int]",
         "info": "",
-        "x": 180,
-        "y": 680,
+        "x": 200,
+        "y": 740,
         "wires": []
     },
     {
@@ -422,10 +421,11 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/batteryPercentage",
         "links": [
-            "214448f98c24559e"
+            "214448f98c24559e",
+            "002337ab102d4f3a"
         ],
-        "x": 355,
-        "y": 680,
+        "x": 375,
+        "y": 740,
         "wires": [
             []
         ]
@@ -436,8 +436,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/realtiveHumidity [float]",
         "info": "",
-        "x": 180,
-        "y": 740,
+        "x": 200,
+        "y": 800,
         "wires": []
     },
     {
@@ -448,11 +448,121 @@
         "links": [
             "0be064a2c659c9a6"
         ],
-        "x": 355,
-        "y": 740,
+        "x": 375,
+        "y": 800,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "0fc60dcce126bb56",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/acceleration [x,y,x]",
+        "info": "",
+        "x": 200,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "bcc55d3b75af50b4",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/acceleration",
+        "links": [
+            "0ad22c5f1dca0ec8"
+        ],
+        "x": 375,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63f1f9f78ff03929",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/batteryPercentage [int]",
+        "info": "",
+        "x": 190,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "a7d84af63bc1a4a3",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [],
+        "x": 375,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "656c29854a0f9c68",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "links": [
+            "12f3f5b83580a23d"
+        ],
+        "x": 375,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90c5dade84a5b513",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/isMotionDetected [true/false]",
+        "info": "",
+        "x": 170,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "afb3a856d21e5af7",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
+        "info": "",
+        "x": 300,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "825a8a29af6c8760",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "The Espruino JoltJS https://www.espruino.com/Jolt.js",
+        "info": "",
+        "x": 200,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "510c3dbc15186c67",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
+        "info": "",
+        "x": 340,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9abc8790454ec959",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Also, you can add your own flow and copy any input and output nodes from below into it, and they will work!",
+        "info": "",
+        "x": 370,
+        "y": 240,
+        "wires": []
     },
     {
         "id": "87cef86360be7223",
@@ -1491,7 +1601,9 @@
             [],
             [
                 "54d557b47848e32a",
-                "703f4cb5601ee2a3"
+                "703f4cb5601ee2a3",
+                "73889f2195070320",
+                "79fd44a608cf9a6d"
             ]
         ]
     },
@@ -1499,15 +1611,15 @@
         "id": "6e4e1e9551cce098",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "/motionE8DA/isMotionDetected",
-        "func": "let newmsg = {topic: \"/motionE8DA/isMotionDetected\",\n            payload: msg.payload.isMotionDetected[0]};\nreturn newmsg;",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "func": "let newmsg = {\n    topic: \"/e9beacon5c26/isMotionDetected\",\n            payload: msg.payload.isMotionDetected[0]};\nreturn newmsg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
+        "x": 920,
         "y": 1780,
         "wires": [
             [
@@ -1549,10 +1661,10 @@
         "id": "12f3f5b83580a23d",
         "type": "link out",
         "z": "943e204f81529182",
-        "name": "/motionE8DA/isMotionDetected",
+        "name": "/e9beacon5c26/isMotionDetected",
         "mode": "link",
         "links": [
-            "7f48796d223aff6d"
+            "656c29854a0f9c68"
         ],
         "x": 1275,
         "y": 1780,
@@ -1562,9 +1674,9 @@
         "id": "d8daf00ff3b65d44",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "/motionE8DA/isMotionDetected",
+        "name": "/e9beacon5c26/isMotionDetected",
         "info": "",
-        "x": 1430,
+        "x": 1440,
         "y": 1780,
         "wires": []
     },
@@ -1627,7 +1739,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
@@ -1648,7 +1761,7 @@
         "id": "c53fee8ee9c05b2e",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "MINEW MSP01 HUman Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
+        "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
         "info": "",
         "x": 380,
         "y": 600,
@@ -1663,6 +1776,212 @@
         "x": 380,
         "y": 1660,
         "wires": []
+    },
+    {
+        "id": "49e6e5b80ab0da1e",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "func": "let newmsg = {\n    topic: \"/e9beacon5c26/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1940,
+        "wires": [
+            [
+                "002337ab102d4f3a"
+            ]
+        ]
+    },
+    {
+        "id": "a85f54f2772adb1c",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 960,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "8f636243ac6d8b09",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1590,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "002337ab102d4f3a",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/batteryPercentage",
+        "mode": "link",
+        "links": [
+            "0e67c49a5c1dbc69"
+        ],
+        "x": 1275,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "e58e3477e15fc998",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "info": "",
+        "x": 1440,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "0f0250f82747ba70",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 540,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "62034e3e84a7e588",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 480,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "73889f2195070320",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it batteryPercentage?",
+        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1940,
+        "wires": [
+            [
+                "49e6e5b80ab0da1e"
+            ]
+        ]
+    },
+    {
+        "id": "e53334db6f2d533b",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/acceleration",
+        "func": "let newmsg = {\n    topic: \"/e9beacon5c26/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 2100,
+        "wires": [
+            [
+                "0ad22c5f1dca0ec8"
+            ]
+        ]
+    },
+    {
+        "id": "3c98aed9c0939d2f",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 960,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "bfa762290632be76",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1590,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "0ad22c5f1dca0ec8",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/acceleration",
+        "mode": "link",
+        "links": [
+            "bcc55d3b75af50b4"
+        ],
+        "x": 1275,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "986ad0efcdb07805",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/acceleration",
+        "info": "",
+        "x": 1420,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "897111c57fcd0966",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 540,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "1ed47df7cf2d3ccf",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 480,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "79fd44a608cf9a6d",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it acceleration?",
+        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 2100,
+        "wires": [
+            [
+                "e53334db6f2d533b"
+            ]
+        ]
     },
     {
         "id": "9f33f6c8963e1e03",
