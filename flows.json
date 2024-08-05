@@ -200,7 +200,8 @@
         "name": "/joltjsd883/buttonPressCount",
         "links": [
             "627021b995a2a0ef",
-            "e56477c26cb0cacc"
+            "e56477c26cb0cacc",
+            "39d6698f6076b1cf"
         ],
         "x": 275,
         "y": 380,
@@ -735,6 +736,161 @@
         "info": "",
         "x": 820,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "06097ef97334cbbe",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001/devices/c300000ae8da/3",
+        "name": "Pareto JoltJS c8c8751dd883/3",
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [],
+            [
+                "5d9fe62628055011",
+                "41568586e94a1797"
+            ]
+        ]
+    },
+    {
+        "id": "0cb3b39d5ed1b219",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/joltd883/buttonPressCount",
+        "func": "let newmsg = {topic: \"/joltd883/buttonPressCount\",\n            payload: msg.payload.txCount};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 640,
+        "wires": [
+            [
+                "39d6698f6076b1cf"
+            ]
+        ]
+    },
+    {
+        "id": "d3fb2139cfd695cc",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 140,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "7477598c7eb88892",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 940,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d79f46f664f0f657",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1570,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "39d6698f6076b1cf",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/joltjsd883/buttonPressCount",
+        "mode": "link",
+        "links": [
+            "a991b79e982ec38f"
+        ],
+        "x": 1255,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "7a4475816fc8f6c1",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 1400,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c233950c6c0eb923",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c8c8751dd883/3",
+        "info": "",
+        "x": 150,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8c5769b6f3dcaecc",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 460,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "302f92d39e0a17a6",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5d9fe62628055011",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it txCount?",
+        "func": "if(msg.payload.txCount){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 640,
+        "wires": [
+            [
+                "0cb3b39d5ed1b219"
+            ]
+        ]
+    },
+    {
+        "id": "41568586e94a1797",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 34",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 800,
         "wires": []
     },
     {
