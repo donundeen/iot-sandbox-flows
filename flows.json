@@ -334,6 +334,102 @@
         "wires": []
     },
     {
+        "id": "7efd13165909c947",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/temperature",
+        "info": "",
+        "x": 150,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7ef475ffc039806f",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0"
+        ],
+        "x": 295,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db43857d6fddb21f",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/illuminance",
+        "info": "",
+        "x": 150,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "15f03384138c7a9b",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/illuminance",
+        "links": [
+            "0fb34d273a62d5fd"
+        ],
+        "x": 295,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f1793047f7fd9ad",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/acceleration",
+        "info": "",
+        "x": 150,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b435851896189b4c",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/acceleration",
+        "links": [
+            "be8df522c0e4f250"
+        ],
+        "x": 295,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68fd9537b6ef4f90",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/batteryPercentage",
+        "info": "",
+        "x": 130,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0e67c49a5c1dbc69",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/motionE8DA/batteryPercentage",
+        "links": [
+            "214448f98c24559e"
+        ],
+        "x": 295,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "87cef86360be7223",
         "type": "serial in",
         "z": "63e4ca87ec15e7b6",
@@ -712,7 +808,9 @@
             [],
             [
                 "5d9fe62628055011",
-                "c0ccf5de0c27300a"
+                "c0ccf5de0c27300a",
+                "baf140ce5e927807",
+                "361ad2d00306f22a"
             ]
         ]
     },
@@ -852,8 +950,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
-        "y": 700,
+        "x": 820,
+        "y": 560,
         "wires": []
     },
     {
@@ -869,11 +967,10 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 820,
+        "y": 780,
         "wires": [
             [
-                "3f8a8d4cc887a6a0",
-                "bdeca3ef06080d45"
+                "3f8a8d4cc887a6a0"
             ]
         ]
     },
@@ -884,7 +981,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 780,
+        "y": 740,
         "wires": []
     },
     {
@@ -894,7 +991,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 780,
+        "y": 740,
         "wires": []
     },
     {
@@ -903,9 +1000,11 @@
         "z": "943e204f81529182",
         "name": "/motionE8DA/temperature",
         "mode": "link",
-        "links": [],
+        "links": [
+            "7ef475ffc039806f"
+        ],
         "x": 1255,
-        "y": 820,
+        "y": 780,
         "wires": []
     },
     {
@@ -915,7 +1014,7 @@
         "name": "/motionE8DA/temperature",
         "info": "",
         "x": 1390,
-        "y": 820,
+        "y": 780,
         "wires": []
     },
     {
@@ -925,7 +1024,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 780,
+        "y": 740,
         "wires": []
     },
     {
@@ -935,7 +1034,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 860,
+        "y": 820,
         "wires": []
     },
     {
@@ -951,7 +1050,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 820,
+        "y": 780,
         "wires": [
             [
                 "99753da02303ad09"
@@ -959,20 +1058,313 @@
         ]
     },
     {
-        "id": "bdeca3ef06080d45",
-        "type": "debug",
+        "id": "c2d1f94ce0a9c2da",
+        "type": "function",
         "z": "943e204f81529182",
-        "name": "debug 35",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1100,
+        "name": "/motionE8DA/illuminance",
+        "func": "let newmsg = {topic: \"/motionE8DA/illuminance\",\n            payload: msg.payload.illuminance};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 920,
+        "wires": [
+            [
+                "0fb34d273a62d5fd"
+            ]
+        ]
+    },
+    {
+        "id": "355639d6dd165a82",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 940,
         "y": 880,
         "wires": []
+    },
+    {
+        "id": "098e8b167d245e1f",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1570,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "0fb34d273a62d5fd",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/illuminance",
+        "mode": "link",
+        "links": [
+            "15f03384138c7a9b"
+        ],
+        "x": 1255,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c4c7a87b7496d9bd",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/illuminance",
+        "info": "",
+        "x": 1390,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "579612895fe99982",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 520,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "83f20baa7bfd27f4",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "baf140ce5e927807",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it illuminance?",
+        "func": "if(msg.payload.illuminance){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 920,
+        "wires": [
+            [
+                "c2d1f94ce0a9c2da"
+            ]
+        ]
+    },
+    {
+        "id": "460e120d3b20700c",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/acceleration",
+        "func": "let newmsg = {topic: \"/motionE8DA/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1060,
+        "wires": [
+            [
+                "be8df522c0e4f250"
+            ]
+        ]
+    },
+    {
+        "id": "60e55d32a29ec3ac",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 940,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "566a31d14065ed84",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1570,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "be8df522c0e4f250",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/acceleration",
+        "mode": "link",
+        "links": [
+            "b435851896189b4c"
+        ],
+        "x": 1255,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "0aeb582b77afe93e",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/acceleration",
+        "info": "",
+        "x": 1390,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "cec06d64792b5849",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 520,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "4b0560ac346d0eed",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "361ad2d00306f22a",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it acceleration?",
+        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "460e120d3b20700c"
+            ]
+        ]
+    },
+    {
+        "id": "5a4b5a79e428cbb3",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/batteryPercentage",
+        "func": "let newmsg = {topic: \"/motionE8DA/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1200,
+        "wires": [
+            [
+                "214448f98c24559e"
+            ]
+        ]
+    },
+    {
+        "id": "442d84b7a74f0473",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 940,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "0dbb77a39488f9e2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1570,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "214448f98c24559e",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/batteryPercentage",
+        "mode": "link",
+        "links": [
+            "0e67c49a5c1dbc69"
+        ],
+        "x": 1255,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "1a4d20849e78648b",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/motionE8DA/batteryPercentage",
+        "info": "",
+        "x": 1410,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "756912a5f3287de6",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 520,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "fa7908efdef3ecd2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "0272f77e16f24d35",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it batteryPercentage?",
+        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1200,
+        "wires": [
+            [
+                "5a4b5a79e428cbb3"
+            ]
+        ]
     },
     {
         "id": "9f33f6c8963e1e03",
