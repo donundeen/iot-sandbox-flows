@@ -554,7 +554,8 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
-        "x": 120,
+        "name": "Pareto JoltJS c8c8751dd883/3",
+        "x": 170,
         "y": 440,
         "wires": [
             [],
