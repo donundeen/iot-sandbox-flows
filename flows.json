@@ -1790,7 +1790,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 1940,
+        "y": 1920,
         "wires": [
             [
                 "002337ab102d4f3a"
@@ -1804,7 +1804,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 960,
-        "y": 1900,
+        "y": 1880,
         "wires": []
     },
     {
@@ -1814,7 +1814,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1590,
-        "y": 1900,
+        "y": 1880,
         "wires": []
     },
     {
@@ -1827,7 +1827,7 @@
             "0e67c49a5c1dbc69"
         ],
         "x": 1275,
-        "y": 1940,
+        "y": 1920,
         "wires": []
     },
     {
@@ -1837,7 +1837,7 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "info": "",
         "x": 1440,
-        "y": 1940,
+        "y": 1920,
         "wires": []
     },
     {
@@ -1847,7 +1847,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 540,
-        "y": 1900,
+        "y": 1880,
         "wires": []
     },
     {
@@ -1857,7 +1857,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 480,
-        "y": 1980,
+        "y": 1960,
         "wires": []
     },
     {
@@ -1873,7 +1873,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 1940,
+        "y": 1920,
         "wires": [
             [
                 "49e6e5b80ab0da1e"
@@ -1893,7 +1893,7 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 2100,
+        "y": 2060,
         "wires": [
             [
                 "0ad22c5f1dca0ec8"
@@ -1907,7 +1907,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 960,
-        "y": 2060,
+        "y": 2020,
         "wires": []
     },
     {
@@ -1917,7 +1917,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1590,
-        "y": 2060,
+        "y": 2020,
         "wires": []
     },
     {
@@ -1930,7 +1930,7 @@
             "bcc55d3b75af50b4"
         ],
         "x": 1275,
-        "y": 2100,
+        "y": 2060,
         "wires": []
     },
     {
@@ -1940,7 +1940,7 @@
         "name": "/e9beacon5c26/acceleration",
         "info": "",
         "x": 1420,
-        "y": 2100,
+        "y": 2060,
         "wires": []
     },
     {
@@ -1950,7 +1950,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 540,
-        "y": 2060,
+        "y": 2020,
         "wires": []
     },
     {
@@ -1960,7 +1960,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 480,
-        "y": 2140,
+        "y": 2100,
         "wires": []
     },
     {
@@ -1976,7 +1976,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2100,
+        "y": 2060,
         "wires": [
             [
                 "e53334db6f2d533b"
