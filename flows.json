@@ -492,7 +492,7 @@
         "id": "c899758bf59368aa",
         "type": "comment",
         "z": "63e4ca87ec15e7b6",
-        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in teh Message Switchboard",
+        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
         "info": "",
         "x": 560,
         "y": 380,
@@ -559,7 +559,7 @@
         "wires": [
             [],
             [
-                "0d246c6d36f59726"
+                "39714e8ba6c34ecb"
             ]
         ]
     },
@@ -595,7 +595,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 880,
         "y": 440,
         "wires": [
             [
@@ -609,7 +609,7 @@
         "z": "943e204f81529182",
         "name": "each device property gets their own section here",
         "info": "# each device property gets their own section here",
-        "x": 220,
+        "x": 820,
         "y": 340,
         "wires": []
     },
@@ -629,7 +629,7 @@
         "z": "943e204f81529182",
         "name": "create a topic name, and assign the payload here",
         "info": "",
-        "x": 560,
+        "x": 940,
         "y": 400,
         "wires": []
     },
@@ -639,7 +639,7 @@
         "z": "943e204f81529182",
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
-        "x": 1190,
+        "x": 1570,
         "y": 400,
         "wires": []
     },
@@ -662,7 +662,7 @@
         "links": [
             "a991b79e982ec38f"
         ],
-        "x": 875,
+        "x": 1255,
         "y": 440,
         "wires": []
     },
@@ -672,7 +672,7 @@
         "z": "943e204f81529182",
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
-        "x": 1020,
+        "x": 1400,
         "y": 440,
         "wires": []
     },
@@ -684,6 +684,56 @@
         "info": "",
         "x": 150,
         "y": 480,
+        "wires": []
+    },
+    {
+        "id": "23f72742cac028f4",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 460,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "187f3783b671189d",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Even if we trust the device....",
+        "info": "",
+        "x": 460,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "39714e8ba6c34ecb",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it txCount?",
+        "func": "if(msg.payload.txCount){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "0d246c6d36f59726"
+            ]
+        ]
+    },
+    {
+        "id": "60f62919685ff439",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Code below for identifying and routing BLE device messages",
+        "info": "",
+        "x": 820,
+        "y": 300,
         "wires": []
     },
     {
@@ -1171,12 +1221,11 @@
         "type": "pareto-anywhere-socketio",
         "z": "a3efac045c708839",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
-        "x": 120,
-        "y": 240,
+        "x": 80,
+        "y": 200,
         "wires": [
             [
-                "42afc2b2dd0ad3e2",
-                "2a8f57065fb28b88"
+                "42afc2b2dd0ad3e2"
             ],
             []
         ]
@@ -1187,8 +1236,8 @@
         "z": "a3efac045c708839",
         "name": "decrypt each packet",
         "ignoreProtocolOverheadCheckbox": false,
-        "x": 700,
-        "y": 220,
+        "x": 880,
+        "y": 200,
         "wires": [
             [
                 "e72b03d8a82489a0",
@@ -1216,8 +1265,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 320,
+        "x": 760,
+        "y": 300,
         "wires": [
             [
                 "0ea6cd11bf0d3f51"
@@ -1237,8 +1286,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 220,
+        "x": 1480,
+        "y": 200,
         "wires": []
     },
     {
@@ -1253,8 +1302,8 @@
         "stream": false,
         "addname": "",
         "property": "payload.packets",
-        "x": 360,
-        "y": 320,
+        "x": 540,
+        "y": 300,
         "wires": [
             [
                 "df65414db9f74cb8"
@@ -1281,8 +1330,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 850,
-        "y": 320,
+        "x": 1030,
+        "y": 300,
         "wires": [
             [
                 "705d8e7f865f600a"
@@ -1310,8 +1359,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1020,
-        "y": 220,
+        "x": 1200,
+        "y": 200,
         "wires": [
             [
                 "7f9f23fecefd14fe"
@@ -1331,8 +1380,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 180,
+        "x": 1080,
+        "y": 160,
         "wires": []
     },
     {
@@ -1347,8 +1396,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1130,
-        "y": 320,
+        "x": 1310,
+        "y": 300,
         "wires": [
             [
                 "4204e108516287ef"
@@ -1369,7 +1418,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 300,
-        "y": 180,
+        "y": 120,
         "wires": []
     },
     {
@@ -1384,12 +1433,22 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
+        "x": 520,
         "y": 220,
         "wires": [
             [
                 "395d945f07b5fc2b"
             ]
         ]
+    },
+    {
+        "id": "5c685955e288d1ab",
+        "type": "comment",
+        "z": "a3efac045c708839",
+        "name": "removed this connection so things won't happen here.",
+        "info": "",
+        "x": 260,
+        "y": 220,
+        "wires": []
     }
 ]
