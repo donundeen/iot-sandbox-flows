@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "d286a10585a73e58",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -180,7 +188,7 @@
             "cb332d7f29f9638f"
         ],
         "x": 1235,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -190,7 +198,7 @@
         "name": "/joltjsd883/javascript",
         "info": "",
         "x": 1350,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -203,7 +211,7 @@
             "e56477c26cb0cacc"
         ],
         "x": 375,
-        "y": 380,
+        "y": 500,
         "wires": [
             [
                 "d3f56a97527fb425"
@@ -217,7 +225,7 @@
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
         "x": 220,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -232,10 +240,11 @@
         "template": "LED2.set();",
         "output": "str",
         "x": 770,
-        "y": 380,
+        "y": 500,
         "wires": [
             [
-                "093e2453d12cd821"
+                "093e2453d12cd821",
+                "1d4e7943c44c8ea6"
             ]
         ]
     },
@@ -246,7 +255,7 @@
         "name": "THE OUTPUTS",
         "info": "",
         "x": 1300,
-        "y": 300,
+        "y": 420,
         "wires": []
     },
     {
@@ -260,23 +269,13 @@
         "wires": []
     },
     {
-        "id": "508f43dc2bdec049",
-        "type": "comment",
-        "z": "9529f2fd9052e78b",
-        "name": "LinkIn and LinkOut nodes here match LinkOut and LinkIn nodes in other tabs, dependoing on what protocols the originally come via.",
-        "info": "",
-        "x": 440,
-        "y": 120,
-        "wires": []
-    },
-    {
         "id": "5cedde4270e55d73",
         "type": "comment",
         "z": "9529f2fd9052e78b",
         "name": "Use Debug nodes to see what kind of data come out of the LinkOuts (the INPUTS)",
         "info": "",
         "x": 290,
-        "y": 160,
+        "y": 240,
         "wires": []
     },
     {
@@ -286,7 +285,7 @@
         "name": "Then (optionally)modify those messages and pass them along to the named LinkIn nodes (the OUTPUTS)",
         "info": "",
         "x": 360,
-        "y": 200,
+        "y": 280,
         "wires": []
     },
     {
@@ -296,7 +295,7 @@
         "name": "THE INPUTS",
         "info": "",
         "x": 70,
-        "y": 300,
+        "y": 420,
         "wires": []
     },
     {
@@ -306,7 +305,7 @@
         "name": "PLAY HAPPENS HERE",
         "info": "",
         "x": 760,
-        "y": 300,
+        "y": 420,
         "wires": []
     },
     {
@@ -318,10 +317,11 @@
             "39d6698f6076b1cf"
         ],
         "x": 375,
-        "y": 500,
+        "y": 620,
         "wires": [
             [
-                "d3f56a97527fb425"
+                "d3f56a97527fb425",
+                "a17733e1cb081bd6"
             ]
         ]
     },
@@ -332,7 +332,7 @@
         "name": "/motionE8DA/isMotionDetected [true/false]",
         "info": "",
         "x": 180,
-        "y": 500,
+        "y": 620,
         "wires": []
     },
     {
@@ -342,7 +342,7 @@
         "name": "/motionE8DA/temperature [float]",
         "info": "",
         "x": 210,
-        "y": 560,
+        "y": 680,
         "wires": []
     },
     {
@@ -354,7 +354,7 @@
             "3f8a8d4cc887a6a0"
         ],
         "x": 375,
-        "y": 560,
+        "y": 680,
         "wires": [
             []
         ]
@@ -366,7 +366,7 @@
         "name": "/motionE8DA/illuminance [int]",
         "info": "",
         "x": 220,
-        "y": 620,
+        "y": 740,
         "wires": []
     },
     {
@@ -378,7 +378,7 @@
             "0fb34d273a62d5fd"
         ],
         "x": 375,
-        "y": 620,
+        "y": 740,
         "wires": [
             []
         ]
@@ -390,7 +390,7 @@
         "name": "/motionE8DA/acceleration [x,y,x]",
         "info": "",
         "x": 210,
-        "y": 680,
+        "y": 800,
         "wires": []
     },
     {
@@ -402,7 +402,7 @@
             "be8df522c0e4f250"
         ],
         "x": 375,
-        "y": 680,
+        "y": 800,
         "wires": [
             []
         ]
@@ -414,7 +414,7 @@
         "name": "/motionE8DA/batteryPercentage [int]",
         "info": "",
         "x": 200,
-        "y": 740,
+        "y": 860,
         "wires": []
     },
     {
@@ -427,7 +427,7 @@
             "002337ab102d4f3a"
         ],
         "x": 375,
-        "y": 740,
+        "y": 860,
         "wires": [
             []
         ]
@@ -439,7 +439,7 @@
         "name": "/motionE8DA/realtiveHumidity [float]",
         "info": "",
         "x": 200,
-        "y": 800,
+        "y": 920,
         "wires": []
     },
     {
@@ -451,7 +451,7 @@
             "0be064a2c659c9a6"
         ],
         "x": 375,
-        "y": 800,
+        "y": 920,
         "wires": [
             []
         ]
@@ -463,7 +463,7 @@
         "name": "/e9beacon5c26/acceleration [x,y,x]",
         "info": "",
         "x": 200,
-        "y": 900,
+        "y": 1020,
         "wires": []
     },
     {
@@ -475,7 +475,7 @@
             "0ad22c5f1dca0ec8"
         ],
         "x": 375,
-        "y": 900,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -487,7 +487,7 @@
         "name": "/e9beacon5c26/batteryPercentage [int]",
         "info": "",
         "x": 190,
-        "y": 960,
+        "y": 1080,
         "wires": []
     },
     {
@@ -497,7 +497,7 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "links": [],
         "x": 375,
-        "y": 960,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -511,7 +511,7 @@
             "12f3f5b83580a23d"
         ],
         "x": 375,
-        "y": 1020,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -523,7 +523,7 @@
         "name": "/e9beacon5c26/isMotionDetected [true/false]",
         "info": "",
         "x": 170,
-        "y": 1020,
+        "y": 1140,
         "wires": []
     },
     {
@@ -533,7 +533,7 @@
         "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
         "info": "",
         "x": 300,
-        "y": 860,
+        "y": 980,
         "wires": []
     },
     {
@@ -543,7 +543,7 @@
         "name": "The Espruino JoltJS https://www.espruino.com/Jolt.js",
         "info": "",
         "x": 200,
-        "y": 340,
+        "y": 460,
         "wires": []
     },
     {
@@ -553,7 +553,7 @@
         "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
         "info": "",
         "x": 340,
-        "y": 460,
+        "y": 580,
         "wires": []
     },
     {
@@ -563,7 +563,59 @@
         "name": "Also, you can add your own flow and copy any input and output nodes from below into it, and they will work!",
         "info": "",
         "x": 370,
-        "y": 240,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a0deccccec3a0425",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Find the devices in the rooms, using the ID number written on it that matches the first part of the input/output names below",
+        "info": "",
+        "x": 410,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d7e205c98b27cfa9",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "eg the device named \"motionE8DA\" has all the inputs and outputs that start with /motionE8DA",
+        "info": "",
+        "x": 330,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a17733e1cb081bd6",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 36",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "1d4e7943c44c8ea6",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 580,
         "wires": []
     },
     {
@@ -857,7 +909,8 @@
         "name": "/joltjsd883/buttonPressCount",
         "mode": "link",
         "links": [
-            "a991b79e982ec38f"
+            "a991b79e982ec38f",
+            "26017cc35f3e96bf"
         ],
         "x": 1255,
         "y": 440,
@@ -1010,7 +1063,8 @@
         "name": "/motionE8DA/isMotionDetected",
         "mode": "link",
         "links": [
-            "7f48796d223aff6d"
+            "7f48796d223aff6d",
+            "8fabfcd6e00bb298"
         ],
         "x": 1255,
         "y": 700,
@@ -1123,7 +1177,8 @@
         "name": "/motionE8DA/temperature",
         "mode": "link",
         "links": [
-            "7ef475ffc039806f"
+            "7ef475ffc039806f",
+            "30c63c537e502a94"
         ],
         "x": 1255,
         "y": 840,
@@ -2228,7 +2283,8 @@
         "name": "/joltjsd883/buttonPressCount",
         "mode": "link",
         "links": [
-            "a991b79e982ec38f"
+            "a991b79e982ec38f",
+            "26017cc35f3e96bf"
         ],
         "x": 1005,
         "y": 360,
@@ -2325,7 +2381,8 @@
         "z": "bb01535f48abe2ce",
         "name": "/joltjsd883/javascript",
         "links": [
-            "093e2453d12cd821"
+            "093e2453d12cd821",
+            "12d7b33aba9f5d4b"
         ],
         "x": 135,
         "y": 320,
