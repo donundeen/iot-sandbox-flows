@@ -213,9 +213,7 @@
         "x": 375,
         "y": 500,
         "wires": [
-            [
-                "d3f56a97527fb425"
-            ]
+            []
         ]
     },
     {
@@ -239,8 +237,8 @@
         "syntax": "mustache",
         "template": "LED2.set();",
         "output": "str",
-        "x": 770,
-        "y": 500,
+        "x": 750,
+        "y": 620,
         "wires": [
             [
                 "093e2453d12cd821",
@@ -320,8 +318,8 @@
         "y": 620,
         "wires": [
             [
-                "d3f56a97527fb425",
-                "a17733e1cb081bd6"
+                "a17733e1cb081bd6",
+                "fb481705f37072a6"
             ]
         ]
     },
@@ -513,9 +511,7 @@
         "x": 375,
         "y": 1140,
         "wires": [
-            [
-                "a0cf0de0e9d8c435"
-            ]
+            []
         ]
     },
     {
@@ -600,8 +596,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 640,
+        "x": 600,
+        "y": 740,
         "wires": []
     },
     {
@@ -631,13 +627,63 @@
         "syntax": "mustache",
         "template": "LED2.reset();",
         "output": "str",
-        "x": 690,
-        "y": 1140,
+        "x": 750,
+        "y": 660,
         "wires": [
             [
-                "093e2453d12cd821"
+                "093e2453d12cd821",
+                "751db6ce17bd48b7"
             ]
         ]
+    },
+    {
+        "id": "fb481705f37072a6",
+        "type": "switch",
+        "z": "9529f2fd9052e78b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 640,
+        "wires": [
+            [
+                "d3f56a97527fb425"
+            ],
+            [
+                "a0cf0de0e9d8c435"
+            ]
+        ]
+    },
+    {
+        "id": "751db6ce17bd48b7",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 38",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 660,
+        "wires": []
     },
     {
         "id": "87cef86360be7223",
@@ -1039,11 +1085,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
+        "x": 850,
         "y": 700,
         "wires": [
             [
-                "39d6698f6076b1cf"
+                "913cf85b77bf72c6"
             ]
         ]
     },
@@ -1063,7 +1109,7 @@
         "z": "943e204f81529182",
         "name": "create a topic name, and assign the payload here",
         "info": "",
-        "x": 940,
+        "x": 900,
         "y": 660,
         "wires": []
     },
@@ -1135,15 +1181,15 @@
         "id": "5d9fe62628055011",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "is it isMotionDetected and is it true?",
-        "func": "if(msg.payload.isMotionDetected && msg.payload.isMotionDetected[0] === true){\n    return msg;\n}",
+        "name": "is it isMotionDetected",
+        "func": "if(msg.payload.isMotionDetected){\n    return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 440,
         "y": 700,
         "wires": [
             [
@@ -1167,7 +1213,7 @@
         "y": 840,
         "wires": [
             [
-                "3f8a8d4cc887a6a0"
+                "a2a4bb6ae1db4a73"
             ]
         ]
     },
@@ -1271,7 +1317,7 @@
         "y": 980,
         "wires": [
             [
-                "0fb34d273a62d5fd"
+                "7e6670f45f062dc4"
             ]
         ]
     },
@@ -1374,7 +1420,7 @@
         "y": 1120,
         "wires": [
             [
-                "be8df522c0e4f250"
+                "8e419f4d7285ec5f"
             ]
         ]
     },
@@ -1477,7 +1523,7 @@
         "y": 1260,
         "wires": [
             [
-                "214448f98c24559e"
+                "b42ab26e4f368895"
             ]
         ]
     },
@@ -1580,7 +1626,7 @@
         "y": 1400,
         "wires": [
             [
-                "0be064a2c659c9a6"
+                "3e7f1a7e86edd907"
             ]
         ]
     },
@@ -1679,7 +1725,6 @@
             [],
             [
                 "54d557b47848e32a",
-                "703f4cb5601ee2a3",
                 "73889f2195070320",
                 "79fd44a608cf9a6d"
             ]
@@ -1701,7 +1746,7 @@
         "y": 1780,
         "wires": [
             [
-                "12f3f5b83580a23d"
+                "01da984135ffb4b5"
             ]
         ]
     },
@@ -1792,38 +1837,21 @@
         "id": "54d557b47848e32a",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "is it isMotionDetected and is it true?",
-        "func": "if(msg.payload.isMotionDetected && msg.payload.isMotionDetected[0] === true){\n    return msg;\n}",
+        "name": "is it isMotionDetected?",
+        "func": "if(msg.payload.isMotionDetected){\n    return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
+        "x": 470,
         "y": 1780,
         "wires": [
             [
                 "6e4e1e9551cce098"
             ]
         ]
-    },
-    {
-        "id": "703f4cb5601ee2a3",
-        "type": "debug",
-        "z": "943e204f81529182",
-        "name": "debug 35",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 1700,
-        "wires": []
     },
     {
         "id": "fc10d2f338d12c67",
@@ -1868,32 +1896,12 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 1920,
+        "y": 1860,
         "wires": [
             [
-                "002337ab102d4f3a"
+                "7e5cc97aecd17920"
             ]
         ]
-    },
-    {
-        "id": "a85f54f2772adb1c",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "create a topic name, and assign the payload here",
-        "info": "",
-        "x": 960,
-        "y": 1880,
-        "wires": []
-    },
-    {
-        "id": "8f636243ac6d8b09",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 1590,
-        "y": 1880,
-        "wires": []
     },
     {
         "id": "002337ab102d4f3a",
@@ -1905,7 +1913,7 @@
             "0e67c49a5c1dbc69"
         ],
         "x": 1275,
-        "y": 1920,
+        "y": 1860,
         "wires": []
     },
     {
@@ -1915,27 +1923,7 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "info": "",
         "x": 1440,
-        "y": 1920,
-        "wires": []
-    },
-    {
-        "id": "0f0250f82747ba70",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 540,
-        "y": 1880,
-        "wires": []
-    },
-    {
-        "id": "62034e3e84a7e588",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "Even if we trust the device....",
-        "info": "",
-        "x": 480,
-        "y": 1960,
+        "y": 1860,
         "wires": []
     },
     {
@@ -1951,7 +1939,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 1920,
+        "y": 1860,
         "wires": [
             [
                 "49e6e5b80ab0da1e"
@@ -1971,32 +1959,12 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 2060,
+        "y": 1920,
         "wires": [
             [
-                "0ad22c5f1dca0ec8"
+                "db8d2a1e80114204"
             ]
         ]
-    },
-    {
-        "id": "3c98aed9c0939d2f",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "create a topic name, and assign the payload here",
-        "info": "",
-        "x": 960,
-        "y": 2020,
-        "wires": []
-    },
-    {
-        "id": "bfa762290632be76",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 1590,
-        "y": 2020,
-        "wires": []
     },
     {
         "id": "0ad22c5f1dca0ec8",
@@ -2008,7 +1976,7 @@
             "bcc55d3b75af50b4"
         ],
         "x": 1275,
-        "y": 2060,
+        "y": 1920,
         "wires": []
     },
     {
@@ -2018,27 +1986,7 @@
         "name": "/e9beacon5c26/acceleration",
         "info": "",
         "x": 1420,
-        "y": 2060,
-        "wires": []
-    },
-    {
-        "id": "897111c57fcd0966",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 540,
-        "y": 2020,
-        "wires": []
-    },
-    {
-        "id": "1ed47df7cf2d3ccf",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "Even if we trust the device....",
-        "info": "",
-        "x": 480,
-        "y": 2100,
+        "y": 1920,
         "wires": []
     },
     {
@@ -2054,10 +2002,190 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2060,
+        "y": 1920,
         "wires": [
             [
                 "e53334db6f2d533b"
+            ]
+        ]
+    },
+    {
+        "id": "913cf85b77bf72c6",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 700,
+        "wires": [
+            [
+                "39d6698f6076b1cf"
+            ]
+        ]
+    },
+    {
+        "id": "01da984135ffb4b5",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1160,
+        "y": 1780,
+        "wires": [
+            [
+                "12f3f5b83580a23d"
+            ]
+        ]
+    },
+    {
+        "id": "7e5cc97aecd17920",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1160,
+        "y": 1860,
+        "wires": [
+            [
+                "002337ab102d4f3a"
+            ]
+        ]
+    },
+    {
+        "id": "db8d2a1e80114204",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1160,
+        "y": 1920,
+        "wires": [
+            [
+                "0ad22c5f1dca0ec8"
+            ]
+        ]
+    },
+    {
+        "id": "a2a4bb6ae1db4a73",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 840,
+        "wires": [
+            [
+                "3f8a8d4cc887a6a0"
+            ]
+        ]
+    },
+    {
+        "id": "7e6670f45f062dc4",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 980,
+        "wires": [
+            [
+                "0fb34d273a62d5fd"
+            ]
+        ]
+    },
+    {
+        "id": "8e419f4d7285ec5f",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 1120,
+        "wires": [
+            [
+                "be8df522c0e4f250"
+            ]
+        ]
+    },
+    {
+        "id": "b42ab26e4f368895",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 1260,
+        "wires": [
+            [
+                "214448f98c24559e"
+            ]
+        ]
+    },
+    {
+        "id": "3e7f1a7e86edd907",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 1400,
+        "wires": [
+            [
+                "0be064a2c659c9a6"
             ]
         ]
     },
