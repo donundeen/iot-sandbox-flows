@@ -645,14 +645,10 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "true",
-                "vt": "str"
+                "t": "true"
             },
             {
-                "t": "eq",
-                "v": "false",
-                "vt": "str"
+                "t": "false"
             }
         ],
         "checkall": "true",
