@@ -3154,7 +3154,9 @@
         "x": 435,
         "y": 280,
         "wires": [
-            []
+            [
+                "db2e5205dab51c88"
+            ]
         ]
     },
     {
@@ -3317,7 +3319,9 @@
         "x": 435,
         "y": 680,
         "wires": [
-            []
+            [
+                "8bb744164f30a793"
+            ]
         ]
     },
     {
@@ -3614,6 +3618,94 @@
         "className": "",
         "x": 950,
         "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db2e5205dab51c88",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detected",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bb744164f30a793",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "b16a71166ef94228",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detected",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 680,
         "wires": [
             []
         ]
