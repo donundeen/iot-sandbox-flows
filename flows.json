@@ -3758,7 +3758,7 @@
         "type": "function",
         "z": "d286a10585a73e58",
         "name": "split into 3",
-        "func": "let msg1 = msg2 = msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
