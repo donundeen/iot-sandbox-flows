@@ -2512,7 +2512,8 @@
                 "d0be3bfcd62b5837",
                 "c1b0a8ec0a07d96a",
                 "7a808c6536e4a5cb",
-                "547de9f301233c87"
+                "547de9f301233c87",
+                "c2894d8c81135ed7"
             ]
         ]
     },
@@ -2561,15 +2562,15 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 40",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 2020,
+        "x": 400,
+        "y": 2500,
         "wires": []
     },
     {
@@ -2836,6 +2837,73 @@
                 "4231c54266544aaa"
             ]
         ]
+    },
+    {
+        "id": "fd8072474a0cb7cd",
+        "type": "red-advlib-ble",
+        "z": "943e204f81529182",
+        "name": "",
+        "ignoreProtocolOverheadCheckbox": false,
+        "x": 860,
+        "y": 2600,
+        "wires": [
+            [
+                "cf2259b44c6db0e5"
+            ]
+        ]
+    },
+    {
+        "id": "c2894d8c81135ed7",
+        "type": "split",
+        "z": "943e204f81529182",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "data",
+        "property": "payload.packets",
+        "x": 550,
+        "y": 2380,
+        "wires": [
+            [
+                "c2ad694c85e570b3",
+                "fd8072474a0cb7cd"
+            ]
+        ]
+    },
+    {
+        "id": "c2ad694c85e570b3",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 2360,
+        "wires": []
+    },
+    {
+        "id": "cf2259b44c6db0e5",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 42",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 2580,
+        "wires": []
     },
     {
         "id": "9f33f6c8963e1e03",
