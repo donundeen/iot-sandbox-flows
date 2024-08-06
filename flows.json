@@ -3266,8 +3266,7 @@
         "y": 580,
         "wires": [
             [
-                "c6cccff2f14b9711",
-                "54a22b6351e62aec"
+                "c6cccff2f14b9711"
             ]
         ]
     },
@@ -3431,8 +3430,8 @@
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
-        "ymin": "-10",
-        "ymax": "30",
+        "ymin": "0",
+        "ymax": "100",
         "removeOlder": 1,
         "removeOlderPoints": "",
         "removeOlderUnit": "604800",
@@ -3458,26 +3457,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "54a22b6351e62aec",
-        "type": "ui_text",
-        "z": "d286a10585a73e58",
-        "group": "1b3ec53ab98a0a0b",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Humidity1",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 810,
-        "y": 500,
-        "wires": []
     }
 ]
