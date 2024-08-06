@@ -3192,7 +3192,9 @@
         "x": 435,
         "y": 400,
         "wires": [
-            []
+            [
+                "c0f71b6e723f9769"
+            ]
         ]
     },
     {
@@ -3241,7 +3243,9 @@
         "x": 435,
         "y": 520,
         "wires": [
-            []
+            [
+                "a4c1da411cd7ddcc"
+            ]
         ]
     },
     {
@@ -3313,7 +3317,9 @@
         "x": 435,
         "y": 740,
         "wires": [
-            []
+            [
+                "f956aa9e70619c0a"
+            ]
         ]
     },
     {
@@ -3454,6 +3460,138 @@
         "className": "",
         "x": 910,
         "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f956aa9e70619c0a",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "E9 Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4c1da411cd7ddcc",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Sensor Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0f71b6e723f9769",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Sensor Light Level",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "500",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 400,
         "wires": [
             []
         ]
