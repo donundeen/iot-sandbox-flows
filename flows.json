@@ -513,7 +513,9 @@
         "x": 375,
         "y": 1140,
         "wires": [
-            []
+            [
+                "a0cf0de0e9d8c435"
+            ]
         ]
     },
     {
@@ -617,6 +619,25 @@
         "x": 960,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "a0cf0de0e9d8c435",
+        "type": "template",
+        "z": "9529f2fd9052e78b",
+        "name": "LED2.reset();",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "LED2.reset();",
+        "output": "str",
+        "x": 690,
+        "y": 1140,
+        "wires": [
+            [
+                "093e2453d12cd821"
+            ]
+        ]
     },
     {
         "id": "87cef86360be7223",
