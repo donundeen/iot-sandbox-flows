@@ -2506,7 +2506,9 @@
         "x": 150,
         "y": 2100,
         "wires": [
-            [],
+            [
+                "e7649bf9c5aee0c7"
+            ],
             [
                 "d0be3bfcd62b5837",
                 "c1b0a8ec0a07d96a",
@@ -2560,7 +2562,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 40",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2835,6 +2837,37 @@
                 "4231c54266544aaa"
             ]
         ]
+    },
+    {
+        "id": "e7649bf9c5aee0c7",
+        "type": "red-advlib-ble",
+        "z": "943e204f81529182",
+        "name": "",
+        "ignoreProtocolOverheadCheckbox": false,
+        "x": 320,
+        "y": 2420,
+        "wires": [
+            [
+                "bd47ee860268feb5"
+            ]
+        ]
+    },
+    {
+        "id": "bd47ee860268feb5",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 2420,
+        "wires": []
     },
     {
         "id": "9f33f6c8963e1e03",
