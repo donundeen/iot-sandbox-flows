@@ -3321,7 +3321,7 @@
         "y": 680,
         "wires": [
             [
-                "8bb744164f30a793"
+                "04865675a02dc232"
             ]
         ]
     },
@@ -3763,5 +3763,25 @@
         "x": 740,
         "y": 440,
         "wires": []
+    },
+    {
+        "id": "04865675a02dc232",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "true->1, false->0",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nif(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "8bb744164f30a793"
+            ]
+        ]
     }
 ]
