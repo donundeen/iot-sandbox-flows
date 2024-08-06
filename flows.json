@@ -2507,7 +2507,7 @@
         "y": 2100,
         "wires": [
             [
-                "e7649bf9c5aee0c7"
+                "20acd70353fc1af2"
             ],
             [
                 "d0be3bfcd62b5837",
@@ -2844,7 +2844,7 @@
         "z": "943e204f81529182",
         "name": "",
         "ignoreProtocolOverheadCheckbox": true,
-        "x": 320,
+        "x": 360,
         "y": 2420,
         "wires": [
             [
@@ -2868,6 +2868,26 @@
         "x": 540,
         "y": 2420,
         "wires": []
+    },
+    {
+        "id": "20acd70353fc1af2",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "function 3",
+        "func": "msg.payload.data = msg.payload.packets\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 2360,
+        "wires": [
+            [
+                "e7649bf9c5aee0c7"
+            ]
+        ]
     },
     {
         "id": "9f33f6c8963e1e03",
