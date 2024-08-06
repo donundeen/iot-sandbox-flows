@@ -50,7 +50,7 @@
     {
         "id": "d286a10585a73e58",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "UI Generator",
         "disabled": false,
         "info": "",
         "env": []
@@ -167,6 +167,121 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "1298aa3fd6cc5da5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e4b11e57b9bdf9c8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1b3ec53ab98a0a0b",
+        "type": "ui_group",
+        "name": "Sensor Data",
+        "tab": "1298aa3fd6cc5da5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "5347604aa986a9b3",
@@ -1031,7 +1146,8 @@
         "mode": "link",
         "links": [
             "a991b79e982ec38f",
-            "26017cc35f3e96bf"
+            "26017cc35f3e96bf",
+            "b8e0d1ef098a80f6"
         ],
         "x": 1255,
         "y": 440,
@@ -1185,7 +1301,8 @@
         "mode": "link",
         "links": [
             "7f48796d223aff6d",
-            "8fabfcd6e00bb298"
+            "8fabfcd6e00bb298",
+            "da9387dc2680a057"
         ],
         "x": 1255,
         "y": 700,
@@ -1299,7 +1416,8 @@
         "mode": "link",
         "links": [
             "7ef475ffc039806f",
-            "30c63c537e502a94"
+            "30c63c537e502a94",
+            "622bf26b87eb3ed9"
         ],
         "x": 1255,
         "y": 840,
@@ -1402,7 +1520,8 @@
         "name": "/motionE8DA/illuminance",
         "mode": "link",
         "links": [
-            "15f03384138c7a9b"
+            "15f03384138c7a9b",
+            "c1d1dfc74b17a671"
         ],
         "x": 1255,
         "y": 980,
@@ -1505,7 +1624,8 @@
         "name": "/motionE8DA/acceleration",
         "mode": "link",
         "links": [
-            "b435851896189b4c"
+            "b435851896189b4c",
+            "34179481a9d37d57"
         ],
         "x": 1255,
         "y": 1120,
@@ -1608,7 +1728,8 @@
         "name": "/motionE8DA/batteryPercentage",
         "mode": "link",
         "links": [
-            "0e67c49a5c1dbc69"
+            "0e67c49a5c1dbc69",
+            "92148f9250905b6b"
         ],
         "x": 1255,
         "y": 1260,
@@ -1711,7 +1832,8 @@
         "name": "/motionE8DA/relativeHumidity",
         "mode": "link",
         "links": [
-            "61fe7ef84007a447"
+            "61fe7ef84007a447",
+            "10d09e9ebbae4a39"
         ],
         "x": 1255,
         "y": 1400,
@@ -1841,7 +1963,8 @@
         "name": "/e9beacon5c26/isMotionDetected",
         "mode": "link",
         "links": [
-            "656c29854a0f9c68"
+            "656c29854a0f9c68",
+            "f3877161e3ba366e"
         ],
         "x": 1275,
         "y": 1780,
@@ -1964,7 +2087,8 @@
         "name": "/motionE8DA/batteryPercentage",
         "mode": "link",
         "links": [
-            "0e67c49a5c1dbc69"
+            "0e67c49a5c1dbc69",
+            "92148f9250905b6b"
         ],
         "x": 1275,
         "y": 1860,
@@ -2027,7 +2151,8 @@
         "name": "/e9beacon5c26/acceleration",
         "mode": "link",
         "links": [
-            "bcc55d3b75af50b4"
+            "bcc55d3b75af50b4",
+            "68c2629504ca0b28"
         ],
         "x": 1275,
         "y": 1920,
@@ -2487,7 +2612,8 @@
         "mode": "link",
         "links": [
             "a991b79e982ec38f",
-            "26017cc35f3e96bf"
+            "26017cc35f3e96bf",
+            "b8e0d1ef098a80f6"
         ],
         "x": 1005,
         "y": 360,
@@ -2671,7 +2797,7 @@
         "links": [
             "182e3454d1caf7c1"
         ],
-        "x": 815,
+        "x": 955,
         "y": 320,
         "wires": []
     },
@@ -2691,7 +2817,7 @@
         "z": "bb01535f48abe2ce",
         "name": "send to sendToEspruinoHub LinkIn",
         "info": "",
-        "x": 980,
+        "x": 1120,
         "y": 320,
         "wires": []
     },
@@ -2959,5 +3085,377 @@
         "x": 260,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "b8e0d1ef098a80f6",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/joltjsd883/buttonPressCount",
+        "links": [
+            "627021b995a2a0ef",
+            "e56477c26cb0cacc"
+        ],
+        "x": 435,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53fc1d4bad7bc041",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "66ad2bee53eb2ac7",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "THE INPUTS",
+        "info": "",
+        "x": 130,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "da9387dc2680a057",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "link in 2",
+        "links": [
+            "39d6698f6076b1cf"
+        ],
+        "x": 435,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "072e7c60dbbfb7b4",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/isMotionDetected [true/false]",
+        "info": "",
+        "x": 240,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "14f24fcceb258547",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/temperature [float]",
+        "info": "",
+        "x": 270,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "622bf26b87eb3ed9",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0"
+        ],
+        "x": 435,
+        "y": 340,
+        "wires": [
+            [
+                "55dba078f6391338"
+            ]
+        ]
+    },
+    {
+        "id": "09c3ee45296f5cf2",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/illuminance [int]",
+        "info": "",
+        "x": 280,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c1d1dfc74b17a671",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/illuminance",
+        "links": [
+            "0fb34d273a62d5fd"
+        ],
+        "x": 435,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8c67115aa626043",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/acceleration [x,y,x]",
+        "info": "",
+        "x": 270,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "34179481a9d37d57",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/acceleration",
+        "links": [
+            "be8df522c0e4f250"
+        ],
+        "x": 435,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25a47a22e68e2028",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/batteryPercentage [int]",
+        "info": "",
+        "x": 260,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "92148f9250905b6b",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/batteryPercentage",
+        "links": [
+            "214448f98c24559e",
+            "002337ab102d4f3a"
+        ],
+        "x": 435,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25b1bb849b259470",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/realtiveHumidity [float]",
+        "info": "",
+        "x": 260,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "10d09e9ebbae4a39",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/relativeHumidity",
+        "links": [
+            "0be064a2c659c9a6"
+        ],
+        "x": 435,
+        "y": 580,
+        "wires": [
+            [
+                "c6cccff2f14b9711"
+            ]
+        ]
+    },
+    {
+        "id": "d3b5f91d7add3588",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/acceleration [x,y,x]",
+        "info": "",
+        "x": 260,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "68c2629504ca0b28",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/acceleration",
+        "links": [
+            "0ad22c5f1dca0ec8"
+        ],
+        "x": 435,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b958dc18d532a5ce",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage [int]",
+        "info": "",
+        "x": 250,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b40fb4c40be74994",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [],
+        "x": 435,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3877161e3ba366e",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "links": [
+            "12f3f5b83580a23d"
+        ],
+        "x": 435,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db08e388efd8177f",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/isMotionDetected [true/false]",
+        "info": "",
+        "x": 230,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "8daac43e8d594479",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
+        "info": "",
+        "x": 360,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "773a6a7ee978c851",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "The Espruino JoltJS https://www.espruino.com/Jolt.js",
+        "info": "",
+        "x": 260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c3ec776166f02b2b",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
+        "info": "",
+        "x": 400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "55dba078f6391338",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temp1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6cccff2f14b9711",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 580,
+        "wires": [
+            []
+        ]
     }
 ]
