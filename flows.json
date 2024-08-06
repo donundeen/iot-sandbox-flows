@@ -643,7 +643,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/e9beacon5c26/isMotionDetected",
         "links": [
-            "12f3f5b83580a23d"
+            "12f3f5b83580a23d",
+            "298b7604e45e2609"
         ],
         "x": 375,
         "y": 1140,
@@ -2391,6 +2392,182 @@
         ]
     },
     {
+        "id": "2c5feba6290da36e",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c3000011f741/3",
+        "info": "",
+        "x": 170,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "6a0452d57d23771d",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001/devices/c3000011f741/3",
+        "name": "Pareto Badge c3000011f741/3",
+        "x": 150,
+        "y": 2100,
+        "wires": [
+            [],
+            [
+                "bb7e388b2b378b03",
+                "d0be3bfcd62b5837"
+            ]
+        ]
+    },
+    {
+        "id": "6ab5eea496329aeb",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 160,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "f1d62748eeb7f73b",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "func": "let newmsg = {\n    topic: \"/e9beacon5c26/isMotionDetected\",\n            payload: msg.payload.isMotionDetected[0]};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 2100,
+        "wires": [
+            [
+                "249cb7a3be09986e"
+            ]
+        ]
+    },
+    {
+        "id": "5c187d161fa794b3",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 960,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "298b7604e45e2609",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "mode": "link",
+        "links": [
+            "656c29854a0f9c68",
+            "f3877161e3ba366e"
+        ],
+        "x": 1275,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "a06efde6c559b2d6",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "info": "",
+        "x": 1440,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "eefec2609de2c17a",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 540,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "bb7e388b2b378b03",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it isMotionDetected?",
+        "func": "if(msg.payload.isMotionDetected){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2100,
+        "wires": [
+            [
+                "f1d62748eeb7f73b"
+            ]
+        ]
+    },
+    {
+        "id": "249cb7a3be09986e",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1160,
+        "y": 2100,
+        "wires": [
+            [
+                "298b7604e45e2609"
+            ]
+        ]
+    },
+    {
+        "id": "2f799188156d0734",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1590,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "d0be3bfcd62b5837",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 40",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "fc6c85fa4a2b23b2",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Minew MWC01 Badge Bluetooth Repeater https://www.minewstore.com/product/mwc01-badge-bluetooth-repeater",
+        "info": "",
+        "x": 450,
+        "y": 2000,
+        "wires": []
+    },
+    {
         "id": "9f33f6c8963e1e03",
         "type": "comment",
         "z": "9d6a628240034869",
@@ -3357,7 +3534,8 @@
         "z": "d286a10585a73e58",
         "name": "/e9beacon5c26/isMotionDetected",
         "links": [
-            "12f3f5b83580a23d"
+            "12f3f5b83580a23d",
+            "298b7604e45e2609"
         ],
         "x": 435,
         "y": 800,
