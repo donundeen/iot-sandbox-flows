@@ -3468,7 +3468,7 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "text",
+        "label": "Humidity1",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -3476,7 +3476,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 790,
+        "x": 810,
         "y": 500,
         "wires": []
     }
