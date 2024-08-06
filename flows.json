@@ -2843,7 +2843,7 @@
         "type": "red-advlib-ble",
         "z": "943e204f81529182",
         "name": "",
-        "ignoreProtocolOverheadCheckbox": false,
+        "ignoreProtocolOverheadCheckbox": true,
         "x": 320,
         "y": 2420,
         "wires": [
