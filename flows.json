@@ -570,8 +570,7 @@
         "z": "9529f2fd9052e78b",
         "name": "/motionE8DA/batteryPercentage",
         "links": [
-            "214448f98c24559e",
-            "002337ab102d4f3a"
+            "214448f98c24559e"
         ],
         "x": 375,
         "y": 860,
@@ -939,7 +938,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/e9beacon5c26/batteryPercentage",
         "links": [
-            "4231c54266544aaa"
+            "4231c54266544aaa",
+            "002337ab102d4f3a"
         ],
         "x": 375,
         "y": 1340,
@@ -2204,10 +2204,10 @@
         "id": "002337ab102d4f3a",
         "type": "link out",
         "z": "943e204f81529182",
-        "name": "/motionE8DA/batteryPercentage",
+        "name": "/e9beacon5c26/batteryPercentage",
         "mode": "link",
         "links": [
-            "0e67c49a5c1dbc69",
+            "3b7587803e77b349",
             "92148f9250905b6b"
         ],
         "x": 1275,
