@@ -185,7 +185,8 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -286,7 +287,7 @@
     {
         "id": "f8be3fae20759ed0",
         "type": "ui_group",
-        "name": "Motion Sensor",
+        "name": "Motion Sensor E8DA",
         "tab": "1298aa3fd6cc5da5",
         "order": 2,
         "disp": true,
@@ -297,7 +298,7 @@
     {
         "id": "b16a71166ef94228",
         "type": "ui_group",
-        "name": "E9 Beacon",
+        "name": "E9 Beacon 5C26",
         "tab": "1298aa3fd6cc5da5",
         "order": 3,
         "disp": true,
@@ -2506,9 +2507,7 @@
         "x": 150,
         "y": 2100,
         "wires": [
-            [
-                "20acd70353fc1af2"
-            ],
+            [],
             [
                 "d0be3bfcd62b5837",
                 "c1b0a8ec0a07d96a",
@@ -2835,57 +2834,6 @@
         "wires": [
             [
                 "4231c54266544aaa"
-            ]
-        ]
-    },
-    {
-        "id": "e7649bf9c5aee0c7",
-        "type": "red-advlib-ble",
-        "z": "943e204f81529182",
-        "name": "",
-        "ignoreProtocolOverheadCheckbox": true,
-        "x": 360,
-        "y": 2420,
-        "wires": [
-            [
-                "bd47ee860268feb5"
-            ]
-        ]
-    },
-    {
-        "id": "bd47ee860268feb5",
-        "type": "debug",
-        "z": "943e204f81529182",
-        "name": "debug 41",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 2420,
-        "wires": []
-    },
-    {
-        "id": "20acd70353fc1af2",
-        "type": "function",
-        "z": "943e204f81529182",
-        "name": "function 3",
-        "func": "msg.payload.data = msg.payload.packets\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 2360,
-        "wires": [
-            [
-                "e7649bf9c5aee0c7"
             ]
         ]
     },
