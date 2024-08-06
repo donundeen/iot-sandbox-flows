@@ -3265,7 +3265,9 @@
         "x": 435,
         "y": 580,
         "wires": [
-            []
+            [
+                "c6cccff2f14b9711"
+            ]
         ]
     },
     {
@@ -3408,6 +3410,50 @@
         "className": "",
         "x": 890,
         "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6cccff2f14b9711",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "1b3ec53ab98a0a0b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 580,
         "wires": [
             []
         ]
