@@ -3322,7 +3322,9 @@
         "x": 435,
         "y": 680,
         "wires": [
-            []
+            [
+                "40f1937eb3d5fc08"
+            ]
         ]
     },
     {
@@ -3838,5 +3840,75 @@
         "x": 1260,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "40f1937eb3d5fc08",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 680,
+        "wires": [
+            [
+                "e2c14abd5156bb4d"
+            ],
+            [
+                "e2c14abd5156bb4d"
+            ],
+            [
+                "e2c14abd5156bb4d"
+            ]
+        ]
+    },
+    {
+        "id": "e2c14abd5156bb4d",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "b16a71166ef94228",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 680,
+        "wires": [
+            []
+        ]
     }
 ]
