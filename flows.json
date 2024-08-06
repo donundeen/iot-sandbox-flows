@@ -654,7 +654,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 610,
+        "x": 590,
         "y": 640,
         "wires": [
             [
