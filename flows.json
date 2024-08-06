@@ -3723,8 +3723,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 120,
+        "x": 1180,
+        "y": 700,
         "wires": []
     },
     {
@@ -3732,7 +3732,7 @@
         "type": "function",
         "z": "d286a10585a73e58",
         "name": "true->1, false->0",
-        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nif(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nelse if(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3743,8 +3743,7 @@
         "y": 280,
         "wires": [
             [
-                "db2e5205dab51c88",
-                "5e4f0d4ffe74780b"
+                "db2e5205dab51c88"
             ]
         ]
     },
@@ -3769,7 +3768,7 @@
         "type": "function",
         "z": "d286a10585a73e58",
         "name": "true->1, false->0",
-        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nif(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n} else if(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3780,7 +3779,8 @@
         "y": 680,
         "wires": [
             [
-                "8bb744164f30a793"
+                "8bb744164f30a793",
+                "5e4f0d4ffe74780b"
             ]
         ]
     }
