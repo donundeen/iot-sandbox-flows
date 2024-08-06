@@ -3867,7 +3867,7 @@
         "order": 4,
         "width": 0,
         "height": 0,
-        "label": "Motion Sensor Temp",
+        "label": "Temperature",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -3896,7 +3896,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 940,
+        "x": 910,
         "y": 340,
         "wires": [
             []
@@ -3911,7 +3911,7 @@
         "order": 5,
         "width": 0,
         "height": 0,
-        "label": "Motion Sensor Humidity",
+        "label": "Humidity",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -3940,7 +3940,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 950,
+        "x": 900,
         "y": 580,
         "wires": [
             []
@@ -3955,7 +3955,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "label": "E9 Battery",
+        "label": "Battery",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -3984,7 +3984,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 910,
+        "x": 900,
         "y": 740,
         "wires": [
             []
@@ -3999,7 +3999,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "label": "Motion Sensor Battery",
+        "label": "Battery",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -4028,7 +4028,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 940,
+        "x": 900,
         "y": 520,
         "wires": [
             []
@@ -4043,7 +4043,7 @@
         "order": 6,
         "width": 0,
         "height": 0,
-        "label": "Motion Sensor Light Level",
+        "label": "Light Level",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -4072,7 +4072,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 950,
+        "x": 910,
         "y": 400,
         "wires": [
             []
@@ -4574,7 +4574,7 @@
         "order": 3,
         "width": 0,
         "height": 0,
-        "label": "Temp",
+        "label": "Temperature",
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm",
@@ -4603,7 +4603,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 890,
+        "x": 910,
         "y": 1060,
         "wires": [
             []
