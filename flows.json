@@ -5471,7 +5471,7 @@
         "type": "function",
         "z": "d286a10585a73e58",
         "name": "getCapturedBLE",
-        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nlet allKeys = Object.keys(all);\nlet capturedKeys = Object.keys(captured);\n\nnode.warn(capturedKeys);\n\nlet uncaptured = {};\n\nfor(let i = 0; i < allKeys.length; i++){\n   let key = allKeys[i];\n    if(!capturedKeys.contains(key)){\n        uncaptured[key] = all[key];\n\n    }\n}\n\n\nreturn uncaptured;",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nlet allKeys = Object.keys(all);\nlet capturedKeys = Object.keys(captured);\n\nnode.warn(capturedKeys);\n\nlet uncaptured = {};\n\nfor(let i = 0; i < allKeys.length; i++){\n   let key = allKeys[i];\n    if(!capturedKeys.includes(key)){\n        uncaptured[key] = all[key];\n    }\n}\n\n\nreturn uncaptured;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
