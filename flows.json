@@ -2508,13 +2508,13 @@
         "y": 2100,
         "wires": [
             [
-                "c2894d8c81135ed7",
-                "d0be3bfcd62b5837"
+                "c2894d8c81135ed7"
             ],
             [
                 "c1b0a8ec0a07d96a",
                 "7a808c6536e4a5cb",
-                "547de9f301233c87"
+                "547de9f301233c87",
+                "d0be3bfcd62b5837"
             ]
         ]
     },
@@ -2563,7 +2563,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 40",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
