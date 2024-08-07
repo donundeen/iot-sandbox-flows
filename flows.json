@@ -2871,7 +2871,7 @@
         "z": "943e204f81529182",
         "name": "",
         "ignoreProtocolOverheadCheckbox": false,
-        "x": 1820,
+        "x": 1880,
         "y": 140,
         "wires": [
             [
@@ -2891,7 +2891,7 @@
         "stream": false,
         "addname": "data",
         "property": "payload.packets",
-        "x": 1430,
+        "x": 1490,
         "y": 140,
         "wires": [
             [
@@ -2912,7 +2912,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1580,
+        "x": 1640,
         "y": 180,
         "wires": []
     },
@@ -2928,7 +2928,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1980,
+        "x": 2040,
         "y": 140,
         "wires": []
     },
@@ -2951,7 +2951,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1620,
+        "x": 1680,
         "y": 140,
         "wires": [
             [
@@ -3135,7 +3135,7 @@
         "z": "943e204f81529182",
         "name": "a little bit that'suseful for debugging",
         "info": "",
-        "x": 1320,
+        "x": 1380,
         "y": 100,
         "wires": []
     },
@@ -3145,7 +3145,7 @@
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
         "name": "Pareto ALL Devices",
-        "x": 1270,
+        "x": 1330,
         "y": 140,
         "wires": [
             [],
@@ -3158,7 +3158,27 @@
         "z": "943e204f81529182",
         "name": "Connect Pareto to Split to get it going....",
         "info": "",
-        "x": 1340,
+        "x": 1400,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d146a7173562aeb7",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "This flow uses the ParetoAnywhere software to access Bluetooth Low-energy device information",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "90f2368be6a4ce23",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "You can access the Pareto Anywhere Apps here to see more device information: http://192.168.73.88:3001/",
+        "info": "[http://192.168.73.88:3001/](http://192.168.73.88:3001/)",
+        "x": 390,
         "y": 180,
         "wires": []
     },
