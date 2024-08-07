@@ -40,17 +40,17 @@
         "env": []
     },
     {
-        "id": "a3efac045c708839",
+        "id": "d286a10585a73e58",
         "type": "tab",
-        "label": "Graveyard",
+        "label": "UI Generator",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "d286a10585a73e58",
+        "id": "a3efac045c708839",
         "type": "tab",
-        "label": "UI Generator",
+        "label": "Graveyard",
         "disabled": false,
         "info": "",
         "env": []
@@ -3998,251 +3998,6 @@
         "wires": []
     },
     {
-        "id": "60a86d3823f3f5db",
-        "type": "comment",
-        "z": "a3efac045c708839",
-        "name": "Old bits I don't want to totally delete. Parking lot.",
-        "info": "",
-        "x": 700,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "3ccfd232644d3611",
-        "type": "pareto-anywhere-socketio",
-        "z": "a3efac045c708839",
-        "uri": "http://localhost:3001/devices/c8c8751dd883/3",
-        "x": 80,
-        "y": 200,
-        "wires": [
-            [
-                "42afc2b2dd0ad3e2"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "0ea6cd11bf0d3f51",
-        "type": "red-advlib-ble",
-        "z": "a3efac045c708839",
-        "name": "decrypt each packet",
-        "ignoreProtocolOverheadCheckbox": false,
-        "x": 880,
-        "y": 200,
-        "wires": [
-            [
-                "e72b03d8a82489a0",
-                "943d3a0f98d5e21c"
-            ]
-        ]
-    },
-    {
-        "id": "df65414db9f74cb8",
-        "type": "change",
-        "z": "a3efac045c708839",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "payload.packets",
-                "tot": "msg",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 300,
-        "wires": [
-            [
-                "0ea6cd11bf0d3f51"
-            ]
-        ]
-    },
-    {
-        "id": "4204e108516287ef",
-        "type": "debug",
-        "z": "a3efac045c708839",
-        "name": "debug 24",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1480,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "395d945f07b5fc2b",
-        "type": "split",
-        "z": "a3efac045c708839",
-        "name": "extract packets",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload.packets",
-        "x": 540,
-        "y": 300,
-        "wires": [
-            [
-                "df65414db9f74cb8"
-            ]
-        ]
-    },
-    {
-        "id": "e72b03d8a82489a0",
-        "type": "switch",
-        "z": "a3efac045c708839",
-        "name": "is name txCount?",
-        "property": "payload.advDecoded",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "hask",
-                "v": "txCount",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1030,
-        "y": 300,
-        "wires": [
-            [
-                "705d8e7f865f600a"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "705d8e7f865f600a",
-        "type": "change",
-        "z": "a3efac045c708839",
-        "name": "set payload to just the button value",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.advDecoded.txCount",
-                "tot": "msg",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1200,
-        "y": 200,
-        "wires": [
-            [
-                "7f9f23fecefd14fe"
-            ]
-        ]
-    },
-    {
-        "id": "943d3a0f98d5e21c",
-        "type": "debug",
-        "z": "a3efac045c708839",
-        "name": "debug 25",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1080,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "7f9f23fecefd14fe",
-        "type": "rbe",
-        "z": "a3efac045c708839",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1310,
-        "y": 300,
-        "wires": [
-            [
-                "4204e108516287ef"
-            ]
-        ]
-    },
-    {
-        "id": "42afc2b2dd0ad3e2",
-        "type": "debug",
-        "z": "a3efac045c708839",
-        "name": "debug 26",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 300,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "2a8f57065fb28b88",
-        "type": "function",
-        "z": "a3efac045c708839",
-        "name": "function 2",
-        "func": "if(Array.isArray(msg.payload.packets)){\n    msg.payload.packets.reverse();\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 220,
-        "wires": [
-            [
-                "395d945f07b5fc2b"
-            ]
-        ]
-    },
-    {
-        "id": "5c685955e288d1ab",
-        "type": "comment",
-        "z": "a3efac045c708839",
-        "name": "removed this connection so things won't happen here.",
-        "info": "",
-        "x": 260,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "b8e0d1ef098a80f6",
         "type": "link in",
         "z": "d286a10585a73e58",
@@ -4560,7 +4315,7 @@
         "label": "Temperature",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4604,7 +4359,7 @@
         "label": "Humidity",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4648,7 +4403,7 @@
         "label": "Battery",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4692,7 +4447,7 @@
         "label": "Battery",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4736,7 +4491,7 @@
         "label": "Light Level",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4780,7 +4535,7 @@
         "label": "Motion Detected",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4824,7 +4579,7 @@
         "label": "Motion Detected",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -4934,7 +4689,7 @@
         "label": "Movement",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5004,7 +4759,7 @@
         "label": "Movement",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5167,7 +4922,7 @@
         "label": "Movement",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5211,7 +4966,7 @@
         "label": "Battery",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5255,7 +5010,7 @@
         "label": "Temperature",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5362,7 +5117,7 @@
         "label": "Battery",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5406,7 +5161,7 @@
         "label": "Number Of Occupants",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "waiting on data....",
         "dot": false,
@@ -5457,6 +5212,251 @@
         "color": "#000000",
         "x": 900,
         "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "60a86d3823f3f5db",
+        "type": "comment",
+        "z": "a3efac045c708839",
+        "name": "Old bits I don't want to totally delete. Parking lot.",
+        "info": "",
+        "x": 700,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3ccfd232644d3611",
+        "type": "pareto-anywhere-socketio",
+        "z": "a3efac045c708839",
+        "uri": "http://localhost:3001/devices/c8c8751dd883/3",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "42afc2b2dd0ad3e2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0ea6cd11bf0d3f51",
+        "type": "red-advlib-ble",
+        "z": "a3efac045c708839",
+        "name": "decrypt each packet",
+        "ignoreProtocolOverheadCheckbox": false,
+        "x": 880,
+        "y": 200,
+        "wires": [
+            [
+                "e72b03d8a82489a0",
+                "943d3a0f98d5e21c"
+            ]
+        ]
+    },
+    {
+        "id": "df65414db9f74cb8",
+        "type": "change",
+        "z": "a3efac045c708839",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload.packets",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "0ea6cd11bf0d3f51"
+            ]
+        ]
+    },
+    {
+        "id": "4204e108516287ef",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "395d945f07b5fc2b",
+        "type": "split",
+        "z": "a3efac045c708839",
+        "name": "extract packets",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload.packets",
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "df65414db9f74cb8"
+            ]
+        ]
+    },
+    {
+        "id": "e72b03d8a82489a0",
+        "type": "switch",
+        "z": "a3efac045c708839",
+        "name": "is name txCount?",
+        "property": "payload.advDecoded",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "txCount",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "705d8e7f865f600a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "705d8e7f865f600a",
+        "type": "change",
+        "z": "a3efac045c708839",
+        "name": "set payload to just the button value",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.advDecoded.txCount",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 200,
+        "wires": [
+            [
+                "7f9f23fecefd14fe"
+            ]
+        ]
+    },
+    {
+        "id": "943d3a0f98d5e21c",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7f9f23fecefd14fe",
+        "type": "rbe",
+        "z": "a3efac045c708839",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1310,
+        "y": 300,
+        "wires": [
+            [
+                "4204e108516287ef"
+            ]
+        ]
+    },
+    {
+        "id": "42afc2b2dd0ad3e2",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2a8f57065fb28b88",
+        "type": "function",
+        "z": "a3efac045c708839",
+        "name": "function 2",
+        "func": "if(Array.isArray(msg.payload.packets)){\n    msg.payload.packets.reverse();\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "395d945f07b5fc2b"
+            ]
+        ]
+    },
+    {
+        "id": "5c685955e288d1ab",
+        "type": "comment",
+        "z": "a3efac045c708839",
+        "name": "removed this connection so things won't happen here.",
+        "info": "",
+        "x": 260,
+        "y": 220,
         "wires": []
     }
 ]
