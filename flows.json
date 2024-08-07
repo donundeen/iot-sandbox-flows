@@ -1114,7 +1114,7 @@
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
         "name": "Pareto JoltJS c8c8751dd883/3",
         "x": 170,
-        "y": 440,
+        "y": 420,
         "wires": [
             [],
             [
@@ -1156,7 +1156,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "627021b995a2a0ef"
@@ -1180,7 +1180,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 140,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -1190,7 +1190,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -1200,7 +1200,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -1215,7 +1215,7 @@
             "b8e0d1ef098a80f6"
         ],
         "x": 1255,
-        "y": 440,
+        "y": 420,
         "wires": []
     },
     {
@@ -1225,7 +1225,7 @@
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
         "x": 1400,
-        "y": 440,
+        "y": 420,
         "wires": []
     },
     {
@@ -1235,7 +1235,7 @@
         "name": "/devices/c8c8751dd883/3",
         "info": "",
         "x": 150,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
@@ -1245,7 +1245,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -1255,7 +1255,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 480,
+        "y": 460,
         "wires": []
     },
     {
@@ -1271,7 +1271,7 @@
         "finalize": "",
         "libs": [],
         "x": 410,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "0d246c6d36f59726"
@@ -2105,7 +2105,7 @@
         "name": "The Espruino JoltJS https://www.espruino.com/Jolt.js",
         "info": "",
         "x": 240,
-        "y": 360,
+        "y": 340,
         "wires": []
     },
     {
@@ -3434,7 +3434,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 540,
+        "y": 520,
         "wires": [
             []
         ]
@@ -3519,6 +3519,16 @@
         "info": "",
         "x": 170,
         "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "97c9c3f6510f2590",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "attach the \"save to capturedBLE\" node to the second Pareto output, so we can identify UNTRACKED devices.",
+        "info": "",
+        "x": 670,
+        "y": 520,
         "wires": []
     },
     {
@@ -5415,8 +5425,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1280,
-        "y": 160,
+        "x": 1820,
+        "y": 180,
         "wires": [
             []
         ]
@@ -5433,8 +5443,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 160,
+        "x": 1580,
+        "y": 180,
         "wires": [
             [
                 "e2bc8730ca71a33d"
@@ -5458,8 +5468,8 @@
         "topic": "",
         "payload": "{\"squadName\":\"Super hero squad\",\"homeTown\":\"Metro City\",\"formed\":2016,\"secretBase\":\"Super tower\",\"active\":true,\"members\":[{\"index\":0,\"isActive\":false,\"age\":21,\"eyeColor\":\"blue\",\"name\":\"Bentley Clayton\",\"gender\":\"male\",\"registered\":\"2018-05-02T05:35:41 +04:00\"},{\"index\":1,\"isActive\":false,\"age\":23,\"eyeColor\":\"blue\",\"name\":\"Lela Ramos\",\"gender\":\"female\",\"registered\":\"2014-02-24T03:13:50 +05:00\"},{\"index\":2,\"isActive\":true,\"age\":38,\"eyeColor\":\"green\",\"name\":\"Milagros Becker\",\"gender\":\"female\",\"registered\":\"2016-10-22T12:18:50 +04:00\"},{\"index\":3,\"isActive\":false,\"age\":30,\"eyeColor\":\"brown\",\"name\":\"Mccoy Barrera\",\"gender\":\"male\",\"registered\":\"2016-12-03T03:44:57 +05:00\"},{\"index\":4,\"isActive\":false,\"age\":35,\"eyeColor\":\"brown\",\"name\":\"Morton Bennett\",\"gender\":\"male\",\"registered\":\"2015-10-06T09:48:03 +04:00\"},{\"index\":5,\"isActive\":true,\"age\":20,\"eyeColor\":\"blue\",\"name\":\"Acosta Bird\",\"gender\":\"male\",\"registered\":\"2019-02-11T09:59:58 +05:00\"},{\"index\":6,\"isActive\":false,\"age\":35,\"eyeColor\":\"blue\",\"name\":\"Mcleod Keith\",\"gender\":\"male\",\"registered\":\"2014-04-24T07:50:11 +04:00\"},{\"index\":7,\"isActive\":false,\"age\":27,\"eyeColor\":\"brown\",\"name\":\"Magdalena Burgess\",\"gender\":\"female\",\"registered\":\"2015-03-19T09:28:55 +04:00\"},{\"index\":8,\"isActive\":false,\"age\":37,\"eyeColor\":\"blue\",\"name\":\"Cline Castaneda\",\"gender\":\"male\",\"registered\":\"2016-02-29T09:49:37 +05:00\"},{\"index\":9,\"isActive\":false,\"age\":39,\"eyeColor\":\"green\",\"name\":\"Garcia Baker\",\"gender\":\"male\",\"registered\":\"2018-05-26T02:54:22 +04:00\"},{\"index\":10,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Lenora Keller\",\"gender\":\"female\",\"registered\":\"2017-12-19T05:12:17 +05:00\"},{\"index\":11,\"isActive\":false,\"age\":33,\"eyeColor\":\"green\",\"name\":\"Kathryn Donovan\",\"gender\":\"female\",\"registered\":\"2014-03-21T12:33:36 +04:00\"},{\"index\":12,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Opal Hinton\",\"gender\":\"female\",\"registered\":\"2014-05-03T02:14:25 +04:00\"},{\"index\":13,\"isActive\":false,\"age\":25,\"eyeColor\":\"green\",\"name\":\"Mayer Gray\",\"gender\":\"male\",\"registered\":\"2016-04-01T05:52:21 +04:00\"},{\"index\":14,\"isActive\":true,\"age\":22,\"eyeColor\":\"green\",\"name\":\"Josefina Quinn\",\"gender\":\"female\",\"registered\":\"2015-02-07T12:04:14 +05:00\"}]}",
         "payloadType": "json",
-        "x": 610,
-        "y": 160,
+        "x": 1150,
+        "y": 180,
         "wires": [
             [
                 "f85b67c47aaa8f66"
@@ -5478,13 +5488,23 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 160,
+        "x": 1330,
+        "y": 180,
         "wires": [
             [
                 "dfa6f8ae37760595"
             ]
         ]
+    },
+    {
+        "id": "143b391abf3537cd",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "This creates a tab of all UNTRACKED BLE devices",
+        "info": "",
+        "x": 1270,
+        "y": 140,
+        "wires": []
     },
     {
         "id": "60a86d3823f3f5db",
