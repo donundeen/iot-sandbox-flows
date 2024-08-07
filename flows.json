@@ -329,6 +329,26 @@
         "className": ""
     },
     {
+        "id": "f8acfcf9bb97cb20",
+        "type": "ui_group",
+        "name": "Tablegroup",
+        "tab": "fb202f2b9c4ea98f",
+        "order": 1,
+        "disp": true,
+        "width": "32",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fb202f2b9c4ea98f",
+        "type": "ui_tab",
+        "name": "Table",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "5347604aa986a9b3",
         "type": "comment",
         "z": "9529f2fd9052e78b",
@@ -1098,7 +1118,8 @@
         "wires": [
             [],
             [
-                "39714e8ba6c34ecb"
+                "39714e8ba6c34ecb",
+                "80c61fac6e3bda78"
             ]
         ]
     },
@@ -1283,7 +1304,8 @@
                 "baf140ce5e927807",
                 "361ad2d00306f22a",
                 "0272f77e16f24d35",
-                "1690eba349907604"
+                "1690eba349907604",
+                "5f837816a4724060"
             ]
         ]
     },
@@ -1940,14 +1962,15 @@
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/ac233faf5c26/2",
         "name": "Pareto E9 Beacon ac233faf5c26/2",
-        "x": 160,
+        "x": 140,
         "y": 1780,
         "wires": [
             [],
             [
                 "54d557b47848e32a",
                 "73889f2195070320",
-                "79fd44a608cf9a6d"
+                "79fd44a608cf9a6d",
+                "42ad7f68dcca6362"
             ]
         ]
     },
@@ -2437,7 +2460,8 @@
                 "7a808c6536e4a5cb",
                 "547de9f301233c87",
                 "fb20186e8c681554",
-                "697f0f1377d7c56a"
+                "697f0f1377d7c56a",
+                "29a3760223a31313"
             ]
         ]
     },
@@ -3076,7 +3100,8 @@
             [
                 "9dde0599580188ee",
                 "f4805199ed3084a3",
-                "2964098162b31f7a"
+                "2964098162b31f7a",
+                "57466a9df57870f8"
             ]
         ]
     },
@@ -3222,7 +3247,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 43",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3324,7 +3349,7 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 44",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3365,15 +3390,15 @@
         "id": "f885eac3693ca6f6",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "function 3",
-        "func": "let allBLE = global.get(\"allBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\n\n\nglobal.set(\"allBLE\", allBLE);\n\nreturn msg;",
+        "name": "save to allBLE",
+        "func": "let allBLE = global.get(\"allBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"allBLE\", allBLE);\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1600,
+        "x": 1620,
         "y": 100,
         "wires": [
             []
@@ -3384,15 +3409,116 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 45",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1540,
+        "x": 1600,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "80c61fac6e3bda78",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f837816a4724060",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42ad7f68dcca6362",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29a3760223a31313",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 2200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57466a9df57870f8",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 2680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ab46f02b3adcfd3",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c30000131569/3",
+        "info": "",
+        "x": 170,
+        "y": 2640,
         "wires": []
     },
     {
@@ -5273,6 +5399,72 @@
         "x": 900,
         "y": 1180,
         "wires": []
+    },
+    {
+        "id": "e2bc8730ca71a33d",
+        "type": "ui_template",
+        "z": "d286a10585a73e58",
+        "group": "f8acfcf9bb97cb20",
+        "name": "",
+        "order": 0,
+        "width": "18",
+        "height": "15",
+        "format": "<style>\n    div.tableContainer {\n        display: flex;\n        flex-direction: column;\n        word-wrap: break-word;\n        background-color: #303030;\n        border: 1px solid rgba(0,0,0,0.125);\n        border-radius: 0.25rem;\n        color: white;\n        font-size: 0.75rem;\n    }\n    \n    .table-collapse {\n        border-collapse: collapse;\n        border-spacing: 0;\n        display: flex;\n        height:100%;\n        flex: 0 0 auto;\n        transition: all 0.5s ease-in-out;\n    }\n    \n    .tableContainer table tbody {\n        border-collapse: collapse !important;\n        border: solid #B5B5B5 1px;\n        border-radius: 3px;\n        display: table-row-group;\n        vertical-align: middle;\n        border-color: inherit;\n    }\n    \n    .tableContainer table tr {\n        font-weight: bold;\n        border: none;\n    }\n    \n    .tableContainer table td {\n        vertical-align: top;\n        border: 1px solid #636363;\n        padding: 3px 10px 3px 10px;\n        white-space: nowrap;\n    }\n    \n    .endValue {\n        font-weight: initial;\n    }\n    \n    .expandButton {\n        font-size: 1.5rem;\n        cursor: pointer;\n    }\n    \n    .hidden {\n        height: 0;\n        max-height: 0;\n        opacity: 0;\n        overflow: hidden;\n    }\n    \n    .string {\n        color: rgb(155 185 91);\n    }\n    \n    .notString {\n        color: rgb(101 142 177);\n    }\n</style>\n<script>\nwindow.addEventListener('click', (e) => {\n    if (e.target.classList.contains('expandButton')) {\n        if (e.target.classList.contains('expanded')) {\n            e.target.innerHTML = '+';\n            e.target.classList.toggle(\"expanded\", false);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", true);\n        } else {\n            e.target.innerHTML = '-';\n            e.target.classList.toggle(\"expanded\", true);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", false);\n        }\n    }\n});\n</script>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 820,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfa6f8ae37760595",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "CreateHTMLTableFromJSON",
+        "func": "const checkIfObjectOrArray = (value) =>  (\n    Object.prototype.toString.call(value) === '[object Array]'\n    || Object.prototype.toString.call(value) === '[object Object]'\n);\n\nconst isString = (value) => (typeof value === 'string' || value instanceof String);\n\nconst createTable = (json) => {\n    \n    const tableData = Object.keys(json).map((key) => {\n        \n        const createNewTableIfObjectOrArray = (value) => {\n\n            if(checkIfObjectOrArray(value)) {\n                return `\n                    <tr>\n                        <td>${key}</td>\n                        <td>\n                            <span class=\"expandButton expanded\">-</span>\n                            ${createTable(value)}\n                        </td>\n                    </tr>\n                `;\n            } \n            \n            return `\n                <tr>\n                    <td>${key}</td>\n                    <td class=\"endValue ${(isString(json[key]) ? 'string' : 'notString')}\">${json[key]}</td>\n                </tr>\n            `;\n        }\n        \n        return createNewTableIfObjectOrArray(json[key]);\n    });\n    \n    return `\n        <table class=\"table-collapse\">\n            <tbody>${tableData.join('')}</tbody>\n        </table>\n    `;\n}\n\nmsg.payload = `\n<div class=\"tableContainer\">\n    ${createTable(msg.payload)}\n</div>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1600,
+        "wires": [
+            [
+                "e2bc8730ca71a33d"
+            ]
+        ]
+    },
+    {
+        "id": "b634a06d2f1cf975",
+        "type": "inject",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"squadName\":\"Super hero squad\",\"homeTown\":\"Metro City\",\"formed\":2016,\"secretBase\":\"Super tower\",\"active\":true,\"members\":[{\"index\":0,\"isActive\":false,\"age\":21,\"eyeColor\":\"blue\",\"name\":\"Bentley Clayton\",\"gender\":\"male\",\"registered\":\"2018-05-02T05:35:41 +04:00\"},{\"index\":1,\"isActive\":false,\"age\":23,\"eyeColor\":\"blue\",\"name\":\"Lela Ramos\",\"gender\":\"female\",\"registered\":\"2014-02-24T03:13:50 +05:00\"},{\"index\":2,\"isActive\":true,\"age\":38,\"eyeColor\":\"green\",\"name\":\"Milagros Becker\",\"gender\":\"female\",\"registered\":\"2016-10-22T12:18:50 +04:00\"},{\"index\":3,\"isActive\":false,\"age\":30,\"eyeColor\":\"brown\",\"name\":\"Mccoy Barrera\",\"gender\":\"male\",\"registered\":\"2016-12-03T03:44:57 +05:00\"},{\"index\":4,\"isActive\":false,\"age\":35,\"eyeColor\":\"brown\",\"name\":\"Morton Bennett\",\"gender\":\"male\",\"registered\":\"2015-10-06T09:48:03 +04:00\"},{\"index\":5,\"isActive\":true,\"age\":20,\"eyeColor\":\"blue\",\"name\":\"Acosta Bird\",\"gender\":\"male\",\"registered\":\"2019-02-11T09:59:58 +05:00\"},{\"index\":6,\"isActive\":false,\"age\":35,\"eyeColor\":\"blue\",\"name\":\"Mcleod Keith\",\"gender\":\"male\",\"registered\":\"2014-04-24T07:50:11 +04:00\"},{\"index\":7,\"isActive\":false,\"age\":27,\"eyeColor\":\"brown\",\"name\":\"Magdalena Burgess\",\"gender\":\"female\",\"registered\":\"2015-03-19T09:28:55 +04:00\"},{\"index\":8,\"isActive\":false,\"age\":37,\"eyeColor\":\"blue\",\"name\":\"Cline Castaneda\",\"gender\":\"male\",\"registered\":\"2016-02-29T09:49:37 +05:00\"},{\"index\":9,\"isActive\":false,\"age\":39,\"eyeColor\":\"green\",\"name\":\"Garcia Baker\",\"gender\":\"male\",\"registered\":\"2018-05-26T02:54:22 +04:00\"},{\"index\":10,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Lenora Keller\",\"gender\":\"female\",\"registered\":\"2017-12-19T05:12:17 +05:00\"},{\"index\":11,\"isActive\":false,\"age\":33,\"eyeColor\":\"green\",\"name\":\"Kathryn Donovan\",\"gender\":\"female\",\"registered\":\"2014-03-21T12:33:36 +04:00\"},{\"index\":12,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Opal Hinton\",\"gender\":\"female\",\"registered\":\"2014-05-03T02:14:25 +04:00\"},{\"index\":13,\"isActive\":false,\"age\":25,\"eyeColor\":\"green\",\"name\":\"Mayer Gray\",\"gender\":\"male\",\"registered\":\"2016-04-01T05:52:21 +04:00\"},{\"index\":14,\"isActive\":true,\"age\":22,\"eyeColor\":\"green\",\"name\":\"Josefina Quinn\",\"gender\":\"female\",\"registered\":\"2015-02-07T12:04:14 +05:00\"}]}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 1600,
+        "wires": [
+            [
+                "dfa6f8ae37760595"
+            ]
+        ]
     },
     {
         "id": "60a86d3823f3f5db",
