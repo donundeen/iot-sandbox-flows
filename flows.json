@@ -2551,14 +2551,11 @@
         "x": 150,
         "y": 2100,
         "wires": [
-            [
-                "c2894d8c81135ed7"
-            ],
+            [],
             [
                 "c1b0a8ec0a07d96a",
                 "7a808c6536e4a5cb",
                 "547de9f301233c87",
-                "d0be3bfcd62b5837",
                 "fb20186e8c681554"
             ]
         ]
@@ -2601,22 +2598,6 @@
         "info": "",
         "x": 1590,
         "y": 2060,
-        "wires": []
-    },
-    {
-        "id": "d0be3bfcd62b5837",
-        "type": "debug",
-        "z": "943e204f81529182",
-        "name": "debug 40",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 300,
-        "y": 2540,
         "wires": []
     },
     {
@@ -2890,8 +2871,8 @@
         "z": "943e204f81529182",
         "name": "",
         "ignoreProtocolOverheadCheckbox": false,
-        "x": 1000,
-        "y": 2480,
+        "x": 1820,
+        "y": 140,
         "wires": [
             [
                 "cf2259b44c6db0e5"
@@ -2910,11 +2891,12 @@
         "stream": false,
         "addname": "data",
         "property": "payload.packets",
-        "x": 590,
-        "y": 2520,
+        "x": 1430,
+        "y": 140,
         "wires": [
             [
-                "d9d4dd74cbc4f92b"
+                "d9d4dd74cbc4f92b",
+                "c2ad694c85e570b3"
             ]
         ]
     },
@@ -2923,15 +2905,15 @@
         "type": "debug",
         "z": "943e204f81529182",
         "name": "debug 41",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 2520,
+        "x": 1580,
+        "y": 180,
         "wires": []
     },
     {
@@ -2946,8 +2928,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
-        "y": 2580,
+        "x": 1980,
+        "y": 140,
         "wires": []
     },
     {
@@ -2969,8 +2951,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 2580,
+        "x": 1620,
+        "y": 140,
         "wires": [
             [
                 "fd8072474a0cb7cd"
@@ -3146,6 +3128,39 @@
                 "19d4534cec60808e"
             ]
         ]
+    },
+    {
+        "id": "3e4804814a47f650",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "a little bit that'suseful for debugging",
+        "info": "",
+        "x": 1320,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c603f295d4d12744",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001",
+        "name": "Pareto ALL Devices",
+        "x": 1270,
+        "y": 140,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8cb5b186d5396c5a",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Connect Pareto to Split to get it going....",
+        "info": "",
+        "x": 1340,
+        "y": 180,
+        "wires": []
     },
     {
         "id": "9f33f6c8963e1e03",
