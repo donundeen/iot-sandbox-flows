@@ -331,7 +331,7 @@
     {
         "id": "f8acfcf9bb97cb20",
         "type": "ui_group",
-        "name": "BLE Devices",
+        "name": "Untracked BLE Devices",
         "tab": "fb202f2b9c4ea98f",
         "order": 1,
         "disp": true,
@@ -347,6 +347,17 @@
         "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "f85a84fa1aa251ff",
+        "type": "ui_group",
+        "name": "Tracked BLE Devices",
+        "tab": "fb202f2b9c4ea98f",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "5347604aa986a9b3",
@@ -5511,7 +5522,7 @@
         "id": "b69ad0e26cb75345",
         "type": "ui_template",
         "z": "d286a10585a73e58",
-        "group": "f8acfcf9bb97cb20",
+        "group": "f85a84fa1aa251ff",
         "name": "Tracked BLE Devices",
         "order": 0,
         "width": "18",
