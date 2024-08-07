@@ -8,17 +8,17 @@
         "env": []
     },
     {
-        "id": "63e4ca87ec15e7b6",
+        "id": "943e204f81529182",
         "type": "tab",
-        "label": "MicroBit  Bridge",
+        "label": "BLE in with Pareto Anywhere",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "943e204f81529182",
+        "id": "63e4ca87ec15e7b6",
         "type": "tab",
-        "label": "BLE in with Pareto Anywhere",
+        "label": "MicroBit  Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -312,6 +312,17 @@
         "name": "Badge F741",
         "tab": "1298aa3fd6cc5da5",
         "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e36bbf7bb7e6790e",
+        "type": "ui_group",
+        "name": "Radar1569",
+        "tab": "1298aa3fd6cc5da5",
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -914,8 +925,7 @@
         "z": "9529f2fd9052e78b",
         "name": "/e9beacon5c26/acceleration",
         "links": [
-            "de8fbc462923dbc9",
-            "6e29a67b8309b49b"
+            "de8fbc462923dbc9"
         ],
         "x": 375,
         "y": 1280,
@@ -1020,193 +1030,62 @@
         ]
     },
     {
-        "id": "87cef86360be7223",
-        "type": "serial in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "serialp",
-        "serial": "4ecaa01218566e73",
-        "x": 70,
-        "y": 140,
-        "wires": [
-            [
-                "832e51e1892d2dee"
-            ]
-        ]
-    },
-    {
-        "id": "8273d38b742461d1",
-        "type": "osc",
-        "z": "63e4ca87ec15e7b6",
-        "name": "oscout",
-        "path": "",
-        "metadata": true,
-        "x": 410,
-        "y": 140,
-        "wires": [
-            [
-                "ce86589b352c2c71"
-            ]
-        ]
-    },
-    {
-        "id": "832e51e1892d2dee",
-        "type": "function",
-        "z": "63e4ca87ec15e7b6",
-        "name": "split messsage",
-        "func": "var split = msg.payload.split(\":\");\nreturn {\n    topic: \"/\"+split[0],\n    payload:split[1]\n};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 240,
-        "y": 140,
-        "wires": [
-            [
-                "8273d38b742461d1"
-            ]
-        ]
-    },
-    {
-        "id": "ce86589b352c2c71",
-        "type": "udp out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bcast7777",
-        "addr": "192.168.73.88",
-        "iface": "",
-        "port": "7777",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 610,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "5ff5a5cb5150699d",
-        "type": "osc",
-        "z": "63e4ca87ec15e7b6",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 210,
-        "y": 300,
-        "wires": [
-            [
-                "a3b3ff78fa377765"
-            ]
-        ]
-    },
-    {
-        "id": "dd6a7c5fd2bc57a1",
-        "type": "udp in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "",
-        "iface": "",
-        "port": "7778",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "buffer",
-        "x": 80,
-        "y": 300,
-        "wires": [
-            [
-                "5ff5a5cb5150699d"
-            ]
-        ]
-    },
-    {
-        "id": "02190d58f95b35a6",
-        "type": "serial out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "toMicroBit",
-        "serial": "4ecaa01218566e73",
-        "x": 610,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "a3b3ff78fa377765",
-        "type": "function",
-        "z": "63e4ca87ec15e7b6",
-        "name": "split messsage",
-        "func": "\nlet topic = msg.topic.replace(/^\\//,\"\");\nreturn {\n    payload:topic+\":\"+msg.payload\n};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 300,
-        "wires": [
-            [
-                "02190d58f95b35a6"
-            ]
-        ]
-    },
-    {
-        "id": "533c9463e67d2fee",
+        "id": "6f7d2c98610cd139",
         "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "This flow Runs on the IoT Sandbox",
-        "info": "This Flow translates Microbits Radio messages to/from OSC ",
-        "x": 160,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "230cb2ed91a44c36",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
+        "z": "9529f2fd9052e78b",
+        "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
         "info": "",
-        "x": 350,
-        "y": 100,
+        "x": 370,
+        "y": 1600,
         "wires": []
     },
     {
-        "id": "3016901ca21ed23b",
+        "id": "3fcc306c56f11bc8",
         "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Send UDP messages over Serial to a dedicated Microbits device attached to this computer",
+        "z": "9529f2fd9052e78b",
+        "name": "/radar1569/numberOfOccupants [int]",
         "info": "",
-        "x": 330,
-        "y": 260,
+        "x": 190,
+        "y": 1660,
         "wires": []
     },
     {
-        "id": "af14cac50388c72e",
+        "id": "58da5b866b432383",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/radar1569/numberOfOccupants",
+        "links": [
+            "6e29a67b8309b49b"
+        ],
+        "x": 375,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "439df683befd6a81",
         "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Then send them over UDP to the OSC Switchboard with a common naming convention",
+        "z": "9529f2fd9052e78b",
+        "name": "/radar1569/batteryPercentage [int]",
         "info": "",
-        "x": 320,
-        "y": 180,
+        "x": 200,
+        "y": 1720,
         "wires": []
     },
     {
-        "id": "5ac4fb824a5f6e19",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Route the messages with the OSC Switchboard!",
-        "info": "",
-        "x": 620,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "c899758bf59368aa",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
-        "info": "",
-        "x": 560,
-        "y": 380,
-        "wires": []
+        "id": "0ba2dd4dcb604546",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "4fbb33ab4f5e3d5c"
+        ],
+        "x": 375,
+        "y": 1720,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "c4d470ef752fbe8f",
@@ -2557,7 +2436,8 @@
                 "c1b0a8ec0a07d96a",
                 "7a808c6536e4a5cb",
                 "547de9f301233c87",
-                "fb20186e8c681554"
+                "fb20186e8c681554",
+                "697f0f1377d7c56a"
             ]
         ]
     },
@@ -3195,7 +3075,8 @@
             [],
             [
                 "9dde0599580188ee",
-                "f4805199ed3084a3"
+                "f4805199ed3084a3",
+                "2964098162b31f7a"
             ]
         ]
     },
@@ -3253,15 +3134,15 @@
         "id": "53906adf11ee8470",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "/badgeF741/acceleration",
-        "func": "let newmsg = {\n    topic: \"/badgeF741/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "name": "/radar1569/numberOfOccupants",
+        "func": "let newmsg = {\n    topic: \"/radar1569/numberOfOccupants\",\n            payload: msg.payload.numberOfOccupants};\nreturn newmsg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
+        "x": 940,
         "y": 2620,
         "wires": [
             [
@@ -3273,12 +3154,13 @@
         "id": "6e29a67b8309b49b",
         "type": "link out",
         "z": "943e204f81529182",
-        "name": "/badgeF741/acceleration",
+        "name": "/radar1569/numberOfOccupants",
         "mode": "link",
         "links": [
             "68c2629504ca0b28",
-            "190c1992f1cbf565",
-            "b00b5206398fc5d3"
+            "b00b5206398fc5d3",
+            "58da5b866b432383",
+            "cfce5eec5e17f20b"
         ],
         "x": 1295,
         "y": 2620,
@@ -3288,9 +3170,9 @@
         "id": "8c5903e22cfc9677",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "/badgeF741/acceleration",
+        "name": "/radar1569/numberOfOccupants",
         "info": "",
-        "x": 1430,
+        "x": 1450,
         "y": 2620,
         "wires": []
     },
@@ -3298,15 +3180,15 @@
         "id": "9dde0599580188ee",
         "type": "function",
         "z": "943e204f81529182",
-        "name": "is it acceleration?",
-        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "name": "is it numberOfOccupants?",
+        "func": "if(msg.payload.numberOfOccupants){\n    return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
+        "x": 500,
         "y": 2620,
         "wires": [
             [
@@ -3348,6 +3230,281 @@
         "statusType": "auto",
         "x": 440,
         "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "2002bdd8e5d85919",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/radar1569/batteryPercentage",
+        "func": "let newmsg = {\n    topic: \"/radar1569/batteryPercentage\",\n            payload: msg.payload.batteryPercentage};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 2680,
+        "wires": [
+            [
+                "b518074259a3f96b"
+            ]
+        ]
+    },
+    {
+        "id": "4fbb33ab4f5e3d5c",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/radar1569/batteryPercentage",
+        "mode": "link",
+        "links": [
+            "89cd1b5d44963cb4",
+            "92148f9250905b6b",
+            "0ba2dd4dcb604546",
+            "1b47c84cab13a9d8"
+        ],
+        "x": 1295,
+        "y": 2680,
+        "wires": []
+    },
+    {
+        "id": "bf2601ca277dfcf0",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/radar1569/batteryPercentage",
+        "info": "",
+        "x": 1440,
+        "y": 2680,
+        "wires": []
+    },
+    {
+        "id": "2964098162b31f7a",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it batteryPercentage?",
+        "func": "if (msg.payload.batteryPercentage){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 2680,
+        "wires": [
+            [
+                "2002bdd8e5d85919"
+            ]
+        ]
+    },
+    {
+        "id": "b518074259a3f96b",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1180,
+        "y": 2680,
+        "wires": [
+            [
+                "4fbb33ab4f5e3d5c"
+            ]
+        ]
+    },
+    {
+        "id": "87cef86360be7223",
+        "type": "serial in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "serialp",
+        "serial": "4ecaa01218566e73",
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "832e51e1892d2dee"
+            ]
+        ]
+    },
+    {
+        "id": "8273d38b742461d1",
+        "type": "osc",
+        "z": "63e4ca87ec15e7b6",
+        "name": "oscout",
+        "path": "",
+        "metadata": true,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "ce86589b352c2c71"
+            ]
+        ]
+    },
+    {
+        "id": "832e51e1892d2dee",
+        "type": "function",
+        "z": "63e4ca87ec15e7b6",
+        "name": "split messsage",
+        "func": "var split = msg.payload.split(\":\");\nreturn {\n    topic: \"/\"+split[0],\n    payload:split[1]\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "8273d38b742461d1"
+            ]
+        ]
+    },
+    {
+        "id": "ce86589b352c2c71",
+        "type": "udp out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bcast7777",
+        "addr": "192.168.73.88",
+        "iface": "",
+        "port": "7777",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5ff5a5cb5150699d",
+        "type": "osc",
+        "z": "63e4ca87ec15e7b6",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "a3b3ff78fa377765"
+            ]
+        ]
+    },
+    {
+        "id": "dd6a7c5fd2bc57a1",
+        "type": "udp in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "",
+        "iface": "",
+        "port": "7778",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 80,
+        "y": 300,
+        "wires": [
+            [
+                "5ff5a5cb5150699d"
+            ]
+        ]
+    },
+    {
+        "id": "02190d58f95b35a6",
+        "type": "serial out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "toMicroBit",
+        "serial": "4ecaa01218566e73",
+        "x": 610,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a3b3ff78fa377765",
+        "type": "function",
+        "z": "63e4ca87ec15e7b6",
+        "name": "split messsage",
+        "func": "\nlet topic = msg.topic.replace(/^\\//,\"\");\nreturn {\n    payload:topic+\":\"+msg.payload\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "02190d58f95b35a6"
+            ]
+        ]
+    },
+    {
+        "id": "533c9463e67d2fee",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "This flow Runs on the IoT Sandbox",
+        "info": "This Flow translates Microbits Radio messages to/from OSC ",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "230cb2ed91a44c36",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3016901ca21ed23b",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Send UDP messages over Serial to a dedicated Microbits device attached to this computer",
+        "info": "",
+        "x": 330,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "af14cac50388c72e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Then send them over UDP to the OSC Switchboard with a common naming convention",
+        "info": "",
+        "x": 320,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5ac4fb824a5f6e19",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Route the messages with the OSC Switchboard!",
+        "info": "",
+        "x": 620,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c899758bf59368aa",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
+        "info": "",
+        "x": 560,
+        "y": 380,
         "wires": []
     },
     {
@@ -4228,7 +4385,8 @@
             "002337ab102d4f3a",
             "4231c54266544aaa",
             "1993e168718b6344",
-            "19d4534cec60808e"
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c"
         ],
         "x": 435,
         "y": 520,
@@ -4916,7 +5074,8 @@
         "links": [
             "4231c54266544aaa",
             "1993e168718b6344",
-            "19d4534cec60808e"
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c"
         ],
         "x": 435,
         "y": 1000,
@@ -5110,5 +5269,177 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "19323ce7f7e17814",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
+        "info": "",
+        "x": 430,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "a1ef02ba7a1021dd",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/numberOfOccupants [int]",
+        "info": "",
+        "x": 250,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "cfce5eec5e17f20b",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/numberOfOccupants",
+        "links": [
+            "6e29a67b8309b49b"
+        ],
+        "x": 435,
+        "y": 1220,
+        "wires": [
+            [
+                "ded640e4a59a3d55",
+                "b3da94412cdfa710"
+            ]
+        ]
+    },
+    {
+        "id": "649b49bbf3c21d43",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/batteryPercentage [int]",
+        "info": "",
+        "x": 260,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "1b47c84cab13a9d8",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "4fbb33ab4f5e3d5c"
+        ],
+        "x": 435,
+        "y": 1280,
+        "wires": [
+            [
+                "f8f74e8c0f09baad"
+            ]
+        ]
+    },
+    {
+        "id": "f8f74e8c0f09baad",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "e36bbf7bb7e6790e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ded640e4a59a3d55",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "e36bbf7bb7e6790e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Number Of Occupants",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3da94412cdfa710",
+        "type": "ui_text",
+        "z": "d286a10585a73e58",
+        "group": "e36bbf7bb7e6790e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Currently",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 900,
+        "y": 1180,
+        "wires": []
     }
 ]
