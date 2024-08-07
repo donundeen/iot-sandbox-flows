@@ -2514,7 +2514,8 @@
                 "c1b0a8ec0a07d96a",
                 "7a808c6536e4a5cb",
                 "547de9f301233c87",
-                "d0be3bfcd62b5837"
+                "d0be3bfcd62b5837",
+                "fb20186e8c681554"
             ]
         ]
     },
@@ -2869,7 +2870,6 @@
         "y": 2520,
         "wires": [
             [
-                "c2ad694c85e570b3",
                 "d9d4dd74cbc4f92b"
             ]
         ]
@@ -2886,8 +2886,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 2360,
+        "x": 800,
+        "y": 2520,
         "wires": []
     },
     {
@@ -2930,6 +2930,91 @@
         "wires": [
             [
                 "fd8072474a0cb7cd"
+            ]
+        ]
+    },
+    {
+        "id": "624521af088f10af",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/doubleClick",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/doubleClick\",\n    payload: \"doubleClick\"};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 2340,
+        "wires": [
+            [
+                "4c46173b8950f47e"
+            ]
+        ]
+    },
+    {
+        "id": "1993e168718b6344",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/doubleClick",
+        "mode": "link",
+        "links": [
+            "89cd1b5d44963cb4",
+            "92148f9250905b6b"
+        ],
+        "x": 1275,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "ef5ec8f5cebd0685",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/doubleClick",
+        "info": "",
+        "x": 1410,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "fb20186e8c681554",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is double click on badge button?",
+        "func": "if (msg.payload.unicodeCodePoints && msg.payload.unicodeCodePoints == \"129301\"){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 2340,
+        "wires": [
+            [
+                "624521af088f10af",
+                "c2ad694c85e570b3"
+            ]
+        ]
+    },
+    {
+        "id": "4c46173b8950f47e",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1160,
+        "y": 2340,
+        "wires": [
+            [
+                "1993e168718b6344"
             ]
         ]
     },
@@ -3809,7 +3894,8 @@
         "links": [
             "214448f98c24559e",
             "002337ab102d4f3a",
-            "4231c54266544aaa"
+            "4231c54266544aaa",
+            "1993e168718b6344"
         ],
         "x": 435,
         "y": 520,
@@ -4493,7 +4579,8 @@
         "z": "d286a10585a73e58",
         "name": "/e9beacon5c26/batteryPercentage",
         "links": [
-            "4231c54266544aaa"
+            "4231c54266544aaa",
+            "1993e168718b6344"
         ],
         "x": 435,
         "y": 1000,
