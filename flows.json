@@ -331,7 +331,7 @@
     {
         "id": "f8acfcf9bb97cb20",
         "type": "ui_group",
-        "name": "Tablegroup",
+        "name": "Untracked BLE Devices",
         "tab": "fb202f2b9c4ea98f",
         "order": 1,
         "disp": true,
@@ -342,7 +342,7 @@
     {
         "id": "fb202f2b9c4ea98f",
         "type": "ui_tab",
-        "name": "Table",
+        "name": "Untracked BLE Devices",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -5470,15 +5470,15 @@
         "id": "f85b67c47aaa8f66",
         "type": "function",
         "z": "d286a10585a73e58",
-        "name": "function 3",
-        "func": "msg.payload = global.get(\"allBLE\");\nreturn msg;",
+        "name": "getCapturedBLE",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nlet allKeys = Object.keys(all);\nlet capturedKeys = Object.keys(captured);\n\nlet uncaptured = {};\n\nfor(let i = 0; i < allKeys.length; i++){\n   let key = allKeys[i];\n    if(!capturedKeys.contains(key)){\n        uncaptured[key] = all[key];\n\n    }\n}\n\n\nreturn uncaptured;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 410,
         "y": 1600,
         "wires": [
             [
