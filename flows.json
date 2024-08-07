@@ -3187,8 +3187,8 @@
         "id": "7a4a181a2f319351",
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
-        "uri": "http://localhost:3001/devices/c3000011f741/3",
-        "name": "Pareto Badge c3000011f741/3",
+        "uri": "http://localhost:3001/devices/c30000131569/3",
+        "name": "Pareto Radar c30000131569/3",
         "x": 170,
         "y": 2600,
         "wires": [
