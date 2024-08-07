@@ -2166,7 +2166,8 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "mode": "link",
         "links": [
-            "92148f9250905b6b"
+            "92148f9250905b6b",
+            "b40fb4c40be74994"
         ],
         "x": 1275,
         "y": 1860,
@@ -4444,7 +4445,9 @@
         "type": "link in",
         "z": "d286a10585a73e58",
         "name": "/e9beacon5c26/batteryPercentage",
-        "links": [],
+        "links": [
+            "002337ab102d4f3a"
+        ],
         "x": 435,
         "y": 740,
         "wires": [
