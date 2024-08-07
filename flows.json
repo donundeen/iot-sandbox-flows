@@ -914,7 +914,8 @@
         "z": "9529f2fd9052e78b",
         "name": "/e9beacon5c26/acceleration",
         "links": [
-            "de8fbc462923dbc9"
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b"
         ],
         "x": 375,
         "y": 1280,
@@ -1268,7 +1269,7 @@
         "z": "943e204f81529182",
         "name": "each device property gets their own section here",
         "info": "# each device property gets their own section here",
-        "x": 820,
+        "x": 900,
         "y": 300,
         "wires": []
     },
@@ -1381,9 +1382,9 @@
         "id": "60f62919685ff439",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "Code below for identifying and routing BLE device messages",
+        "name": "Code below is for identifying and routing BLE device messages with friendlier names",
         "info": "",
-        "x": 820,
+        "x": 890,
         "y": 260,
         "wires": []
     },
@@ -3177,9 +3178,176 @@
         "type": "comment",
         "z": "943e204f81529182",
         "name": "You can access the Pareto Anywhere Apps here to see more device information: http://192.168.73.88:3001/",
-        "info": "[http://192.168.73.88:3001/](http://192.168.73.88:3001/)",
+        "info": "http://192.168.73.88:3001/",
         "x": 390,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7a4a181a2f319351",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001/devices/c3000011f741/3",
+        "name": "Pareto Badge c3000011f741/3",
+        "x": 170,
+        "y": 2600,
+        "wires": [
+            [],
+            [
+                "9dde0599580188ee",
+                "f4805199ed3084a3"
+            ]
+        ]
+    },
+    {
+        "id": "4aae7cccebc658a3",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 180,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "444b50237ad86372",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 980,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "ea2628f74f96419d",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 560,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "d72468c684c8cdca",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1610,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "d50349ae13d0531c",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
+        "info": "",
+        "x": 450,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "53906adf11ee8470",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/acceleration",
+        "func": "let newmsg = {\n    topic: \"/badgeF741/acceleration\",\n            payload: msg.payload.acceleration};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2620,
+        "wires": [
+            [
+                "f620f5dd9f1bd834"
+            ]
+        ]
+    },
+    {
+        "id": "6e29a67b8309b49b",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/acceleration",
+        "mode": "link",
+        "links": [
+            "68c2629504ca0b28",
+            "190c1992f1cbf565",
+            "b00b5206398fc5d3"
+        ],
+        "x": 1295,
+        "y": 2620,
+        "wires": []
+    },
+    {
+        "id": "8c5903e22cfc9677",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/badgeF741/acceleration",
+        "info": "",
+        "x": 1430,
+        "y": 2620,
+        "wires": []
+    },
+    {
+        "id": "9dde0599580188ee",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it acceleration?",
+        "func": "if(msg.payload.acceleration){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2620,
+        "wires": [
+            [
+                "53906adf11ee8470"
+            ]
+        ]
+    },
+    {
+        "id": "f620f5dd9f1bd834",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1180,
+        "y": 2620,
+        "wires": [
+            [
+                "6e29a67b8309b49b"
+            ]
+        ]
+    },
+    {
+        "id": "f4805199ed3084a3",
+        "type": "debug",
+        "z": "943e204f81529182",
+        "name": "debug 43",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 2800,
         "wires": []
     },
     {
@@ -4113,7 +4281,8 @@
         "name": "/e9beacon5c26/acceleration",
         "links": [
             "0ad22c5f1dca0ec8",
-            "de8fbc462923dbc9"
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b"
         ],
         "x": 435,
         "y": 680,
@@ -4718,7 +4887,8 @@
         "z": "d286a10585a73e58",
         "name": "/e9beacon5c26/acceleration",
         "links": [
-            "de8fbc462923dbc9"
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b"
         ],
         "x": 435,
         "y": 940,
