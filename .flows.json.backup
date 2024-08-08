@@ -433,8 +433,7 @@
         "y": 620,
         "wires": [
             [
-                "093e2453d12cd821",
-                "1d4e7943c44c8ea6"
+                "093e2453d12cd821"
             ]
         ]
     },
@@ -510,7 +509,6 @@
         "y": 620,
         "wires": [
             [
-                "a17733e1cb081bd6",
                 "fb481705f37072a6"
             ]
         ]
@@ -777,38 +775,6 @@
         "wires": []
     },
     {
-        "id": "a17733e1cb081bd6",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 36",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "1d4e7943c44c8ea6",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 37",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "a0cf0de0e9d8c435",
         "type": "template",
         "z": "9529f2fd9052e78b",
@@ -823,8 +789,7 @@
         "y": 660,
         "wires": [
             [
-                "093e2453d12cd821",
-                "751db6ce17bd48b7"
+                "093e2453d12cd821"
             ]
         ]
     },
@@ -856,22 +821,6 @@
                 "a0cf0de0e9d8c435"
             ]
         ]
-    },
-    {
-        "id": "751db6ce17bd48b7",
-        "type": "debug",
-        "z": "9529f2fd9052e78b",
-        "name": "debug 38",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 660,
-        "wires": []
     },
     {
         "id": "9a3918a4b11b383d",
