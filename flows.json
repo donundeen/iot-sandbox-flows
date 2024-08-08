@@ -4746,7 +4746,7 @@
         "chartType": "line",
         "legend": "false",
         "xformat": "dd HH:mm",
-        "interpolate": "linear",
+        "interpolate": "step",
         "nodata": "waiting on data....",
         "dot": false,
         "ymin": "0",
