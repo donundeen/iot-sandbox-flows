@@ -1126,7 +1126,7 @@
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
         "name": "Pareto JoltJS c8c8751dd883/3",
         "x": 170,
-        "y": 420,
+        "y": 540,
         "wires": [
             [],
             [
@@ -1149,7 +1149,7 @@
         "id": "41759bd8c50d792e",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "when creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
+        "name": "When creating new BLE messages, use dynamb property names from here: https://reelyactive.github.io/diy/cheatsheet/#dynamb",
         "info": "",
         "x": 450,
         "y": 140,
@@ -1168,7 +1168,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 420,
+        "y": 540,
         "wires": [
             [
                 "627021b995a2a0ef"
@@ -1179,9 +1179,9 @@
         "id": "4cfe56bd16725cf3",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "each device property gets their own section here",
+        "name": "Each device property gets their own section here",
         "info": "# each device property gets their own section here",
-        "x": 900,
+        "x": 200,
         "y": 300,
         "wires": []
     },
@@ -1192,7 +1192,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 140,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -1202,7 +1202,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -1212,7 +1212,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -1227,7 +1227,7 @@
             "b8e0d1ef098a80f6"
         ],
         "x": 1255,
-        "y": 420,
+        "y": 540,
         "wires": []
     },
     {
@@ -1237,7 +1237,7 @@
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
         "x": 1400,
-        "y": 420,
+        "y": 540,
         "wires": []
     },
     {
@@ -1247,7 +1247,7 @@
         "name": "/devices/c8c8751dd883/3",
         "info": "",
         "x": 150,
-        "y": 480,
+        "y": 600,
         "wires": []
     },
     {
@@ -1257,7 +1257,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 380,
+        "y": 500,
         "wires": []
     },
     {
@@ -1267,7 +1267,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 460,
+        "y": 580,
         "wires": []
     },
     {
@@ -1283,7 +1283,7 @@
         "finalize": "",
         "libs": [],
         "x": 410,
-        "y": 420,
+        "y": 540,
         "wires": [
             [
                 "0d246c6d36f59726"
@@ -1294,9 +1294,9 @@
         "id": "60f62919685ff439",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "Code below is for identifying and routing BLE device messages with friendlier names",
+        "name": "The code below is for identifying and routing BLE device messages with friendlier names",
         "info": "",
-        "x": 890,
+        "x": 330,
         "y": 260,
         "wires": []
     },
@@ -1307,7 +1307,7 @@
         "uri": "http://localhost:3001/devices/c300000ae8da/3",
         "name": "Pareto Motion Sensor c300000ae8da/3",
         "x": 150,
-        "y": 700,
+        "y": 820,
         "wires": [
             [],
             [
@@ -1334,7 +1334,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 700,
+        "y": 820,
         "wires": [
             [
                 "913cf85b77bf72c6"
@@ -1348,7 +1348,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 140,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -1358,7 +1358,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 900,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -1368,7 +1368,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -1383,7 +1383,7 @@
             "da9387dc2680a057"
         ],
         "x": 1255,
-        "y": 700,
+        "y": 820,
         "wires": []
     },
     {
@@ -1393,7 +1393,7 @@
         "name": "/motionE8DA/isMotionDetected",
         "info": "",
         "x": 1410,
-        "y": 700,
+        "y": 820,
         "wires": []
     },
     {
@@ -1403,7 +1403,7 @@
         "name": "/devices/c300000ae8da/3",
         "info": "",
         "x": 150,
-        "y": 760,
+        "y": 880,
         "wires": []
     },
     {
@@ -1413,7 +1413,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -1423,7 +1423,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 740,
+        "y": 860,
         "wires": []
     },
     {
@@ -1439,7 +1439,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 700,
+        "y": 820,
         "wires": [
             [
                 "0cb3b39d5ed1b219"
@@ -1459,7 +1459,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 840,
+        "y": 960,
         "wires": [
             [
                 "a2a4bb6ae1db4a73"
@@ -1473,7 +1473,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 800,
+        "y": 920,
         "wires": []
     },
     {
@@ -1483,7 +1483,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 800,
+        "y": 920,
         "wires": []
     },
     {
@@ -1499,7 +1499,7 @@
             "c534c42889ea8a46"
         ],
         "x": 1255,
-        "y": 840,
+        "y": 960,
         "wires": []
     },
     {
@@ -1509,7 +1509,7 @@
         "name": "/motionE8DA/temperature",
         "info": "",
         "x": 1390,
-        "y": 840,
+        "y": 960,
         "wires": []
     },
     {
@@ -1519,7 +1519,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 800,
+        "y": 920,
         "wires": []
     },
     {
@@ -1529,7 +1529,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 880,
+        "y": 1000,
         "wires": []
     },
     {
@@ -1545,7 +1545,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 840,
+        "y": 960,
         "wires": [
             [
                 "99753da02303ad09"
@@ -1565,7 +1565,7 @@
         "finalize": "",
         "libs": [],
         "x": 870,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "7e6670f45f062dc4"
@@ -1579,7 +1579,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 940,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1589,7 +1589,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 940,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1603,7 +1603,7 @@
             "c1d1dfc74b17a671"
         ],
         "x": 1255,
-        "y": 980,
+        "y": 1100,
         "wires": []
     },
     {
@@ -1613,7 +1613,7 @@
         "name": "/motionE8DA/illuminance",
         "info": "",
         "x": 1390,
-        "y": 980,
+        "y": 1100,
         "wires": []
     },
     {
@@ -1623,7 +1623,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 940,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1633,7 +1633,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 1020,
+        "y": 1140,
         "wires": []
     },
     {
@@ -1649,7 +1649,7 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "c2d1f94ce0a9c2da"
@@ -1669,7 +1669,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 1120,
+        "y": 1240,
         "wires": [
             [
                 "8e419f4d7285ec5f"
@@ -1683,7 +1683,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 1080,
+        "y": 1200,
         "wires": []
     },
     {
@@ -1693,7 +1693,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 1080,
+        "y": 1200,
         "wires": []
     },
     {
@@ -1707,7 +1707,7 @@
             "34179481a9d37d57"
         ],
         "x": 1255,
-        "y": 1120,
+        "y": 1240,
         "wires": []
     },
     {
@@ -1717,7 +1717,7 @@
         "name": "/motionE8DA/acceleration",
         "info": "",
         "x": 1390,
-        "y": 1120,
+        "y": 1240,
         "wires": []
     },
     {
@@ -1727,7 +1727,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 1080,
+        "y": 1200,
         "wires": []
     },
     {
@@ -1737,7 +1737,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 1160,
+        "y": 1280,
         "wires": []
     },
     {
@@ -1753,7 +1753,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 1120,
+        "y": 1240,
         "wires": [
             [
                 "460e120d3b20700c"
@@ -1773,7 +1773,7 @@
         "finalize": "",
         "libs": [],
         "x": 890,
-        "y": 1260,
+        "y": 1380,
         "wires": [
             [
                 "b42ab26e4f368895"
@@ -1787,7 +1787,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 1220,
+        "y": 1340,
         "wires": []
     },
     {
@@ -1797,7 +1797,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 1220,
+        "y": 1340,
         "wires": []
     },
     {
@@ -1811,7 +1811,7 @@
             "92148f9250905b6b"
         ],
         "x": 1255,
-        "y": 1260,
+        "y": 1380,
         "wires": []
     },
     {
@@ -1821,7 +1821,7 @@
         "name": "/motionE8DA/batteryPercentage",
         "info": "",
         "x": 1410,
-        "y": 1260,
+        "y": 1380,
         "wires": []
     },
     {
@@ -1831,7 +1831,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 1220,
+        "y": 1340,
         "wires": []
     },
     {
@@ -1841,7 +1841,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 1300,
+        "y": 1420,
         "wires": []
     },
     {
@@ -1857,7 +1857,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 1260,
+        "y": 1380,
         "wires": [
             [
                 "5a4b5a79e428cbb3"
@@ -1877,7 +1877,7 @@
         "finalize": "",
         "libs": [],
         "x": 890,
-        "y": 1400,
+        "y": 1520,
         "wires": [
             [
                 "3e7f1a7e86edd907"
@@ -1891,7 +1891,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 940,
-        "y": 1360,
+        "y": 1480,
         "wires": []
     },
     {
@@ -1901,7 +1901,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1570,
-        "y": 1360,
+        "y": 1480,
         "wires": []
     },
     {
@@ -1915,7 +1915,7 @@
             "10d09e9ebbae4a39"
         ],
         "x": 1255,
-        "y": 1400,
+        "y": 1520,
         "wires": []
     },
     {
@@ -1925,7 +1925,7 @@
         "name": "/motionE8DA/relativeHumidity",
         "info": "",
         "x": 1400,
-        "y": 1400,
+        "y": 1520,
         "wires": []
     },
     {
@@ -1935,7 +1935,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 520,
-        "y": 1360,
+        "y": 1480,
         "wires": []
     },
     {
@@ -1945,7 +1945,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 460,
-        "y": 1440,
+        "y": 1560,
         "wires": []
     },
     {
@@ -1961,7 +1961,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 1400,
+        "y": 1520,
         "wires": [
             [
                 "ca258975bff086ad"
@@ -1975,7 +1975,7 @@
         "uri": "http://localhost:3001/devices/ac233faf5c26/2",
         "name": "Pareto E9 Beacon ac233faf5c26/2",
         "x": 140,
-        "y": 1780,
+        "y": 1900,
         "wires": [
             [],
             [
@@ -1999,7 +1999,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 1780,
+        "y": 1900,
         "wires": [
             [
                 "01da984135ffb4b5"
@@ -2013,7 +2013,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 160,
-        "y": 1740,
+        "y": 1860,
         "wires": []
     },
     {
@@ -2023,7 +2023,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 960,
-        "y": 1740,
+        "y": 1860,
         "wires": []
     },
     {
@@ -2033,7 +2033,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1590,
-        "y": 1740,
+        "y": 1860,
         "wires": []
     },
     {
@@ -2047,7 +2047,7 @@
             "f3877161e3ba366e"
         ],
         "x": 1275,
-        "y": 1780,
+        "y": 1900,
         "wires": []
     },
     {
@@ -2057,7 +2057,7 @@
         "name": "/e9beacon5c26/isMotionDetected",
         "info": "",
         "x": 1440,
-        "y": 1780,
+        "y": 1900,
         "wires": []
     },
     {
@@ -2067,7 +2067,7 @@
         "name": "/devices/ac233faf5c26/2",
         "info": "",
         "x": 170,
-        "y": 1840,
+        "y": 1960,
         "wires": []
     },
     {
@@ -2077,7 +2077,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 540,
-        "y": 1740,
+        "y": 1860,
         "wires": []
     },
     {
@@ -2087,7 +2087,7 @@
         "name": "Even if we trust the device....",
         "info": "",
         "x": 480,
-        "y": 1820,
+        "y": 1940,
         "wires": []
     },
     {
@@ -2103,7 +2103,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 1780,
+        "y": 1900,
         "wires": [
             [
                 "6e4e1e9551cce098"
@@ -2127,7 +2127,7 @@
         "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
         "info": "",
         "x": 380,
-        "y": 600,
+        "y": 720,
         "wires": []
     },
     {
@@ -2137,7 +2137,7 @@
         "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
         "info": "",
         "x": 360,
-        "y": 1660,
+        "y": 1780,
         "wires": []
     },
     {
@@ -2153,7 +2153,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 1860,
+        "y": 1980,
         "wires": [
             [
                 "7e5cc97aecd17920"
@@ -2171,7 +2171,7 @@
             "b40fb4c40be74994"
         ],
         "x": 1275,
-        "y": 1860,
+        "y": 1980,
         "wires": []
     },
     {
@@ -2181,7 +2181,7 @@
         "name": "/e9beacon5c26/batteryPercentage",
         "info": "",
         "x": 1440,
-        "y": 1860,
+        "y": 1980,
         "wires": []
     },
     {
@@ -2197,7 +2197,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 1860,
+        "y": 1980,
         "wires": [
             [
                 "49e6e5b80ab0da1e"
@@ -2217,7 +2217,7 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 1920,
+        "y": 2040,
         "wires": [
             [
                 "db8d2a1e80114204"
@@ -2235,7 +2235,7 @@
             "68c2629504ca0b28"
         ],
         "x": 1275,
-        "y": 1920,
+        "y": 2040,
         "wires": []
     },
     {
@@ -2245,7 +2245,7 @@
         "name": "/e9beacon5c26/acceleration",
         "info": "",
         "x": 1420,
-        "y": 1920,
+        "y": 2040,
         "wires": []
     },
     {
@@ -2261,7 +2261,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 1920,
+        "y": 2040,
         "wires": [
             [
                 "e53334db6f2d533b"
@@ -2281,7 +2281,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 700,
+        "y": 820,
         "wires": [
             [
                 "39d6698f6076b1cf"
@@ -2301,7 +2301,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 1780,
+        "y": 1900,
         "wires": [
             [
                 "12f3f5b83580a23d"
@@ -2321,7 +2321,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 1860,
+        "y": 1980,
         "wires": [
             [
                 "002337ab102d4f3a"
@@ -2341,7 +2341,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 1920,
+        "y": 2040,
         "wires": [
             [
                 "0ad22c5f1dca0ec8"
@@ -2361,7 +2361,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 840,
+        "y": 960,
         "wires": [
             [
                 "3f8a8d4cc887a6a0"
@@ -2381,7 +2381,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 980,
+        "y": 1100,
         "wires": [
             [
                 "0fb34d273a62d5fd"
@@ -2401,7 +2401,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 1120,
+        "y": 1240,
         "wires": [
             [
                 "be8df522c0e4f250"
@@ -2421,7 +2421,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 1260,
+        "y": 1380,
         "wires": [
             [
                 "214448f98c24559e"
@@ -2441,7 +2441,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1120,
-        "y": 1400,
+        "y": 1520,
         "wires": [
             [
                 "0be064a2c659c9a6"
@@ -2455,7 +2455,7 @@
         "name": "/devices/c3000011f741/3",
         "info": "",
         "x": 170,
-        "y": 2160,
+        "y": 2280,
         "wires": []
     },
     {
@@ -2465,7 +2465,7 @@
         "uri": "http://localhost:3001/devices/c3000011f741/3",
         "name": "Pareto Badge c3000011f741/3",
         "x": 150,
-        "y": 2100,
+        "y": 2220,
         "wires": [
             [],
             [
@@ -2485,7 +2485,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 160,
-        "y": 2060,
+        "y": 2180,
         "wires": []
     },
     {
@@ -2495,7 +2495,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 960,
-        "y": 2060,
+        "y": 2180,
         "wires": []
     },
     {
@@ -2505,7 +2505,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 540,
-        "y": 2060,
+        "y": 2180,
         "wires": []
     },
     {
@@ -2515,7 +2515,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1590,
-        "y": 2060,
+        "y": 2180,
         "wires": []
     },
     {
@@ -2525,7 +2525,7 @@
         "name": "Minew MWC01 Badge Bluetooth Repeater https://www.minewstore.com/product/mwc01-badge-bluetooth-repeater",
         "info": "",
         "x": 450,
-        "y": 2000,
+        "y": 2120,
         "wires": []
     },
     {
@@ -2541,7 +2541,7 @@
         "finalize": "",
         "libs": [],
         "x": 890,
-        "y": 2120,
+        "y": 2240,
         "wires": [
             [
                 "0c7473607021312f"
@@ -2560,7 +2560,7 @@
             "b00b5206398fc5d3"
         ],
         "x": 1275,
-        "y": 2120,
+        "y": 2240,
         "wires": []
     },
     {
@@ -2570,7 +2570,7 @@
         "name": "/badgeF741/acceleration",
         "info": "",
         "x": 1410,
-        "y": 2120,
+        "y": 2240,
         "wires": []
     },
     {
@@ -2586,7 +2586,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2120,
+        "y": 2240,
         "wires": [
             [
                 "4a13bbd18b63c058"
@@ -2606,7 +2606,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 2120,
+        "y": 2240,
         "wires": [
             [
                 "de8fbc462923dbc9"
@@ -2626,7 +2626,7 @@
         "finalize": "",
         "libs": [],
         "x": 890,
-        "y": 2200,
+        "y": 2320,
         "wires": [
             [
                 "319c3cd1e677a8b2"
@@ -2645,7 +2645,7 @@
             "c534c42889ea8a46"
         ],
         "x": 1275,
-        "y": 2200,
+        "y": 2320,
         "wires": []
     },
     {
@@ -2655,7 +2655,7 @@
         "name": "/badgeF741/temperature",
         "info": "",
         "x": 1410,
-        "y": 2200,
+        "y": 2320,
         "wires": []
     },
     {
@@ -2671,7 +2671,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2200,
+        "y": 2320,
         "wires": [
             [
                 "347577beb2fc67a1"
@@ -2691,7 +2691,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 2200,
+        "y": 2320,
         "wires": [
             [
                 "d7237dea509bc5d8"
@@ -2711,7 +2711,7 @@
         "finalize": "",
         "libs": [],
         "x": 910,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "c983cf628524568c"
@@ -2730,7 +2730,7 @@
             "89cd1b5d44963cb4"
         ],
         "x": 1275,
-        "y": 2280,
+        "y": 2400,
         "wires": []
     },
     {
@@ -2740,7 +2740,7 @@
         "name": "/badgeF741/batteryPercentage",
         "info": "",
         "x": 1430,
-        "y": 2280,
+        "y": 2400,
         "wires": []
     },
     {
@@ -2756,7 +2756,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "c9362e70e15b8138"
@@ -2776,7 +2776,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 2280,
+        "y": 2400,
         "wires": [
             [
                 "4231c54266544aaa"
@@ -2789,8 +2789,8 @@
         "z": "943e204f81529182",
         "name": "",
         "ignoreProtocolOverheadCheckbox": false,
-        "x": 1880,
-        "y": 140,
+        "x": 1900,
+        "y": 240,
         "wires": [
             [
                 "cf2259b44c6db0e5"
@@ -2810,7 +2810,7 @@
         "addname": "data",
         "property": "payload.packets",
         "x": 1490,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "d9d4dd74cbc4f92b",
@@ -2831,7 +2831,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1640,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -2846,8 +2846,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2040,
-        "y": 140,
+        "x": 2060,
+        "y": 240,
         "wires": []
     },
     {
@@ -2870,7 +2870,7 @@
         "to": "",
         "reg": false,
         "x": 1680,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "fd8072474a0cb7cd"
@@ -2890,7 +2890,7 @@
         "finalize": "",
         "libs": [],
         "x": 890,
-        "y": 2340,
+        "y": 2460,
         "wires": [
             [
                 "4c46173b8950f47e"
@@ -2909,7 +2909,7 @@
             "8dd1e7825daec697"
         ],
         "x": 1275,
-        "y": 2340,
+        "y": 2460,
         "wires": []
     },
     {
@@ -2919,7 +2919,7 @@
         "name": "/badgeF741/doubleClick",
         "info": "",
         "x": 1410,
-        "y": 2340,
+        "y": 2460,
         "wires": []
     },
     {
@@ -2935,7 +2935,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 2340,
+        "y": 2460,
         "wires": [
             [
                 "624521af088f10af"
@@ -2955,7 +2955,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 2340,
+        "y": 2460,
         "wires": [
             [
                 "1993e168718b6344"
@@ -2975,7 +2975,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 2400,
+        "y": 2520,
         "wires": [
             [
                 "eeb4ef28bdd58ed6"
@@ -2994,7 +2994,7 @@
             "188b2020e129bf2c"
         ],
         "x": 1275,
-        "y": 2400,
+        "y": 2520,
         "wires": []
     },
     {
@@ -3004,7 +3004,7 @@
         "name": "/badgeF741/tripleClick",
         "info": "",
         "x": 1400,
-        "y": 2400,
+        "y": 2520,
         "wires": []
     },
     {
@@ -3020,7 +3020,7 @@
         "finalize": "",
         "libs": [],
         "x": 490,
-        "y": 2400,
+        "y": 2520,
         "wires": [
             [
                 "8596fdbdbb825cdf"
@@ -3040,7 +3040,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1160,
-        "y": 2400,
+        "y": 2520,
         "wires": [
             [
                 "19d4534cec60808e"
@@ -3054,7 +3054,7 @@
         "name": "a little bit that'suseful for debugging",
         "info": "",
         "x": 1380,
-        "y": 220,
+        "y": 200,
         "wires": []
     },
     {
@@ -3064,7 +3064,7 @@
         "uri": "http://localhost:3001",
         "name": "Pareto ALL Devices",
         "x": 1330,
-        "y": 260,
+        "y": 240,
         "wires": [
             [],
             []
@@ -3077,7 +3077,7 @@
         "name": "Connect Pareto to Split to get it going....",
         "info": "",
         "x": 1400,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -3107,7 +3107,7 @@
         "uri": "http://localhost:3001/devices/c30000131569/3",
         "name": "Pareto Radar c30000131569/3",
         "x": 170,
-        "y": 2600,
+        "y": 2720,
         "wires": [
             [],
             [
@@ -3125,7 +3125,7 @@
         "name": "assign a device ID here",
         "info": "",
         "x": 180,
-        "y": 2560,
+        "y": 2680,
         "wires": []
     },
     {
@@ -3135,7 +3135,7 @@
         "name": "create a topic name, and assign the payload here",
         "info": "",
         "x": 980,
-        "y": 2560,
+        "y": 2680,
         "wires": []
     },
     {
@@ -3145,7 +3145,7 @@
         "name": "Confirm the property of the right name exists...",
         "info": "",
         "x": 560,
-        "y": 2560,
+        "y": 2680,
         "wires": []
     },
     {
@@ -3155,7 +3155,7 @@
         "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
         "info": "",
         "x": 1610,
-        "y": 2560,
+        "y": 2680,
         "wires": []
     },
     {
@@ -3165,7 +3165,7 @@
         "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
         "info": "",
         "x": 450,
-        "y": 2500,
+        "y": 2620,
         "wires": []
     },
     {
@@ -3181,7 +3181,7 @@
         "finalize": "",
         "libs": [],
         "x": 940,
-        "y": 2620,
+        "y": 2740,
         "wires": [
             [
                 "f620f5dd9f1bd834"
@@ -3201,7 +3201,7 @@
             "cfce5eec5e17f20b"
         ],
         "x": 1295,
-        "y": 2620,
+        "y": 2740,
         "wires": []
     },
     {
@@ -3211,7 +3211,7 @@
         "name": "/radar1569/numberOfOccupants",
         "info": "",
         "x": 1450,
-        "y": 2620,
+        "y": 2740,
         "wires": []
     },
     {
@@ -3227,7 +3227,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 2620,
+        "y": 2740,
         "wires": [
             [
                 "53906adf11ee8470",
@@ -3248,7 +3248,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1180,
-        "y": 2620,
+        "y": 2740,
         "wires": [
             [
                 "6e29a67b8309b49b"
@@ -3268,7 +3268,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 440,
-        "y": 2800,
+        "y": 2920,
         "wires": []
     },
     {
@@ -3284,7 +3284,7 @@
         "finalize": "",
         "libs": [],
         "x": 930,
-        "y": 2680,
+        "y": 2800,
         "wires": [
             [
                 "b518074259a3f96b"
@@ -3304,7 +3304,7 @@
             "1b47c84cab13a9d8"
         ],
         "x": 1295,
-        "y": 2680,
+        "y": 2800,
         "wires": []
     },
     {
@@ -3314,7 +3314,7 @@
         "name": "/radar1569/batteryPercentage",
         "info": "",
         "x": 1440,
-        "y": 2680,
+        "y": 2800,
         "wires": []
     },
     {
@@ -3330,7 +3330,7 @@
         "finalize": "",
         "libs": [],
         "x": 490,
-        "y": 2680,
+        "y": 2800,
         "wires": [
             [
                 "2002bdd8e5d85919"
@@ -3350,7 +3350,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1180,
-        "y": 2680,
+        "y": 2800,
         "wires": [
             [
                 "4fbb33ab4f5e3d5c"
@@ -3370,7 +3370,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 720,
-        "y": 2800,
+        "y": 2920,
         "wires": []
     },
     {
@@ -3393,9 +3393,9 @@
         "id": "7f94a81d044b45c7",
         "type": "comment",
         "z": "943e204f81529182",
-        "name": "Capturing all devices and saving their info",
+        "name": "Capturing all devices and saving their info, for the dashboard",
         "info": "",
-        "x": 1400,
+        "x": 1460,
         "y": 60,
         "wires": []
     },
@@ -3447,7 +3447,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 520,
+        "y": 640,
         "wires": [
             []
         ]
@@ -3465,7 +3465,7 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 800,
+        "y": 920,
         "wires": [
             []
         ]
@@ -3483,7 +3483,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 1880,
+        "y": 2000,
         "wires": [
             []
         ]
@@ -3501,7 +3501,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 2200,
+        "y": 2320,
         "wires": [
             []
         ]
@@ -3519,7 +3519,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 2680,
+        "y": 2800,
         "wires": [
             []
         ]
@@ -3531,7 +3531,7 @@
         "name": "/devices/c30000131569/3",
         "info": "",
         "x": 170,
-        "y": 2640,
+        "y": 2760,
         "wires": []
     },
     {
@@ -3541,7 +3541,17 @@
         "name": "attach the \"save to capturedBLE\" node to the second Pareto output, so we can identify UNTRACKED devices.",
         "info": "",
         "x": 670,
-        "y": 520,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "58c83c34488e0d02",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "You can also use the \"BLE Devices\" page in the Node-red Dashboard to see what BLE devices ParetoAnywhere sees",
+        "info": "",
+        "x": 420,
+        "y": 220,
         "wires": []
     },
     {
@@ -3551,7 +3561,7 @@
         "name": "serialp",
         "serial": "4ecaa01218566e73",
         "x": 70,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "832e51e1892d2dee"
@@ -3566,7 +3576,7 @@
         "path": "",
         "metadata": true,
         "x": 410,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "ce86589b352c2c71"
@@ -3586,7 +3596,7 @@
         "finalize": "",
         "libs": [],
         "x": 240,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "8273d38b742461d1"
@@ -3606,7 +3616,7 @@
         "base64": false,
         "multicast": "broad",
         "x": 610,
-        "y": 140,
+        "y": 200,
         "wires": []
     },
     {
@@ -3617,7 +3627,7 @@
         "path": "",
         "metadata": false,
         "x": 210,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "a3b3ff78fa377765"
@@ -3636,7 +3646,7 @@
         "group": "",
         "datatype": "buffer",
         "x": 80,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "5ff5a5cb5150699d"
@@ -3650,7 +3660,7 @@
         "name": "toMicroBit",
         "serial": "4ecaa01218566e73",
         "x": 610,
-        "y": 300,
+        "y": 360,
         "wires": []
     },
     {
@@ -3666,7 +3676,7 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "02190d58f95b35a6"
@@ -3690,7 +3700,7 @@
         "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
         "info": "",
         "x": 350,
-        "y": 100,
+        "y": 160,
         "wires": []
     },
     {
@@ -3700,7 +3710,7 @@
         "name": "Send UDP messages over Serial to a dedicated Microbits device attached to this computer",
         "info": "",
         "x": 330,
-        "y": 260,
+        "y": 320,
         "wires": []
     },
     {
@@ -3710,7 +3720,7 @@
         "name": "Then send them over UDP to the OSC Switchboard with a common naming convention",
         "info": "",
         "x": 320,
-        "y": 180,
+        "y": 240,
         "wires": []
     },
     {
@@ -3720,7 +3730,7 @@
         "name": "Route the messages with the OSC Switchboard!",
         "info": "",
         "x": 620,
-        "y": 340,
+        "y": 400,
         "wires": []
     },
     {
@@ -3730,7 +3740,17 @@
         "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
         "info": "",
         "x": 560,
-        "y": 380,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7f833fcf6c834f1e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "This assumes you have a Micro:Bits attached to the node-red machine with a USB cable.",
+        "info": "",
+        "x": 330,
+        "y": 80,
         "wires": []
     },
     {
@@ -3747,7 +3767,7 @@
         "id": "13c54424b5ca53d5",
         "type": "comment",
         "z": "9d6a628240034869",
-        "name": "this is so the Messages Swithboard looks clean and easy to play with",
+        "name": "This is so the Messages Swithboard looks clean and easy to play with",
         "info": "",
         "x": 330,
         "y": 80,
@@ -3774,7 +3794,7 @@
         "type": "debug",
         "z": "9d6a628240034869",
         "name": "debug 23",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3846,7 +3866,7 @@
         "repair": false,
         "outputs": 2,
         "x": 200,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "d95291ead096abd9",
@@ -3873,7 +3893,7 @@
         "type": "debug",
         "z": "9d6a628240034869",
         "name": "debug 29",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3882,7 +3902,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 440,
-        "y": 320,
+        "y": 360,
         "wires": []
     },
     {
@@ -3890,7 +3910,7 @@
         "type": "debug",
         "z": "9d6a628240034869",
         "name": "debug 30",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3899,7 +3919,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 520,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -3909,7 +3929,7 @@
         "name": "Top output if it matches",
         "info": "",
         "x": 280,
-        "y": 320,
+        "y": 360,
         "wires": []
     },
     {
@@ -3919,7 +3939,7 @@
         "name": "bottom output if it doesn't; pass to the next SWITCH",
         "info": "",
         "x": 270,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -3943,7 +3963,7 @@
         "repair": false,
         "outputs": 2,
         "x": 150,
-        "y": 520,
+        "y": 560,
         "wires": [
             [],
             []
@@ -3956,7 +3976,7 @@
         "name": "Top output if it matches",
         "info": "",
         "x": 320,
-        "y": 480,
+        "y": 520,
         "wires": []
     },
     {
@@ -3966,7 +3986,7 @@
         "name": "bottom output if it doesn't; pass to the next SWITCH, and so on...",
         "info": "",
         "x": 320,
-        "y": 560,
+        "y": 600,
         "wires": []
     },
     {
@@ -3981,7 +4001,7 @@
             "b8e0d1ef098a80f6"
         ],
         "x": 1005,
-        "y": 360,
+        "y": 400,
         "wires": []
     },
     {
@@ -3991,7 +4011,7 @@
         "name": "/joltjsd883/buttonPressCount",
         "info": "",
         "x": 1140,
-        "y": 360,
+        "y": 400,
         "wires": []
     },
     {
@@ -4001,7 +4021,7 @@
         "name": "Pass on to named LinkOut node, to match a LinkIn in the Message Switchboard",
         "info": "",
         "x": 1240,
-        "y": 320,
+        "y": 360,
         "wires": []
     },
     {
