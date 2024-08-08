@@ -173,6 +173,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -344,7 +345,7 @@
         "type": "ui_tab",
         "name": "BLE Devices",
         "icon": "dashboard",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -4237,7 +4238,7 @@
         "name": "THE INPUTS",
         "info": "",
         "x": 130,
-        "y": 80,
+        "y": 20,
         "wires": []
     },
     {
@@ -5439,8 +5440,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1870,
-        "y": 180,
+        "x": 1970,
+        "y": 280,
         "wires": [
             []
         ]
@@ -5457,8 +5458,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1580,
-        "y": 180,
+        "x": 1680,
+        "y": 280,
         "wires": [
             [
                 "e2bc8730ca71a33d"
@@ -5482,8 +5483,8 @@
         "topic": "",
         "payload": "{\"squadName\":\"Super hero squad\",\"homeTown\":\"Metro City\",\"formed\":2016,\"secretBase\":\"Super tower\",\"active\":true,\"members\":[{\"index\":0,\"isActive\":false,\"age\":21,\"eyeColor\":\"blue\",\"name\":\"Bentley Clayton\",\"gender\":\"male\",\"registered\":\"2018-05-02T05:35:41 +04:00\"},{\"index\":1,\"isActive\":false,\"age\":23,\"eyeColor\":\"blue\",\"name\":\"Lela Ramos\",\"gender\":\"female\",\"registered\":\"2014-02-24T03:13:50 +05:00\"},{\"index\":2,\"isActive\":true,\"age\":38,\"eyeColor\":\"green\",\"name\":\"Milagros Becker\",\"gender\":\"female\",\"registered\":\"2016-10-22T12:18:50 +04:00\"},{\"index\":3,\"isActive\":false,\"age\":30,\"eyeColor\":\"brown\",\"name\":\"Mccoy Barrera\",\"gender\":\"male\",\"registered\":\"2016-12-03T03:44:57 +05:00\"},{\"index\":4,\"isActive\":false,\"age\":35,\"eyeColor\":\"brown\",\"name\":\"Morton Bennett\",\"gender\":\"male\",\"registered\":\"2015-10-06T09:48:03 +04:00\"},{\"index\":5,\"isActive\":true,\"age\":20,\"eyeColor\":\"blue\",\"name\":\"Acosta Bird\",\"gender\":\"male\",\"registered\":\"2019-02-11T09:59:58 +05:00\"},{\"index\":6,\"isActive\":false,\"age\":35,\"eyeColor\":\"blue\",\"name\":\"Mcleod Keith\",\"gender\":\"male\",\"registered\":\"2014-04-24T07:50:11 +04:00\"},{\"index\":7,\"isActive\":false,\"age\":27,\"eyeColor\":\"brown\",\"name\":\"Magdalena Burgess\",\"gender\":\"female\",\"registered\":\"2015-03-19T09:28:55 +04:00\"},{\"index\":8,\"isActive\":false,\"age\":37,\"eyeColor\":\"blue\",\"name\":\"Cline Castaneda\",\"gender\":\"male\",\"registered\":\"2016-02-29T09:49:37 +05:00\"},{\"index\":9,\"isActive\":false,\"age\":39,\"eyeColor\":\"green\",\"name\":\"Garcia Baker\",\"gender\":\"male\",\"registered\":\"2018-05-26T02:54:22 +04:00\"},{\"index\":10,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Lenora Keller\",\"gender\":\"female\",\"registered\":\"2017-12-19T05:12:17 +05:00\"},{\"index\":11,\"isActive\":false,\"age\":33,\"eyeColor\":\"green\",\"name\":\"Kathryn Donovan\",\"gender\":\"female\",\"registered\":\"2014-03-21T12:33:36 +04:00\"},{\"index\":12,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Opal Hinton\",\"gender\":\"female\",\"registered\":\"2014-05-03T02:14:25 +04:00\"},{\"index\":13,\"isActive\":false,\"age\":25,\"eyeColor\":\"green\",\"name\":\"Mayer Gray\",\"gender\":\"male\",\"registered\":\"2016-04-01T05:52:21 +04:00\"},{\"index\":14,\"isActive\":true,\"age\":22,\"eyeColor\":\"green\",\"name\":\"Josefina Quinn\",\"gender\":\"female\",\"registered\":\"2015-02-07T12:04:14 +05:00\"}]}",
         "payloadType": "json",
-        "x": 1150,
-        "y": 180,
+        "x": 1250,
+        "y": 280,
         "wires": [
             [
                 "f85b67c47aaa8f66",
@@ -5503,8 +5504,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
-        "y": 180,
+        "x": 1440,
+        "y": 280,
         "wires": [
             [
                 "dfa6f8ae37760595"
@@ -5517,8 +5518,8 @@
         "z": "d286a10585a73e58",
         "name": "This creates a tab of all UNTRACKED BLE devices",
         "info": "",
-        "x": 1270,
-        "y": 140,
+        "x": 1370,
+        "y": 240,
         "wires": []
     },
     {
@@ -5536,8 +5537,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1860,
-        "y": 280,
+        "x": 1960,
+        "y": 380,
         "wires": [
             []
         ]
@@ -5554,8 +5555,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1580,
-        "y": 280,
+        "x": 1680,
+        "y": 380,
         "wires": [
             [
                 "b69ad0e26cb75345"
@@ -5574,8 +5575,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1330,
-        "y": 280,
+        "x": 1430,
+        "y": 380,
         "wires": [
             [
                 "95ef3439c8d6162c"
@@ -5588,8 +5589,38 @@
         "z": "d286a10585a73e58",
         "name": "This creates a tab of all UNTRACKED BLE devices",
         "info": "",
-        "x": 1270,
-        "y": 240,
+        "x": 1370,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "96275900a577e922",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "pick your dashboard widget for display. Chart is usually a ood choice :)",
+        "info": "",
+        "x": 1090,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d418e0a4c0eb6b81",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "the inputs below can be copied straight from the inputs in the IoT Playground tab",
+        "info": "",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cd25d0e6559210b2",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "the \"BLE Devices\" tab in the dashboard shows you which devices you're tracking, and which ones Pareto sees but you haven't tracked yet",
+        "info": "",
+        "x": 1640,
+        "y": 200,
         "wires": []
     },
     {
