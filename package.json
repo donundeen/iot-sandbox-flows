@@ -4,5 +4,11 @@
             "flowFile": "flows.json",
             "credentialsFile": "flows_cred.json"
         }
+    },
+    "dependencies": {
+        "@reelyactive/node-red-pareto-anywhere": "0.1.1",
+        "node-red-contrib-advlib-ble": "0.0.4",
+        "node-red-contrib-osc": "1.1.0",
+        "node-red-node-serialport": "2.0.2"
     }
 }

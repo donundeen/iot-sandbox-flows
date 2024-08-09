@@ -361,6 +361,37 @@
         "className": ""
     },
     {
+        "id": "632ec53202999c1c",
+        "type": "mqtt-broker",
+        "name": "Home EspruinoHub",
+        "broker": "10.0.0.30",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "5347604aa986a9b3",
         "type": "comment",
         "z": "9529f2fd9052e78b",
@@ -1015,7 +1046,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
-        "name": "Pareto JoltJS c8c8751dd883/3",
         "x": 170,
         "y": 540,
         "wires": [
@@ -1196,7 +1226,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c300000ae8da/3",
-        "name": "Pareto Motion Sensor c300000ae8da/3",
         "x": 150,
         "y": 820,
         "wires": [
@@ -1864,7 +1893,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/ac233faf5c26/2",
-        "name": "Pareto E9 Beacon ac233faf5c26/2",
         "x": 140,
         "y": 1900,
         "wires": [
@@ -2354,7 +2382,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c3000011f741/3",
-        "name": "Pareto Badge c3000011f741/3",
         "x": 150,
         "y": 2220,
         "wires": [
@@ -2953,7 +2980,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
-        "name": "Pareto ALL Devices",
         "x": 1330,
         "y": 240,
         "wires": [
@@ -2996,7 +3022,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c30000131569/3",
-        "name": "Pareto Radar c30000131569/3",
         "x": 170,
         "y": 2720,
         "wires": [
@@ -3269,7 +3294,6 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
-        "name": "Pareto ALL Devices",
         "x": 1330,
         "y": 100,
         "wires": [
@@ -3958,7 +3982,7 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "331b204cd9aa204f",
+        "broker": "632ec53202999c1c",
         "x": 1120,
         "y": 160,
         "wires": []
