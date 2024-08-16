@@ -152,10 +152,18 @@ Note: These instructions will allow you to clone the iot-sandbox-flows repo, but
 If you are a member of this project and want to commit back to the repo, or if you're curious about how to work with Git Repos from within Node-RED more broadly, better instructions can be found (here)
 
 Go to: http://[THE RPI IP ADDRESS]:1880 from a computer on the same network as your Pi.
+From the menu on the upper right, select Projects->New
 
-(https clone screenshots here)
+![f7b03f4b4ed1f89baf2eb3ea19e99f84.png](f7b03f4b4ed1f89baf2eb3ea19e99f84.png)
 
+in the box that appears, select "Clone Repository" and enter this repository's URL in the field "Git repository URL"
 
+![3568855a5679f829cf8ce95ac6ddd229.png](3568855a5679f829cf8ce95ac6ddd229.png)
+[The repository URL might have changed by the time you read this :) ]
+
+Enter your github credential as appropriate.
+
+Click "Clone Repository"
 
 Now you should see several flow tabs in your Node-RED app!
 
@@ -166,6 +174,12 @@ Great, the sandbox is installed, now what?
 The sandbox is made up of a few flows, each of which is contained in a tabbed window in the app
 
 Each flow is full of comments explaining what it's for an how to use it, so here's just a summary.
+
+But basically, the idea is that:
+
+SOME of the tabs are for more technical people to do the complicated work of capturing data sent via various communication prototocals, and mapping them to convenient, easy-to-understand, "friendly-named" inputs and outputs. These are the "bridge tabs." Techie folks copy existing templates in these tabs, modifying them to match the identifiers of their specific devices, creating their own friendly-named inputs and outputs
+
+OTHER tabs are for people to play with those named inputs and outputs, connecting them willy-nilly to just see what happens, to quickly create different kinds of interactions, fail, learn, and try again. The main play tab is the "IoT Playground: Message Switchboard," but folks should be encouraged to make their own personal playground tabs into which they can copy inputs and output to play on their own.
 
 ## IoT Playground: Message Switchboard
 This is the fun zone. Most of your users time will be spent in this tab.
@@ -182,18 +196,25 @@ Encourage your users to try stuff out!
 
 FUN TIP: Users should feel free to create NEW tabs, an copy the inputs/outputs they care about to them, so they can play in a somewhat cleaner space. But also there's nothing wrong with makeing a mess!
 
-## BLE in with Pareto Anywhere
-This tab leverages the power of Pareto Anywhere, to access the data coming out of BLE devices and convert them to friendly-named inputs for the Switchboard
+## BLE In Bridge with Pareto Anywhere
+This tab leverages the power of Pareto Anywhere, to access the data coming out of BLE devices and convert them to friendly-named inputs for the Switchboard.
+
+You'll notice that the sample flows in this tab connect to a node named "saveToCaputredBLE." What this does it record every device that you're actively doing something with. Another Pareto node captures ALL the devices pareto sees. This empowers a page in the UI to show a display of all the devices you currently ARE and ARE NOT doing anything with, along with all the properties that are available to use. This makes it easy to find new devices and add them to the BLE In table with friendly names.
 
 ## MicroBit Bridge
 This tab creates a bridge with Micro:bits devices (https://microbit.org/), which are popular microcontrollers for teaching interactive programming.
 
 For this tab to work, you need to have a dedicated micro:bit device attached via USB cable to the computer running Node-RED.
 
-TBD: For full setup instructions, see  (add microbits bridge instructions into a separate MD doc)
+TBD: For full setup instructions, see  [MicroBitsBridgeInstall.md](MicroBitsBridgeInstall.md)
 
 ## OSC Bridge
 This tab is where you map OSC-based inputs and outputs to named inputs and outputs that can be used in the Switchboard.
+
+## BLE Out Bridge
+This tab is for connecting named outputs to SEND data to BLE devices, via EspruinoHub, an application that maps mqtt messages to BLE messages. 
+
+Due to how BLE software accesses the BLE hardware on RPIs, EspruinoHub needs to run on a separate Raspberry Pi (or maybe you could use an additional Bluetooth dongle?). Instructions on how to install that are at [BLEOutBridgeInstall.md](BLEOutBridgeInstall.md).
 
 ## UI Generator
 Turn inputs into a cool dashboard, and keep track of all the devices you've got in the system
