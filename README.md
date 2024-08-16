@@ -3,20 +3,26 @@ Node-RED flows for an Internet-of-Things sandbox
 
 This repo is intended to be cloned from within a Node-RED installation that has the projects feature enabled.
 
-With these Node-RED flows installed, you can create an environment that makes it easy for people to collaboratively interconnect inputs and outputs of diverse devices, leveraging the power of Paretoanywhere and the Internet of Things.
+With these Node-RED flows installed, you can create an environment that makes it easy for people to collaboratively 
+interconnect inputs and outputs of diverse devices, leveraging the power of Pareto Anywhere and the Internet of Things.
 
-It's expecially useful in an educational environment where you want students to be able to play with interaction possibilities without having to worry too much about the nuts and bolts of implementation.
+It's expecially useful in an educational environment where you want students to be able to play with interaction possibilities 
+without having to worry too much about the nuts and bolts of implementation.
 
 
 # Installation
 
-## Set up a Raspberry Pi or similar computer with Node-RED and ParetoAnywhere
+## Set up a Raspberry Pi or similar computer with Node-RED and Pareto Anywhere
 
 Using Raspberry Pi Imager, create an image of:
-- Raspbian Lite, with ssh enabled
-(more thorough instructions are at this link)
 
-once you've logged into your Pi, run:
+__Raspbian Lite, with ssh enabled__
+
+
+(Download Raspberry Pi Imageer and check out more thorough instructions for use at
+this link: https://www.raspberrypi.com/software/)
+
+Once you've logged into your Pi, run:
 
 `ifconfig`
 
@@ -35,7 +41,7 @@ sudo apt -y update
 sudo apt -y install nodejs build-essential
 ```
 
-Then go install ParetoAnywhere, using these instructions:
+Then go install Pareto Anywhere, using these instructions:
 https://reelyactive.github.io/diy/pareto-anywhere-pi/  
 
 The above link is the most up-to-date installation instructions, 
@@ -149,6 +155,8 @@ Go to: http://[THE RPI IP ADDRESS]:1880 from a computer on the same network as y
 
 (https clone screenshots here)
 
+
+
 Now you should see several flow tabs in your Node-RED app!
 
 # Now that it's Installed
@@ -174,21 +182,26 @@ Encourage your users to try stuff out!
 
 FUN TIP: Users should feel free to create NEW tabs, an copy the inputs/outputs they care about to them, so they can play in a somewhat cleaner space. But also there's nothing wrong with makeing a mess!
 
-## BLE in with ParetoAnywhere
-This tab leverages the power of ParetoAnywhere, to access the data coming out of BLE devices and convert them to friendly-named inputs for the Switchboard
-
+## BLE in with Pareto Anywhere
+This tab leverages the power of Pareto Anywhere, to access the data coming out of BLE devices and convert them to friendly-named inputs for the Switchboard
 
 ## MicroBit Bridge
-Does the same thing as the ParetoAnywhere tab, but for MicroBits radio signals. 
-(add microbits bridge instructions)
+This tab creates a bridge with Micro:bits devices (https://microbit.org/), which are popular microcontrollers for teaching interactive programming.
+
+For this tab to work, you need to have a dedicated micro:bit device attached via USB cable to the computer running Node-RED.
+
+TBD: For full setup instructions, see  (add microbits bridge instructions into a separate MD doc)
 
 ## OSC Bridge
-Does the same thing for OSC-based messages
+This tab is where you map OSC-based inputs and outputs to named inputs and outputs that can be used in the Switchboard.
 
 ## UI Generator
 Turn inputs into a cool dashboard, and keep track of all the devices you've got in the system
+Named inputs from the switchboard can be copied to this tab, then attached to UI elements that can be viewed at 
+http://[THE RPI IP ADDRESS]:1880/ui/
 
 ## Graveyard
-Things I didn't want to delete, but aren't using
+I use this tab as a scratchpad, and a place to put little string of nodes that I don't want to delete, but aren't using either.
+
 
 
