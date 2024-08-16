@@ -147,8 +147,48 @@ If you are a member of this project and want to commit back to the repo, or if y
 
 Go to: http://[THE RPI IP ADDRESS]:1880 from a computer on the same network as your Pi.
 
+(https clone screenshots here)
+
+Now you should see several flow tabs in your Node-RED app!
+
+# Now that it's Installed
+
+Great, the sandbox is installed, now what?
+
+The sandbox is made up of a few flows, each of which is contained in a tabbed window in the app
+
+Each flow is full of comments explaining what it's for an how to use it, so here's just a summary.
+
+## IoT Playground: Message Switchboard
+This is the fun zone. Most of your users time will be spent in this tab.
+
+On the lefthand side is the friendly-named inputs from all your defined devices that have outputs.
+
+On the righthand side is the friendly-named outputs TO all your defined devices that have inputs
+
+Fun stuff happens when you connect outputs from devices to inputs from other devices.
+
+Learning happens when you use other node objects to modify the outputs to make even more insteresting things happen in the outputs.
+
+Encourage your users to try stuff out!
+
+FUN TIP: Users should feel free to create NEW tabs, an copy the inputs/outputs they care about to them, so they can play in a somewhat cleaner space. But also there's nothing wrong with makeing a mess!
+
+## BLE in with ParetoAnywhere
+This tab leverages the power of ParetoAnywhere, to access the data coming out of BLE devices and convert them to friendly-named inputs for the Switchboard
 
 
+## MicroBit Bridge
+Does the same thing as the ParetoAnywhere tab, but for MicroBits radio signals. 
+(add microbits bridge instructions)
 
+## OSC Bridge
+Does the same thing for OSC-based messages
+
+## UI Generator
+Turn inputs into a cool dashboard, and keep track of all the devices you've got in the system
+
+## Graveyard
+Things I didn't want to delete, but aren't using
 
 
