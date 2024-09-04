@@ -1055,7 +1055,7 @@
         "id": "17f0db515a671710",
         "type": "link in",
         "z": "9529f2fd9052e78b",
-        "name": "link in 5",
+        "name": "/microbit/devB/buttonA",
         "links": [
             "b03c01d92337c309"
         ],
@@ -1091,7 +1091,7 @@
         "id": "90a54b05c828e06a",
         "type": "link in",
         "z": "9529f2fd9052e78b",
-        "name": "link in 6",
+        "name": "/microbit/devB/buttonB",
         "links": [
             "97829c983b8d5c9c"
         ],
@@ -1194,6 +1194,16 @@
         "info": "",
         "x": 880,
         "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "07259254e93104b8",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "or make a new tab and copy inputs/outputs you need to there.",
+        "info": "",
+        "x": 930,
+        "y": 480,
         "wires": []
     },
     {
