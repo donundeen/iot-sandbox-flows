@@ -1067,7 +1067,9 @@
         "x": 375,
         "y": 1880,
         "wires": [
-            []
+            [
+                "09b2079e89159bca"
+            ]
         ]
     },
     {
@@ -1102,6 +1104,56 @@
         "x": 1350,
         "y": 2040,
         "wires": []
+    },
+    {
+        "id": "d5e587b6dc254acf",
+        "type": "link out",
+        "z": "9529f2fd9052e78b",
+        "name": "Send Motor to position 0",
+        "mode": "link",
+        "links": [
+            "01a91a77a4f59c2b"
+        ],
+        "x": 1205,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "60647e6798fe842a",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Send Servo to position at number in payload",
+        "info": "",
+        "x": 1410,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "09b2079e89159bca",
+        "type": "change",
+        "z": "9529f2fd9052e78b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "45",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 2000,
+        "wires": [
+            [
+                "d5e587b6dc254acf"
+            ]
+        ]
     },
     {
         "id": "c4d470ef752fbe8f",
@@ -3980,7 +4032,8 @@
         "z": "63e4ca87ec15e7b6",
         "name": "MBOut",
         "links": [
-            "347382f86489e62c"
+            "347382f86489e62c",
+            "3c7bd074ceefd50e"
         ],
         "x": 485,
         "y": 360,
@@ -4011,6 +4064,92 @@
         "info": "",
         "x": 860,
         "y": 880,
+        "wires": []
+    },
+    {
+        "id": "01a91a77a4f59c2b",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorToN",
+        "links": [
+            "d5e587b6dc254acf"
+        ],
+        "x": 255,
+        "y": 980,
+        "wires": [
+            [
+                "854358c79bc9a242"
+            ]
+        ]
+    },
+    {
+        "id": "05d910ea51953aa4",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorToN",
+        "info": "",
+        "x": 120,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "854358c79bc9a242",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "aM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 980,
+        "wires": [
+            [
+                "3c7bd074ceefd50e"
+            ]
+        ]
+    },
+    {
+        "id": "3c7bd074ceefd50e",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 765,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "7f138da40490fa25",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM:[servo value]",
+        "info": "",
+        "x": 870,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "5faa676988f1a151",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set servo to number value in payload",
+        "info": "",
+        "x": 150,
+        "y": 940,
         "wires": []
     },
     {
