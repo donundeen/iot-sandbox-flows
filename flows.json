@@ -1011,6 +1011,99 @@
         ]
     },
     {
+        "id": "74fde88e8b557db0",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "MicroBits Button Device named \"b\"",
+        "info": "",
+        "x": 200,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "17f0db515a671710",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "link in 5",
+        "links": [
+            "b03c01d92337c309"
+        ],
+        "x": 375,
+        "y": 1820,
+        "wires": [
+            [
+                "84df9701ff1f453c"
+            ]
+        ]
+    },
+    {
+        "id": "2e05219f7227c890",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Button A",
+        "info": "",
+        "x": 280,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "32d8c97058927115",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Button B",
+        "info": "",
+        "x": 280,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "90a54b05c828e06a",
+        "type": "link in",
+        "z": "9529f2fd9052e78b",
+        "name": "link in 6",
+        "links": [
+            "97829c983b8d5c9c"
+        ],
+        "x": 375,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5eaf5c3e3b2e7d4",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "MicroBits Motor Device Driver A",
+        "info": "",
+        "x": 1310,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "84df9701ff1f453c",
+        "type": "link out",
+        "z": "9529f2fd9052e78b",
+        "name": "Send Motor to position 0",
+        "mode": "link",
+        "links": [
+            "8ce3c15689f8ed88"
+        ],
+        "x": 1205,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "6b32856a7224eec7",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Send Motor to position 0",
+        "info": "",
+        "x": 1350,
+        "y": 2040,
+        "wires": []
+    },
+    {
         "id": "c4d470ef752fbe8f",
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
@@ -3720,7 +3813,9 @@
         "z": "63e4ca87ec15e7b6",
         "name": "/microbit/devB/buttonA",
         "mode": "link",
-        "links": [],
+        "links": [
+            "17f0db515a671710"
+        ],
         "x": 705,
         "y": 600,
         "wires": []
@@ -3782,7 +3877,9 @@
         "z": "63e4ca87ec15e7b6",
         "name": "/microbit/devB/buttonB",
         "mode": "link",
-        "links": [],
+        "links": [
+            "90a54b05c828e06a"
+        ],
         "x": 705,
         "y": 660,
         "wires": []
@@ -3822,7 +3919,9 @@
         "type": "link in",
         "z": "63e4ca87ec15e7b6",
         "name": "/microbit/devA/motorTo0",
-        "links": [],
+        "links": [
+            "84df9701ff1f453c"
+        ],
         "x": 255,
         "y": 880,
         "wires": [
