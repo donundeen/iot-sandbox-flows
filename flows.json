@@ -1078,8 +1078,8 @@
         "z": "9529f2fd9052e78b",
         "name": "MicroBits Motor Device Driver A",
         "info": "",
-        "x": 1310,
-        "y": 1980,
+        "x": 1450,
+        "y": 2020,
         "wires": []
     },
     {
@@ -1091,8 +1091,8 @@
         "links": [
             "8ce3c15689f8ed88"
         ],
-        "x": 1205,
-        "y": 2040,
+        "x": 1345,
+        "y": 2080,
         "wires": []
     },
     {
@@ -1101,8 +1101,8 @@
         "z": "9529f2fd9052e78b",
         "name": "Send Motor to position 0",
         "info": "",
-        "x": 1350,
-        "y": 2040,
+        "x": 1490,
+        "y": 2080,
         "wires": []
     },
     {
@@ -1114,8 +1114,8 @@
         "links": [
             "01a91a77a4f59c2b"
         ],
-        "x": 1205,
-        "y": 2100,
+        "x": 1345,
+        "y": 2140,
         "wires": []
     },
     {
@@ -1124,8 +1124,8 @@
         "z": "9529f2fd9052e78b",
         "name": "Send Servo to position at number in payload",
         "info": "",
-        "x": 1410,
-        "y": 2100,
+        "x": 1550,
+        "y": 2140,
         "wires": []
     },
     {
@@ -1147,13 +1147,23 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 2000,
+        "x": 880,
+        "y": 2020,
         "wires": [
             [
                 "d5e587b6dc254acf"
             ]
         ]
+    },
+    {
+        "id": "38331b856f0d6a88",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "set number to 45",
+        "info": "",
+        "x": 880,
+        "y": 2060,
+        "wires": []
     },
     {
         "id": "c4d470ef752fbe8f",
