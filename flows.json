@@ -3670,54 +3670,6 @@
         ]
     },
     {
-        "id": "ce86589b352c2c71",
-        "type": "udp out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bcast7777",
-        "addr": "192.168.73.88",
-        "iface": "",
-        "port": "7777",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 990,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "5ff5a5cb5150699d",
-        "type": "osc",
-        "z": "63e4ca87ec15e7b6",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 930,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dd6a7c5fd2bc57a1",
-        "type": "udp in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "",
-        "iface": "",
-        "port": "7778",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "buffer",
-        "x": 800,
-        "y": 200,
-        "wires": [
-            [
-                "5ff5a5cb5150699d"
-            ]
-        ]
-    },
-    {
         "id": "02190d58f95b35a6",
         "type": "serial out",
         "z": "63e4ca87ec15e7b6",
@@ -3824,31 +3776,6 @@
         "wires": []
     },
     {
-        "id": "8273d38b742461d1",
-        "type": "osc",
-        "z": "63e4ca87ec15e7b6",
-        "name": "oscout",
-        "path": "",
-        "metadata": true,
-        "x": 790,
-        "y": 160,
-        "wires": [
-            [
-                "ce86589b352c2c71"
-            ]
-        ]
-    },
-    {
-        "id": "859178044625fb56",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "we had been sending this out over OSC, but we're instead going to write to a named output. But leavign this here as a memorial...",
-        "info": "",
-        "x": 1180,
-        "y": 100,
-        "wires": []
-    },
-    {
         "id": "978f6656300f444c",
         "type": "switch",
         "z": "63e4ca87ec15e7b6",
@@ -3947,7 +3874,8 @@
         "y": 660,
         "wires": [
             [
-                "97829c983b8d5c9c"
+                "97829c983b8d5c9c",
+                "72b14565ea3ed5b9"
             ]
         ]
     },
@@ -4194,6 +4122,22 @@
         "info": "",
         "x": 150,
         "y": 940,
+        "wires": []
+    },
+    {
+        "id": "72b14565ea3ed5b9",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 720,
         "wires": []
     },
     {
