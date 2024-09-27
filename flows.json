@@ -1242,7 +1242,7 @@
         "name": "MicroBits Motor Device Driver A",
         "info": "",
         "x": 1350,
-        "y": 160,
+        "y": 180,
         "wires": []
     },
     {
