@@ -4076,13 +4076,6 @@
                 "pt": "msg",
                 "to": "aM",
                 "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "100",
-                "tot": "str"
             }
         ],
         "action": "",
