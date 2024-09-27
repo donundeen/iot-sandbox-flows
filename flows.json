@@ -1343,6 +1343,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 170,
         "y": 540,
         "wires": [
@@ -1350,7 +1353,8 @@
             [
                 "39714e8ba6c34ecb",
                 "80c61fac6e3bda78"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -1523,6 +1527,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c300000ae8da/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 150,
         "y": 820,
         "wires": [
@@ -1535,7 +1542,8 @@
                 "0272f77e16f24d35",
                 "1690eba349907604",
                 "5f837816a4724060"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -2190,6 +2198,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/ac233faf5c26/2",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 140,
         "y": 1900,
         "wires": [
@@ -2199,7 +2210,8 @@
                 "73889f2195070320",
                 "79fd44a608cf9a6d",
                 "42ad7f68dcca6362"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -2679,6 +2691,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c3000011f741/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 150,
         "y": 2220,
         "wires": [
@@ -2690,7 +2705,8 @@
                 "fb20186e8c681554",
                 "697f0f1377d7c56a",
                 "29a3760223a31313"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -3277,9 +3293,13 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 1330,
         "y": 240,
         "wires": [
+            [],
             [],
             []
         ]
@@ -3319,6 +3339,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c30000131569/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 170,
         "y": 2720,
         "wires": [
@@ -3328,7 +3351,8 @@
                 "f4805199ed3084a3",
                 "2964098162b31f7a",
                 "57466a9df57870f8"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -3591,6 +3615,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 1330,
         "y": 100,
         "wires": [
@@ -3598,7 +3625,8 @@
             [
                 "f885eac3693ca6f6",
                 "a77a28489a869ede"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -6198,12 +6226,16 @@
         "type": "pareto-anywhere-socketio",
         "z": "a3efac045c708839",
         "uri": "http://localhost:3001/devices/c8c8751dd883/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 80,
         "y": 200,
         "wires": [
             [
                 "42afc2b2dd0ad3e2"
             ],
+            [],
             []
         ]
     },
