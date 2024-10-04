@@ -1381,7 +1381,8 @@
         "wires": [
             [
                 "69caa44abe4e4486",
-                "836c963a2acc33a0"
+                "836c963a2acc33a0",
+                "f0098fb51d536ffe"
             ]
         ]
     },
@@ -1421,6 +1422,29 @@
                 "a2912fc6efadc6c8"
             ]
         ]
+    },
+    {
+        "id": "f0098fb51d536ffe",
+        "type": "link out",
+        "z": "12178aa1b34f6c50",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "2a866971bf59b17b"
+        ],
+        "x": 1305,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cffd1376f2071785",
+        "type": "comment",
+        "z": "12178aa1b34f6c50",
+        "name": "microbit b, set string",
+        "info": "",
+        "x": 1450,
+        "y": 580,
+        "wires": []
     },
     {
         "id": "c4d470ef752fbe8f",
@@ -4422,7 +4446,9 @@
         "type": "link in",
         "z": "63e4ca87ec15e7b6",
         "name": "/microbit/devB/string",
-        "links": [],
+        "links": [
+            "f0098fb51d536ffe"
+        ],
         "x": 225,
         "y": 1160,
         "wires": [
