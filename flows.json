@@ -1576,8 +1576,8 @@
         "z": "12178aa1b34f6c50",
         "name": "Rainbow Light display on Device c (1-360)",
         "info": "",
-        "x": 1420,
-        "y": 440,
+        "x": 1400,
+        "y": 420,
         "wires": []
     },
     {
@@ -1609,7 +1609,8 @@
         "y": 420,
         "wires": [
             [
-                "5eec6a6c81aa28f9"
+                "5eec6a6c81aa28f9",
+                "d42777e1bd2011b3"
             ]
         ]
     },
@@ -1626,8 +1627,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 980,
-        "y": 400,
+        "x": 940,
+        "y": 460,
         "wires": []
     },
     {
@@ -4664,7 +4665,7 @@
         "type": "debug",
         "z": "63e4ca87ec15e7b6",
         "name": "debug 48",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
