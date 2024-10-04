@@ -1730,7 +1730,7 @@
         "z": "63e4ca87ec15e7b6",
         "name": "toMicroBit",
         "serial": "4ecaa01218566e73",
-        "x": 810,
+        "x": 1110,
         "y": 360,
         "wires": []
     },
@@ -2412,8 +2412,8 @@
         "y": 1340,
         "wires": [
             [
-                "cc2c46b0b079d8e5",
-                "3d028fe74136545b"
+                "3d028fe74136545b",
+                "8fad014da5310e20"
             ]
         ]
     },
@@ -2470,9 +2470,34 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 980,
-        "y": 420,
+        "x": 1100,
+        "y": 480,
         "wires": []
+    },
+    {
+        "id": "8fad014da5310e20",
+        "type": "delay",
+        "z": "63e4ca87ec15e7b6",
+        "name": "",
+        "pauseType": "queue",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 1300,
+        "wires": [
+            [
+                "cc2c46b0b079d8e5"
+            ]
+        ]
     },
     {
         "id": "c4d470ef752fbe8f",
