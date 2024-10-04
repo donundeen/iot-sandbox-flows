@@ -1447,6 +1447,35 @@
         "wires": []
     },
     {
+        "id": "89a5aa1dd6a0fcbb",
+        "type": "inject",
+        "z": "12178aa1b34f6c50",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "H",
+        "payloadType": "str",
+        "x": 890,
+        "y": 700,
+        "wires": [
+            [
+                "f0098fb51d536ffe"
+            ]
+        ]
+    },
+    {
         "id": "c4d470ef752fbe8f",
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
