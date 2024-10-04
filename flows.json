@@ -1577,7 +1577,7 @@
         "name": "Rainbow Light display on Device c (1-360)",
         "info": "",
         "x": 1420,
-        "y": 420,
+        "y": 440,
         "wires": []
     },
     {
@@ -1653,6 +1653,35 @@
         "payloadType": "num",
         "x": 1070,
         "y": 500,
+        "wires": [
+            [
+                "d42777e1bd2011b3"
+            ]
+        ]
+    },
+    {
+        "id": "ef74cbb733b1fbeb",
+        "type": "inject",
+        "z": "12178aa1b34f6c50",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "50",
+        "payloadType": "num",
+        "x": 1110,
+        "y": 380,
         "wires": [
             [
                 "d42777e1bd2011b3"
@@ -4246,7 +4275,7 @@
         "type": "debug",
         "z": "63e4ca87ec15e7b6",
         "name": "debug 46",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4619,7 +4648,7 @@
         "type": "debug",
         "z": "63e4ca87ec15e7b6",
         "name": "debug 47",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4838,7 +4867,8 @@
         "y": 1340,
         "wires": [
             [
-                "cc2c46b0b079d8e5"
+                "cc2c46b0b079d8e5",
+                "3d028fe74136545b"
             ]
         ]
     },
@@ -4863,6 +4893,23 @@
         "info": "",
         "x": 870,
         "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "3d028fe74136545b",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 53",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1400,
         "wires": []
     },
     {
