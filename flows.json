@@ -1609,7 +1609,6 @@
         "y": 420,
         "wires": [
             [
-                "d42777e1bd2011b3",
                 "5eec6a6c81aa28f9"
             ]
         ]
@@ -1627,9 +1626,38 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1080,
-        "y": 480,
+        "x": 980,
+        "y": 400,
         "wires": []
+    },
+    {
+        "id": "2dc653f31528e52a",
+        "type": "inject",
+        "z": "12178aa1b34f6c50",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "200",
+        "payloadType": "num",
+        "x": 1070,
+        "y": 500,
+        "wires": [
+            [
+                "d42777e1bd2011b3"
+            ]
+        ]
     },
     {
         "id": "c4d470ef752fbe8f",
