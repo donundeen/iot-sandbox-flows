@@ -16,17 +16,17 @@
         "env": []
     },
     {
-        "id": "943e204f81529182",
+        "id": "63e4ca87ec15e7b6",
         "type": "tab",
-        "label": "BLE in with Pareto Anywhere",
+        "label": "MicroBit  Bridge",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "63e4ca87ec15e7b6",
+        "id": "943e204f81529182",
         "type": "tab",
-        "label": "MicroBit  Bridge",
+        "label": "BLE in with Pareto Anywhere",
         "disabled": false,
         "info": "",
         "env": []
@@ -1688,6 +1688,773 @@
                 "d42777e1bd2011b3"
             ]
         ]
+    },
+    {
+        "id": "87cef86360be7223",
+        "type": "serial in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "serialp",
+        "serial": "4ecaa01218566e73",
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "832e51e1892d2dee",
+                "1aacdb2450ade9be"
+            ]
+        ]
+    },
+    {
+        "id": "832e51e1892d2dee",
+        "type": "function",
+        "z": "63e4ca87ec15e7b6",
+        "name": "split messsage",
+        "func": "var split = msg.payload.split(\":\");\nreturn {\n    topic: split[0],\n    payload:split[1]\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "8fad38546cb1f16e"
+            ]
+        ]
+    },
+    {
+        "id": "02190d58f95b35a6",
+        "type": "serial out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "toMicroBit",
+        "serial": "4ecaa01218566e73",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a3b3ff78fa377765",
+        "type": "function",
+        "z": "63e4ca87ec15e7b6",
+        "name": "combine messsage",
+        "func": "\nlet topic = msg.topic.replace(/^\\//,\"\");\nreturn {\n    payload:topic+\":\"+msg.payload\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 360,
+        "wires": [
+            [
+                "02190d58f95b35a6"
+            ]
+        ]
+    },
+    {
+        "id": "533c9463e67d2fee",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "This flow Runs on the IoT Sandbox",
+        "info": "This Flow translates Microbits Radio messages to/from OSC ",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "230cb2ed91a44c36",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
+        "info": "",
+        "x": 350,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3016901ca21ed23b",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Send named messages over Serial to a dedicated Microbits device attached to this computer, using shortened names",
+        "info": "",
+        "x": 420,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5ac4fb824a5f6e19",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Route the messages with the Message Switchboard!",
+        "info": "",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c899758bf59368aa",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
+        "info": "",
+        "x": 560,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "7f833fcf6c834f1e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "This assumes you have a Micro:Bits attached to the node-red machine with a USB cable.",
+        "info": "",
+        "x": 330,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1aacdb2450ade9be",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 46",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 120,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "978f6656300f444c",
+        "type": "switch",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bA",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "bA",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "b03c01d92337c309"
+            ]
+        ]
+    },
+    {
+        "id": "8fad38546cb1f16e",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "MBIn",
+        "mode": "link",
+        "links": [
+            "365e9c3bca661005",
+            "51f30252596f0e24",
+            "aefc332bfcba42af"
+        ],
+        "x": 385,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "365e9c3bca661005",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "link in 3",
+        "links": [
+            "8fad38546cb1f16e"
+        ],
+        "x": 55,
+        "y": 600,
+        "wires": [
+            [
+                "978f6656300f444c"
+            ]
+        ]
+    },
+    {
+        "id": "b03c01d92337c309",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/buttonA",
+        "mode": "link",
+        "links": [
+            "17f0db515a671710",
+            "7a5a2b5f83d3aac8"
+        ],
+        "x": 705,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ba812f4f63301731",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/buttonA",
+        "info": "",
+        "x": 820,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "56d721487ea02c9d",
+        "type": "switch",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bB",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "bB",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 150,
+        "y": 660,
+        "wires": [
+            [
+                "97829c983b8d5c9c"
+            ]
+        ]
+    },
+    {
+        "id": "51f30252596f0e24",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "link in 4",
+        "links": [
+            "8fad38546cb1f16e"
+        ],
+        "x": 55,
+        "y": 660,
+        "wires": [
+            [
+                "56d721487ea02c9d"
+            ]
+        ]
+    },
+    {
+        "id": "97829c983b8d5c9c",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/buttonB",
+        "mode": "link",
+        "links": [
+            "90a54b05c828e06a",
+            "b9e26d1818337fa4"
+        ],
+        "x": 705,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d4d9d20659d9fcc0",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/buttonB",
+        "info": "",
+        "x": 820,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d5f9228ff1e1315b",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Incoming MicroBits messages",
+        "info": "",
+        "x": 160,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9dee78efcc3c53e0",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "outgoing MicroBits messages",
+        "info": "",
+        "x": 160,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "8ce3c15689f8ed88",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorTo0",
+        "links": [
+            "84df9701ff1f453c",
+            "b054f131ee47e020"
+        ],
+        "x": 255,
+        "y": 880,
+        "wires": [
+            [
+                "030eb58da2a2d3f9"
+            ]
+        ]
+    },
+    {
+        "id": "0ab1b4bb5ec6e55d",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorTo0",
+        "info": "",
+        "x": 110,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "030eb58da2a2d3f9",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "topic to aM and payload to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "aM",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 880,
+        "wires": [
+            [
+                "347382f86489e62c",
+                "72b14565ea3ed5b9"
+            ]
+        ]
+    },
+    {
+        "id": "5965d310a479781d",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "MBOut",
+        "links": [
+            "347382f86489e62c",
+            "3c7bd074ceefd50e",
+            "710a1e1165a15f3f",
+            "cc2c46b0b079d8e5"
+        ],
+        "x": 485,
+        "y": 360,
+        "wires": [
+            [
+                "a3b3ff78fa377765"
+            ]
+        ]
+    },
+    {
+        "id": "347382f86489e62c",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 755,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "7da939e9aad55c4f",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM:[servo value]",
+        "info": "",
+        "x": 860,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "01a91a77a4f59c2b",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorToN",
+        "links": [
+            "d5e587b6dc254acf",
+            "a2912fc6efadc6c8"
+        ],
+        "x": 255,
+        "y": 980,
+        "wires": [
+            [
+                "854358c79bc9a242"
+            ]
+        ]
+    },
+    {
+        "id": "05d910ea51953aa4",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devA/motorToN",
+        "info": "",
+        "x": 120,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "854358c79bc9a242",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set topic to aM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "aM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 980,
+        "wires": [
+            [
+                "3c7bd074ceefd50e",
+                "beb49f33a2324973"
+            ]
+        ]
+    },
+    {
+        "id": "3c7bd074ceefd50e",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 765,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "7f138da40490fa25",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM:[servo value]",
+        "info": "",
+        "x": 870,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "5faa676988f1a151",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set servo to number value in payload",
+        "info": "",
+        "x": 150,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "72b14565ea3ed5b9",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 47",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "beb49f33a2324973",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 48",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "39c2f7c0c3dfcef9",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "display Text on Device b",
+        "info": "",
+        "x": 130,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "2a866971bf59b17b",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/string",
+        "links": [
+            "f0098fb51d536ffe",
+            "9d95e3c44a39e948"
+        ],
+        "x": 225,
+        "y": 1160,
+        "wires": [
+            [
+                "19dcc4822ba96d81"
+            ]
+        ]
+    },
+    {
+        "id": "19dcc4822ba96d81",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set topic to bS",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bS",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 1160,
+        "wires": [
+            [
+                "710a1e1165a15f3f"
+            ]
+        ]
+    },
+    {
+        "id": "710a1e1165a15f3f",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 775,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "de5c240945023e48",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bS:[string text]",
+        "info": "",
+        "x": 880,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "cc270a8d1a7a7847",
+        "type": "switch",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bL",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "bL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "2e687e2ce756dcb8"
+            ]
+        ]
+    },
+    {
+        "id": "aefc332bfcba42af",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "link in 5",
+        "links": [
+            "8fad38546cb1f16e"
+        ],
+        "x": 55,
+        "y": 720,
+        "wires": [
+            [
+                "cc270a8d1a7a7847"
+            ]
+        ]
+    },
+    {
+        "id": "2e687e2ce756dcb8",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/soundLevel",
+        "mode": "link",
+        "links": [
+            "56f2f467ade51184",
+            "ca56d3e8aab9210f"
+        ],
+        "x": 705,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7f2616408368c947",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/soundLevel",
+        "info": "",
+        "x": 830,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "1350ca2cce0505a1",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Rainbow Light display on Device c (1-360)",
+        "info": "",
+        "x": 200,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "782a2d5a7c7ede40",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devC/rainbow",
+        "links": [
+            "db981f93b151a7ef",
+            "d42777e1bd2011b3"
+        ],
+        "x": 205,
+        "y": 1340,
+        "wires": [
+            [
+                "6dcdc8f9f41b75be"
+            ]
+        ]
+    },
+    {
+        "id": "6dcdc8f9f41b75be",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set topic to cR",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "cR",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1340,
+        "wires": [
+            [
+                "cc2c46b0b079d8e5",
+                "3d028fe74136545b"
+            ]
+        ]
+    },
+    {
+        "id": "cc2c46b0b079d8e5",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 775,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "9dab1bbf317bdb0e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "cR:[int 1-360]",
+        "info": "",
+        "x": 870,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "3d028fe74136545b",
+        "type": "debug",
+        "z": "63e4ca87ec15e7b6",
+        "name": "debug 53",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1400,
+        "wires": []
     },
     {
         "id": "c4d470ef752fbe8f",
@@ -4144,773 +4911,6 @@
         "info": "",
         "x": 420,
         "y": 220,
-        "wires": []
-    },
-    {
-        "id": "87cef86360be7223",
-        "type": "serial in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "serialp",
-        "serial": "4ecaa01218566e73",
-        "x": 70,
-        "y": 200,
-        "wires": [
-            [
-                "832e51e1892d2dee",
-                "1aacdb2450ade9be"
-            ]
-        ]
-    },
-    {
-        "id": "832e51e1892d2dee",
-        "type": "function",
-        "z": "63e4ca87ec15e7b6",
-        "name": "split messsage",
-        "func": "var split = msg.payload.split(\":\");\nreturn {\n    topic: split[0],\n    payload:split[1]\n};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 240,
-        "y": 200,
-        "wires": [
-            [
-                "8fad38546cb1f16e"
-            ]
-        ]
-    },
-    {
-        "id": "02190d58f95b35a6",
-        "type": "serial out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "toMicroBit",
-        "serial": "4ecaa01218566e73",
-        "x": 810,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "a3b3ff78fa377765",
-        "type": "function",
-        "z": "63e4ca87ec15e7b6",
-        "name": "combine messsage",
-        "func": "\nlet topic = msg.topic.replace(/^\\//,\"\");\nreturn {\n    payload:topic+\":\"+msg.payload\n};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 360,
-        "wires": [
-            [
-                "02190d58f95b35a6"
-            ]
-        ]
-    },
-    {
-        "id": "533c9463e67d2fee",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "This flow Runs on the IoT Sandbox",
-        "info": "This Flow translates Microbits Radio messages to/from OSC ",
-        "x": 160,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "230cb2ed91a44c36",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Get MicroBit messages over serial from a dedicated Microbits device attached to this computer",
-        "info": "",
-        "x": 350,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "3016901ca21ed23b",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Send named messages over Serial to a dedicated Microbits device attached to this computer, using shortened names",
-        "info": "",
-        "x": 420,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "5ac4fb824a5f6e19",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Route the messages with the Message Switchboard!",
-        "info": "",
-        "x": 590,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "c899758bf59368aa",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "TODO: make named linkOut and LinkIn nodes, based on actual microbit IDs, to use in the Message Switchboard",
-        "info": "",
-        "x": 560,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "7f833fcf6c834f1e",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "This assumes you have a Micro:Bits attached to the node-red machine with a USB cable.",
-        "info": "",
-        "x": 330,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "1aacdb2450ade9be",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 46",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 120,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "978f6656300f444c",
-        "type": "switch",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bA",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "bA",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 150,
-        "y": 600,
-        "wires": [
-            [
-                "b03c01d92337c309"
-            ]
-        ]
-    },
-    {
-        "id": "8fad38546cb1f16e",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "MBIn",
-        "mode": "link",
-        "links": [
-            "365e9c3bca661005",
-            "51f30252596f0e24",
-            "aefc332bfcba42af"
-        ],
-        "x": 385,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "365e9c3bca661005",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "link in 3",
-        "links": [
-            "8fad38546cb1f16e"
-        ],
-        "x": 55,
-        "y": 600,
-        "wires": [
-            [
-                "978f6656300f444c"
-            ]
-        ]
-    },
-    {
-        "id": "b03c01d92337c309",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/buttonA",
-        "mode": "link",
-        "links": [
-            "17f0db515a671710",
-            "7a5a2b5f83d3aac8"
-        ],
-        "x": 705,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "ba812f4f63301731",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/buttonA",
-        "info": "",
-        "x": 820,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "56d721487ea02c9d",
-        "type": "switch",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bB",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "bB",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 150,
-        "y": 660,
-        "wires": [
-            [
-                "97829c983b8d5c9c"
-            ]
-        ]
-    },
-    {
-        "id": "51f30252596f0e24",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "link in 4",
-        "links": [
-            "8fad38546cb1f16e"
-        ],
-        "x": 55,
-        "y": 660,
-        "wires": [
-            [
-                "56d721487ea02c9d"
-            ]
-        ]
-    },
-    {
-        "id": "97829c983b8d5c9c",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/buttonB",
-        "mode": "link",
-        "links": [
-            "90a54b05c828e06a",
-            "b9e26d1818337fa4"
-        ],
-        "x": 705,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "d4d9d20659d9fcc0",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/buttonB",
-        "info": "",
-        "x": 820,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "d5f9228ff1e1315b",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Incoming MicroBits messages",
-        "info": "",
-        "x": 160,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "9dee78efcc3c53e0",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "outgoing MicroBits messages",
-        "info": "",
-        "x": 160,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "8ce3c15689f8ed88",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devA/motorTo0",
-        "links": [
-            "84df9701ff1f453c",
-            "b054f131ee47e020"
-        ],
-        "x": 255,
-        "y": 880,
-        "wires": [
-            [
-                "030eb58da2a2d3f9"
-            ]
-        ]
-    },
-    {
-        "id": "0ab1b4bb5ec6e55d",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devA/motorTo0",
-        "info": "",
-        "x": 110,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "030eb58da2a2d3f9",
-        "type": "change",
-        "z": "63e4ca87ec15e7b6",
-        "name": "topic to aM and payload to 0",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "aM",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 420,
-        "y": 880,
-        "wires": [
-            [
-                "347382f86489e62c",
-                "72b14565ea3ed5b9"
-            ]
-        ]
-    },
-    {
-        "id": "5965d310a479781d",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "MBOut",
-        "links": [
-            "347382f86489e62c",
-            "3c7bd074ceefd50e",
-            "710a1e1165a15f3f",
-            "cc2c46b0b079d8e5"
-        ],
-        "x": 485,
-        "y": 360,
-        "wires": [
-            [
-                "a3b3ff78fa377765"
-            ]
-        ]
-    },
-    {
-        "id": "347382f86489e62c",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM",
-        "mode": "link",
-        "links": [
-            "5965d310a479781d"
-        ],
-        "x": 755,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "7da939e9aad55c4f",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM:[servo value]",
-        "info": "",
-        "x": 860,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "01a91a77a4f59c2b",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devA/motorToN",
-        "links": [
-            "d5e587b6dc254acf",
-            "a2912fc6efadc6c8"
-        ],
-        "x": 255,
-        "y": 980,
-        "wires": [
-            [
-                "854358c79bc9a242"
-            ]
-        ]
-    },
-    {
-        "id": "05d910ea51953aa4",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devA/motorToN",
-        "info": "",
-        "x": 120,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "854358c79bc9a242",
-        "type": "change",
-        "z": "63e4ca87ec15e7b6",
-        "name": "set topic to aM",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "aM",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 980,
-        "wires": [
-            [
-                "3c7bd074ceefd50e",
-                "beb49f33a2324973"
-            ]
-        ]
-    },
-    {
-        "id": "3c7bd074ceefd50e",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM",
-        "mode": "link",
-        "links": [
-            "5965d310a479781d"
-        ],
-        "x": 765,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "7f138da40490fa25",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM:[servo value]",
-        "info": "",
-        "x": 870,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "5faa676988f1a151",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "set servo to number value in payload",
-        "info": "",
-        "x": 150,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "72b14565ea3ed5b9",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 47",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "beb49f33a2324973",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 48",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 1020,
-        "wires": []
-    },
-    {
-        "id": "39c2f7c0c3dfcef9",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "display Text on Device b",
-        "info": "",
-        "x": 130,
-        "y": 1100,
-        "wires": []
-    },
-    {
-        "id": "2a866971bf59b17b",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/string",
-        "links": [
-            "f0098fb51d536ffe",
-            "9d95e3c44a39e948"
-        ],
-        "x": 225,
-        "y": 1160,
-        "wires": [
-            [
-                "19dcc4822ba96d81"
-            ]
-        ]
-    },
-    {
-        "id": "19dcc4822ba96d81",
-        "type": "change",
-        "z": "63e4ca87ec15e7b6",
-        "name": "set topic to bS",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "bS",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 1160,
-        "wires": [
-            [
-                "710a1e1165a15f3f"
-            ]
-        ]
-    },
-    {
-        "id": "710a1e1165a15f3f",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM",
-        "mode": "link",
-        "links": [
-            "5965d310a479781d"
-        ],
-        "x": 775,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "de5c240945023e48",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bS:[string text]",
-        "info": "",
-        "x": 880,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "cc270a8d1a7a7847",
-        "type": "switch",
-        "z": "63e4ca87ec15e7b6",
-        "name": "bL",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "bL",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 150,
-        "y": 720,
-        "wires": [
-            [
-                "2e687e2ce756dcb8"
-            ]
-        ]
-    },
-    {
-        "id": "aefc332bfcba42af",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "link in 5",
-        "links": [
-            "8fad38546cb1f16e"
-        ],
-        "x": 55,
-        "y": 720,
-        "wires": [
-            [
-                "cc270a8d1a7a7847"
-            ]
-        ]
-    },
-    {
-        "id": "2e687e2ce756dcb8",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/soundLevel",
-        "mode": "link",
-        "links": [
-            "56f2f467ade51184",
-            "ca56d3e8aab9210f"
-        ],
-        "x": 705,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "7f2616408368c947",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devB/soundLevel",
-        "info": "",
-        "x": 830,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "1350ca2cce0505a1",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "Rainbow Light display on Device c (1-360)",
-        "info": "",
-        "x": 200,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "782a2d5a7c7ede40",
-        "type": "link in",
-        "z": "63e4ca87ec15e7b6",
-        "name": "/microbit/devC/rainbow",
-        "links": [
-            "db981f93b151a7ef",
-            "d42777e1bd2011b3"
-        ],
-        "x": 205,
-        "y": 1340,
-        "wires": [
-            [
-                "6dcdc8f9f41b75be"
-            ]
-        ]
-    },
-    {
-        "id": "6dcdc8f9f41b75be",
-        "type": "change",
-        "z": "63e4ca87ec15e7b6",
-        "name": "set topic to cR",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "cR",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 1340,
-        "wires": [
-            [
-                "cc2c46b0b079d8e5",
-                "3d028fe74136545b"
-            ]
-        ]
-    },
-    {
-        "id": "cc2c46b0b079d8e5",
-        "type": "link out",
-        "z": "63e4ca87ec15e7b6",
-        "name": "aM",
-        "mode": "link",
-        "links": [
-            "5965d310a479781d"
-        ],
-        "x": 775,
-        "y": 1340,
-        "wires": []
-    },
-    {
-        "id": "9dab1bbf317bdb0e",
-        "type": "comment",
-        "z": "63e4ca87ec15e7b6",
-        "name": "cR:[int 1-360]",
-        "info": "",
-        "x": 870,
-        "y": 1340,
-        "wires": []
-    },
-    {
-        "id": "3d028fe74136545b",
-        "type": "debug",
-        "z": "63e4ca87ec15e7b6",
-        "name": "debug 53",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 560,
-        "y": 1400,
         "wires": []
     },
     {
