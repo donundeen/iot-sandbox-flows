@@ -1022,7 +1022,9 @@
         "x": 375,
         "y": 1660,
         "wires": [
-            []
+            [
+                "285283ef3dcfe46f"
+            ]
         ]
     },
     {
@@ -1171,6 +1173,23 @@
         "info": "",
         "x": 930,
         "y": 480,
+        "wires": []
+    },
+    {
+        "id": "285283ef3dcfe46f",
+        "type": "debug",
+        "z": "9529f2fd9052e78b",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 540,
+        "y": 1660,
         "wires": []
     },
     {
