@@ -1602,7 +1602,7 @@
         "minout": "0",
         "maxout": "360",
         "action": "scale",
-        "round": false,
+        "round": true,
         "property": "payload",
         "name": "",
         "x": 820,
