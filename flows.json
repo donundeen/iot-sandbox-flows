@@ -1559,7 +1559,7 @@
         "z": "12178aa1b34f6c50",
         "name": "debug 51",
         "active": true,
-        "tosidebar": true,
+        "tosidebar": false,
         "console": false,
         "tostatus": true,
         "complete": "payload",
@@ -1609,9 +1609,27 @@
         "y": 420,
         "wires": [
             [
-                "d42777e1bd2011b3"
+                "d42777e1bd2011b3",
+                "5eec6a6c81aa28f9"
             ]
         ]
+    },
+    {
+        "id": "5eec6a6c81aa28f9",
+        "type": "debug",
+        "z": "12178aa1b34f6c50",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 480,
+        "wires": []
     },
     {
         "id": "c4d470ef752fbe8f",
