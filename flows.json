@@ -1189,7 +1189,7 @@
         "z": "9529f2fd9052e78b",
         "name": "MicroBits Device B Button Sender and Display",
         "info": "",
-        "x": 1560,
+        "x": 1580,
         "y": 880,
         "wires": []
     },
@@ -1216,6 +1216,62 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "431e5bebf6b9c0ac",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Microbits Cevice C 10 light strip",
+        "info": "",
+        "x": 1530,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "8349fe7b37b2d055",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Rainbow Light display on Device c (1-360)",
+        "info": "",
+        "x": 1680,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "db981f93b151a7ef",
+        "type": "link out",
+        "z": "9529f2fd9052e78b",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "782a2d5a7c7ede40"
+        ],
+        "x": 1465,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "9d95e3c44a39e948",
+        "type": "link out",
+        "z": "9529f2fd9052e78b",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "2a866971bf59b17b"
+        ],
+        "x": 1475,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d53293897732bddc",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "Device B Show String",
+        "info": "",
+        "x": 1620,
+        "y": 940,
+        "wires": []
     },
     {
         "id": "76042f096f9c1e95",
@@ -1492,7 +1548,8 @@
         "y": 380,
         "wires": [
             [
-                "dd8e8df5d0c569f3"
+                "dd8e8df5d0c569f3",
+                "08e5d8b8eb75a17f"
             ]
         ]
     },
@@ -1512,6 +1569,49 @@
         "x": 460,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "a10adcef4be269ad",
+        "type": "comment",
+        "z": "12178aa1b34f6c50",
+        "name": "Rainbow Light display on Device c (1-360)",
+        "info": "",
+        "x": 1420,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d42777e1bd2011b3",
+        "type": "link out",
+        "z": "12178aa1b34f6c50",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "782a2d5a7c7ede40"
+        ],
+        "x": 1205,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "08e5d8b8eb75a17f",
+        "type": "range",
+        "z": "12178aa1b34f6c50",
+        "minin": "0",
+        "maxin": "255",
+        "minout": "0",
+        "maxout": "360",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 820,
+        "y": 420,
+        "wires": [
+            [
+                "d42777e1bd2011b3"
+            ]
+        ]
     },
     {
         "id": "c4d470ef752fbe8f",
@@ -4346,7 +4446,8 @@
         "links": [
             "347382f86489e62c",
             "3c7bd074ceefd50e",
-            "710a1e1165a15f3f"
+            "710a1e1165a15f3f",
+            "cc2c46b0b079d8e5"
         ],
         "x": 485,
         "y": 360,
@@ -4515,7 +4616,8 @@
         "z": "63e4ca87ec15e7b6",
         "name": "/microbit/devB/string",
         "links": [
-            "f0098fb51d536ffe"
+            "f0098fb51d536ffe",
+            "9d95e3c44a39e948"
         ],
         "x": 225,
         "y": 1160,
@@ -4638,6 +4740,83 @@
         "info": "",
         "x": 830,
         "y": 720,
+        "wires": []
+    },
+    {
+        "id": "1350ca2cce0505a1",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "Rainbow Light display on Device c (1-360)",
+        "info": "",
+        "x": 200,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "782a2d5a7c7ede40",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devC/rainbow",
+        "links": [
+            "db981f93b151a7ef",
+            "d42777e1bd2011b3"
+        ],
+        "x": 205,
+        "y": 1340,
+        "wires": [
+            [
+                "6dcdc8f9f41b75be"
+            ]
+        ]
+    },
+    {
+        "id": "6dcdc8f9f41b75be",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set topic to cR",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "cR",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1340,
+        "wires": [
+            [
+                "cc2c46b0b079d8e5"
+            ]
+        ]
+    },
+    {
+        "id": "cc2c46b0b079d8e5",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 775,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "9dab1bbf317bdb0e",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "cR:[int 1-360]",
+        "info": "",
+        "x": 870,
+        "y": 1340,
         "wires": []
     },
     {
