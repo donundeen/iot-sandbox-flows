@@ -2483,7 +2483,7 @@
         "pauseType": "queue",
         "timeout": "5",
         "timeoutUnits": "seconds",
-        "rate": "1",
+        "rate": "4",
         "nbRateUnits": "1",
         "rateUnits": "second",
         "randomFirst": "1",
