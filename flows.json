@@ -1512,8 +1512,8 @@
         "links": [
             "2a866971bf59b17b"
         ],
-        "x": 1305,
-        "y": 580,
+        "x": 1215,
+        "y": 620,
         "wires": []
     },
     {
@@ -1522,8 +1522,8 @@
         "z": "12178aa1b34f6c50",
         "name": "microbit b, set string",
         "info": "",
-        "x": 1450,
-        "y": 580,
+        "x": 1360,
+        "y": 620,
         "wires": []
     },
     {
@@ -1577,7 +1577,7 @@
         "name": "Rainbow Light display on Device c (1-360)",
         "info": "",
         "x": 1400,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -1650,7 +1650,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "200",
+        "payload": "205",
         "payloadType": "num",
         "x": 1070,
         "y": 500,
