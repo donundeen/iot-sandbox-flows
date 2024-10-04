@@ -1184,6 +1184,16 @@
         "wires": []
     },
     {
+        "id": "cfa68042108ca70c",
+        "type": "comment",
+        "z": "9529f2fd9052e78b",
+        "name": "MicroBits Device B Button Sender and Display",
+        "info": "",
+        "x": 1560,
+        "y": 880,
+        "wires": []
+    },
+    {
         "id": "76042f096f9c1e95",
         "type": "comment",
         "z": "12178aa1b34f6c50",
@@ -4205,7 +4215,7 @@
         "id": "030eb58da2a2d3f9",
         "type": "change",
         "z": "63e4ca87ec15e7b6",
-        "name": "",
+        "name": "topic to aM and payload to 0",
         "rules": [
             {
                 "t": "set",
@@ -4227,7 +4237,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
+        "x": 420,
         "y": 880,
         "wires": [
             [
@@ -4243,7 +4253,8 @@
         "name": "MBOut",
         "links": [
             "347382f86489e62c",
-            "3c7bd074ceefd50e"
+            "3c7bd074ceefd50e",
+            "710a1e1165a15f3f"
         ],
         "x": 485,
         "y": 360,
@@ -4307,7 +4318,7 @@
         "id": "854358c79bc9a242",
         "type": "change",
         "z": "63e4ca87ec15e7b6",
-        "name": "",
+        "name": "set topic to aM",
         "rules": [
             {
                 "t": "set",
@@ -4394,6 +4405,80 @@
         "statusType": "auto",
         "x": 560,
         "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "39c2f7c0c3dfcef9",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "display Text on Device b",
+        "info": "",
+        "x": 130,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "2a866971bf59b17b",
+        "type": "link in",
+        "z": "63e4ca87ec15e7b6",
+        "name": "/microbit/devB/string",
+        "links": [],
+        "x": 225,
+        "y": 1160,
+        "wires": [
+            [
+                "19dcc4822ba96d81"
+            ]
+        ]
+    },
+    {
+        "id": "19dcc4822ba96d81",
+        "type": "change",
+        "z": "63e4ca87ec15e7b6",
+        "name": "set topic to bS",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bS",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 1160,
+        "wires": [
+            [
+                "710a1e1165a15f3f"
+            ]
+        ]
+    },
+    {
+        "id": "710a1e1165a15f3f",
+        "type": "link out",
+        "z": "63e4ca87ec15e7b6",
+        "name": "aM",
+        "mode": "link",
+        "links": [
+            "5965d310a479781d"
+        ],
+        "x": 775,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "de5c240945023e48",
+        "type": "comment",
+        "z": "63e4ca87ec15e7b6",
+        "name": "bS:[string text]",
+        "info": "",
+        "x": 880,
+        "y": 1160,
         "wires": []
     },
     {
