@@ -1652,8 +1652,8 @@
         "topic": "",
         "payload": "205",
         "payloadType": "num",
-        "x": 1070,
-        "y": 500,
+        "x": 1090,
+        "y": 540,
         "wires": [
             [
                 "d42777e1bd2011b3"
@@ -1679,7 +1679,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "50",
+        "payload": "5",
         "payloadType": "num",
         "x": 1110,
         "y": 380,
