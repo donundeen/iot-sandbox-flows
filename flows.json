@@ -1522,7 +1522,7 @@
         "z": "12178aa1b34f6c50",
         "name": "microbit b, set string",
         "info": "",
-        "x": 1360,
+        "x": 1330,
         "y": 620,
         "wires": []
     },
@@ -1533,7 +1533,7 @@
         "name": "soundLevel",
         "info": "",
         "x": 230,
-        "y": 380,
+        "y": 340,
         "wires": []
     },
     {
@@ -1545,7 +1545,7 @@
             "2e687e2ce756dcb8"
         ],
         "x": 335,
-        "y": 380,
+        "y": 340,
         "wires": [
             [
                 "dd8e8df5d0c569f3",
@@ -1590,7 +1590,7 @@
             "782a2d5a7c7ede40"
         ],
         "x": 1205,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -1632,62 +1632,14 @@
         "wires": []
     },
     {
-        "id": "2dc653f31528e52a",
-        "type": "inject",
+        "id": "c50d42f151626957",
+        "type": "comment",
         "z": "12178aa1b34f6c50",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "205",
-        "payloadType": "num",
-        "x": 1090,
-        "y": 540,
-        "wires": [
-            [
-                "d42777e1bd2011b3"
-            ]
-        ]
-    },
-    {
-        "id": "ef74cbb733b1fbeb",
-        "type": "inject",
-        "z": "12178aa1b34f6c50",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "5",
-        "payloadType": "num",
-        "x": 1110,
-        "y": 380,
-        "wires": [
-            [
-                "d42777e1bd2011b3"
-            ]
-        ]
+        "name": "microbits neopixel 10light string",
+        "info": "",
+        "x": 1330,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "87cef86360be7223",
