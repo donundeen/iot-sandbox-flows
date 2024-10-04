@@ -1358,6 +1358,70 @@
         "wires": []
     },
     {
+        "id": "5c0d07879ae408cb",
+        "type": "comment",
+        "z": "12178aa1b34f6c50",
+        "name": "/radar1569/numberOfOccupants [int]",
+        "info": "",
+        "x": 190,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "acf84947596b0ba9",
+        "type": "link in",
+        "z": "12178aa1b34f6c50",
+        "name": "/radar1569/numberOfOccupants",
+        "links": [
+            "6e29a67b8309b49b"
+        ],
+        "x": 375,
+        "y": 540,
+        "wires": [
+            [
+                "69caa44abe4e4486",
+                "836c963a2acc33a0"
+            ]
+        ]
+    },
+    {
+        "id": "69caa44abe4e4486",
+        "type": "debug",
+        "z": "12178aa1b34f6c50",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 500,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "836c963a2acc33a0",
+        "type": "function",
+        "z": "12178aa1b34f6c50",
+        "name": "number of people x 10",
+        "func": "msg.payload = msg.payload * 10;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 540,
+        "wires": [
+            [
+                "a2912fc6efadc6c8"
+            ]
+        ]
+    },
+    {
         "id": "c4d470ef752fbe8f",
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
@@ -3454,7 +3518,8 @@
             "68c2629504ca0b28",
             "b00b5206398fc5d3",
             "58da5b866b432383",
-            "cfce5eec5e17f20b"
+            "cfce5eec5e17f20b",
+            "acf84947596b0ba9"
         ],
         "x": 1295,
         "y": 2740,
