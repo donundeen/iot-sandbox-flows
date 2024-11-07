@@ -7137,7 +7137,7 @@
         "onceDelay": 0.1,
         "topic": "/screen/text",
         "payload": "{\"foo\":\"bar\",\"text\":\"this is text here\"}",
-        "payloadType": "json",
+        "payloadType": "str",
         "x": 290,
         "y": 400,
         "wires": [
