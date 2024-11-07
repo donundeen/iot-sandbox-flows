@@ -7091,15 +7091,15 @@
         "type": "udp out",
         "z": "5fedcf3335946691",
         "name": "",
-        "addr": "192.168.73.44",
+        "addr": "",
         "iface": "",
         "port": "8089",
         "ipv": "udp4",
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 930,
-        "y": 400,
+        "x": 1140,
+        "y": 380,
         "wires": []
     },
     {
@@ -7109,11 +7109,12 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 610,
-        "y": 400,
+        "x": 970,
+        "y": 380,
         "wires": [
             [
-                "a13083c37057dc31"
+                "a13083c37057dc31",
+                "6b94e464e69fd44a"
             ]
         ]
     },
@@ -7138,11 +7139,12 @@
         "topic": "/screen/text",
         "payload": "{\"foo\":\"bar\",\"text\":\"this is text here\"}",
         "payloadType": "str",
-        "x": 290,
-        "y": 400,
+        "x": 150,
+        "y": 360,
         "wires": [
             [
-                "01fceeccac273092"
+                "6fbef8808b48fef2",
+                "fc040ac8f9abc797"
             ]
         ]
     },
@@ -7178,8 +7180,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 560,
-        "y": 560,
+        "x": 720,
+        "y": 660,
         "wires": []
     },
     {
@@ -7189,12 +7191,103 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 450,
-        "y": 620,
+        "x": 510,
+        "y": 540,
         "wires": [
             [
-                "4d320d23ab941fb2"
+                "4d320d23ab941fb2",
+                "103f894b77334efb"
             ]
         ]
+    },
+    {
+        "id": "103f894b77334efb",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "Add to UDPClientList",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\nif(!UDPClientList)}{\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.fromip] = msg.fromip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fbef8808b48fef2",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "function 3",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n\nlet ips = Object.keys(UDPClientList);\n\nfor(let i = 0; i < ips.length; i++){\n    msg.ip = ips[i];\n    node.send(msg);\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "01fceeccac273092",
+                "6f796d4189b8883e"
+            ]
+        ]
+    },
+    {
+        "id": "6b94e464e69fd44a",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6f796d4189b8883e",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 57",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "fc040ac8f9abc797",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 180,
+        "y": 460,
+        "wires": []
     }
 ]
