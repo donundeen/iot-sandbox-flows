@@ -5792,8 +5792,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 620,
+        "x": 300,
+        "y": 500,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5915,6 +5915,33 @@
             [
                 "34d565b7ee371175"
             ]
+        ]
+    },
+    {
+        "id": "8ef7640cec95a1c6",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5",
+        "payload": "{\"p5json\":[{\"c\":\"fill\",\"args\":[\"green\"]}]}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 640,
+        "wires": [
+            []
         ]
     },
     {
