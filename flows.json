@@ -5608,7 +5608,7 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 1000,
+        "x": 1040,
         "y": 420,
         "wires": []
     },
@@ -5619,7 +5619,7 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 790,
+        "x": 830,
         "y": 420,
         "wires": [
             [
@@ -5649,7 +5649,7 @@
         "topic": "/screen/text",
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
-        "x": 290,
+        "x": 110,
         "y": 420,
         "wires": [
             [
@@ -5668,7 +5668,7 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 220,
+        "x": 200,
         "y": 240,
         "wires": [
             [
@@ -5683,7 +5683,7 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 370,
+        "x": 350,
         "y": 240,
         "wires": [
             [
@@ -5703,7 +5703,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 540,
         "y": 240,
         "wires": [
             []
@@ -5721,7 +5721,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 530,
         "y": 420,
         "wires": [
             [
@@ -5743,7 +5743,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 780,
+        "x": 820,
         "y": 500,
         "wires": []
     },
@@ -5760,7 +5760,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 480,
+        "x": 520,
         "y": 500,
         "wires": []
     },
@@ -5772,7 +5772,7 @@
         "links": [
             "08bafefb1501b332"
         ],
-        "x": 125,
+        "x": 165,
         "y": 360,
         "wires": [
             [
@@ -5785,15 +5785,15 @@
         "type": "function",
         "z": "5fedcf3335946691",
         "name": "set payload.text",
-        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
+        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 360,
+        "x": 340,
+        "y": 620,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5854,7 +5854,7 @@
         "z": "5fedcf3335946691",
         "name": "store the IP of any new screen that announces itself",
         "info": "",
-        "x": 350,
+        "x": 330,
         "y": 200,
         "wires": []
     },
@@ -5864,7 +5864,7 @@
         "z": "5fedcf3335946691",
         "name": "when text comes in, send it out to all recipients.",
         "info": "",
-        "x": 360,
+        "x": 400,
         "y": 320,
         "wires": []
     },
@@ -5887,6 +5887,35 @@
         "x": 840,
         "y": 20,
         "wires": []
+    },
+    {
+        "id": "172d6c8825eaf411",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5",
+        "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
     },
     {
         "id": "b8e0d1ef098a80f6",
