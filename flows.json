@@ -64,6 +64,14 @@
         "env": []
     },
     {
+        "id": "5fedcf3335946691",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -398,6 +406,12 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "402f29e7a94fd8c0",
+        "type": "websocket-listener",
+        "path": "/ws/announce",
+        "wholemsg": "true"
     },
     {
         "id": "5347604aa986a9b3",
@@ -1223,8 +1237,8 @@
         "z": "9529f2fd9052e78b",
         "name": "Microbits Cevice C 10 light strip",
         "info": "",
-        "x": 1530,
-        "y": 1020,
+        "x": 1510,
+        "y": 1100,
         "wires": []
     },
     {
@@ -7047,5 +7061,89 @@
         "x": 240,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "34ce8de02f1d2fa8",
+        "type": "websocket in",
+        "z": "5fedcf3335946691",
+        "name": "/ws/announce",
+        "server": "402f29e7a94fd8c0",
+        "client": "",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6eb444efe456d8b6",
+        "type": "websocket out",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "server": "",
+        "client": "",
+        "x": 770,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a13083c37057dc31",
+        "type": "udp out",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "addr": "",
+        "iface": "",
+        "port": "8089",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 880,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "01fceeccac273092",
+        "type": "osc",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 610,
+        "y": 400,
+        "wires": [
+            [
+                "a13083c37057dc31"
+            ]
+        ]
+    },
+    {
+        "id": "e1d62e9df7ce9653",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/text",
+        "payload": "{\"foo\":\"bar\",\"text\":\"this is text here\"}",
+        "payloadType": "json",
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "01fceeccac273092"
+            ]
+        ]
     }
 ]
