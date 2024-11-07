@@ -7063,30 +7063,6 @@
         "wires": []
     },
     {
-        "id": "34ce8de02f1d2fa8",
-        "type": "websocket in",
-        "z": "5fedcf3335946691",
-        "name": "/ws/announce",
-        "server": "402f29e7a94fd8c0",
-        "client": "",
-        "x": 510,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6eb444efe456d8b6",
-        "type": "websocket out",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "server": "",
-        "client": "",
-        "x": 770,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "a13083c37057dc31",
         "type": "udp out",
         "z": "5fedcf3335946691",
@@ -7098,8 +7074,8 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 1140,
-        "y": 380,
+        "x": 680,
+        "y": 360,
         "wires": []
     },
     {
@@ -7109,8 +7085,8 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 970,
-        "y": 380,
+        "x": 510,
+        "y": 360,
         "wires": [
             [
                 "a13083c37057dc31",
@@ -7230,8 +7206,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 420,
+        "x": 340,
+        "y": 360,
         "wires": [
             [
                 "01fceeccac273092",
@@ -7252,8 +7228,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1120,
-        "y": 460,
+        "x": 840,
+        "y": 480,
         "wires": []
     },
     {
@@ -7269,7 +7245,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 600,
+        "x": 500,
         "y": 460,
         "wires": []
     },
