@@ -4422,6 +4422,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 1330,
         "y": 240,
         "wires": [
@@ -4928,6 +4931,9 @@
         "type": "pareto-anywhere-socketio",
         "z": "943e204f81529182",
         "uri": "http://localhost:3001/devices/c30000131569/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
         "x": 140,
         "y": 3140,
         "wires": [
@@ -4944,8 +4950,8 @@
         "z": "943e204f81529182",
         "name": "assign a device ID here",
         "info": "",
-        "x": 150,
-        "y": 3100,
+        "x": 140,
+        "y": 3080,
         "wires": []
     },
     {
@@ -7271,8 +7277,8 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 860,
-        "y": 360,
+        "x": 1000,
+        "y": 420,
         "wires": []
     },
     {
@@ -7282,8 +7288,8 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 650,
-        "y": 360,
+        "x": 790,
+        "y": 420,
         "wires": [
             [
                 "a13083c37057dc31",
@@ -7312,12 +7318,11 @@
         "topic": "/screen/text",
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
-        "x": 150,
-        "y": 360,
+        "x": 290,
+        "y": 420,
         "wires": [
             [
-                "6fbef8808b48fef2",
-                "fc040ac8f9abc797"
+                "6fbef8808b48fef2"
             ]
         ]
     },
@@ -7332,30 +7337,13 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 320,
-        "y": 540,
+        "x": 180,
+        "y": 180,
         "wires": [
             [
                 "fef633d622e3d3ec"
             ]
         ]
-    },
-    {
-        "id": "4d320d23ab941fb2",
-        "type": "debug",
-        "z": "5fedcf3335946691",
-        "name": "debug 55",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 500,
-        "y": 620,
-        "wires": []
     },
     {
         "id": "fef633d622e3d3ec",
@@ -7364,11 +7352,10 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 510,
-        "y": 540,
+        "x": 330,
+        "y": 180,
         "wires": [
             [
-                "4d320d23ab941fb2",
                 "103f894b77334efb"
             ]
         ]
@@ -7385,8 +7372,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 540,
+        "x": 520,
+        "y": 180,
         "wires": [
             []
         ]
@@ -7403,8 +7390,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 360,
+        "x": 490,
+        "y": 420,
         "wires": [
             [
                 "01fceeccac273092",
@@ -7425,8 +7412,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 640,
-        "y": 440,
+        "x": 780,
+        "y": 500,
         "wires": []
     },
     {
@@ -7442,25 +7429,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 340,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "fc040ac8f9abc797",
-        "type": "debug",
-        "z": "5fedcf3335946691",
-        "name": "debug 58",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 120,
-        "y": 440,
+        "x": 480,
+        "y": 500,
         "wires": []
     },
     {
@@ -7471,8 +7441,8 @@
         "links": [
             "08bafefb1501b332"
         ],
-        "x": 165,
-        "y": 200,
+        "x": 125,
+        "y": 360,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -7484,15 +7454,15 @@
         "type": "function",
         "z": "5fedcf3335946691",
         "name": "set payload.text",
-        "func": "let data = JSON.stringify({text : msg.payload});\n\nmsg.topic = \"/screen/text\";\nmsg.payload = data;\n\nreturn msg;",
+        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify({text : msg.payload});\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 200,
+        "x": 260,
+        "y": 360,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -7508,8 +7478,8 @@
         "links": [
             "4258fdaca81f063f"
         ],
-        "x": 495,
-        "y": 80,
+        "x": 325,
+        "y": 60,
         "wires": []
     },
     {
@@ -7536,5 +7506,35 @@
                 "08bafefb1501b332"
             ]
         ]
+    },
+    {
+        "id": "8c8e80fc5fafacb3",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "testing",
+        "info": "",
+        "x": 150,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "a50873ef1db6c9f8",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "store the IP of any new screen that announces itself",
+        "info": "",
+        "x": 310,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5ff6ed84c3269757",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "when text comes in, send it out to all recipients.",
+        "info": "",
+        "x": 360,
+        "y": 320,
+        "wires": []
     }
 ]
