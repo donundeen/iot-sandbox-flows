@@ -7181,7 +7181,7 @@
         "type": "function",
         "z": "5fedcf3335946691",
         "name": "Add to UDPClientList",
-        "func": "let UDPClientList = global.get(\"UDPClientList\");\nif(!UDPClientList){\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.ip] = msg.ip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n UDPClientList = {};\nif(!UDPClientList){\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.ip] = msg.ip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
