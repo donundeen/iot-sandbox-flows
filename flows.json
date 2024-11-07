@@ -7222,7 +7222,7 @@
         "id": "6fbef8808b48fef2",
         "type": "function",
         "z": "5fedcf3335946691",
-        "name": "function 3",
+        "name": "add all client IPs",
         "func": "let UDPClientList = global.get(\"UDPClientList\");\n\nlet ips = Object.keys(UDPClientList);\n\nnode.log(ips);\n\nfor(let i = 0; i < ips.length; i++){\n    msg.ip = ips[i];\n    node.send(msg);\n}\n\n",
         "outputs": 1,
         "timeout": 0,
@@ -7230,7 +7230,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
+        "x": 440,
         "y": 420,
         "wires": [
             [
