@@ -7113,7 +7113,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "/screen/text",
-        "payload": "{\"foo\":\"bar\",\"text\":\"this is text here\"}",
+        "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
         "x": 150,
         "y": 360,
@@ -7229,7 +7229,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 840,
-        "y": 480,
+        "y": 460,
         "wires": []
     },
     {
