@@ -7454,7 +7454,7 @@
         "type": "function",
         "z": "5fedcf3335946691",
         "name": "set payload.text",
-        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify({text : msg.payload});\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
+        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
