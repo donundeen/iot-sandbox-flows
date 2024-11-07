@@ -66,7 +66,7 @@
     {
         "id": "5fedcf3335946691",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "DisplayScreen",
         "disabled": false,
         "info": "",
         "env": []
@@ -4428,6 +4428,7 @@
             [
                 "c2894d8c81135ed7"
             ],
+            [],
             []
         ]
     },
@@ -4921,6 +4922,200 @@
         "x": 420,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "7a4e41fb34ad5813",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001/devices/c30000131569/3",
+        "x": 140,
+        "y": 3140,
+        "wires": [
+            [],
+            [
+                "2125c7e4e0df9920"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e3a38da8247ce216",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 150,
+        "y": 3100,
+        "wires": []
+    },
+    {
+        "id": "2125c7e4e0df9920",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 3220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d83c58e162a0942",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c30000131569/3",
+        "info": "",
+        "x": 140,
+        "y": 3180,
+        "wires": []
+    },
+    {
+        "id": "a40af38034a6c8ef",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 920,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "abbeddbb7fe39b3e",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 500,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "3ca26a21e5506ff7",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1550,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "5bba9896c74b429b",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "func": "let newmsg = {\n    topic: \"/radar1569/numberOfOccupants\",\n            payload: msg.payload.numberOfOccupants};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 3140,
+        "wires": [
+            [
+                "f9c083b6e78ed5e2"
+            ]
+        ]
+    },
+    {
+        "id": "ab7c932c0809d8f2",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "mode": "link",
+        "links": [
+            "68c2629504ca0b28",
+            "b00b5206398fc5d3",
+            "58da5b866b432383",
+            "cfce5eec5e17f20b"
+        ],
+        "x": 1235,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "3399925de9437443",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "info": "",
+        "x": 1390,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "301795b72be3851a",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it numberOfOccupants?",
+        "func": "if(msg.payload.numberOfOccupants){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 3140,
+        "wires": [
+            [
+                "5bba9896c74b429b"
+            ]
+        ]
+    },
+    {
+        "id": "f9c083b6e78ed5e2",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 3140,
+        "wires": [
+            [
+                "ab7c932c0809d8f2"
+            ]
+        ]
+    },
+    {
+        "id": "0970b33e6d276c43",
+        "type": "switch",
+        "z": "943e204f81529182",
+        "name": "",
+        "property": "payload.transmitterId",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "e76432071406",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1590,
+        "y": 200,
+        "wires": [
+            [
+                "d9d4dd74cbc4f92b"
+            ]
+        ]
     },
     {
         "id": "9f33f6c8963e1e03",
@@ -7269,195 +7464,76 @@
         "wires": []
     },
     {
-        "id": "7a4e41fb34ad5813",
-        "type": "pareto-anywhere-socketio",
-        "z": "943e204f81529182",
-        "uri": "http://localhost:3001/devices/c30000131569/3",
-        "x": 140,
-        "y": 3140,
-        "wires": [
-            [],
-            [
-                "2125c7e4e0df9920"
-            ]
-        ]
-    },
-    {
-        "id": "e3a38da8247ce216",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "assign a device ID here",
-        "info": "",
-        "x": 150,
-        "y": 3100,
-        "wires": []
-    },
-    {
-        "id": "2125c7e4e0df9920",
-        "type": "function",
-        "z": "943e204f81529182",
-        "name": "save to capturedBLE",
-        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 150,
-        "y": 3220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4d83c58e162a0942",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "/devices/c30000131569/3",
-        "info": "",
-        "x": 140,
-        "y": 3180,
-        "wires": []
-    },
-    {
-        "id": "a40af38034a6c8ef",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "create a topic name, and assign the payload here",
-        "info": "",
-        "x": 920,
-        "y": 3080,
-        "wires": []
-    },
-    {
-        "id": "abbeddbb7fe39b3e",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "Confirm the property of the right name exists...",
-        "info": "",
-        "x": 500,
-        "y": 3080,
-        "wires": []
-    },
-    {
-        "id": "3ca26a21e5506ff7",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
-        "info": "",
-        "x": 1550,
-        "y": 3080,
-        "wires": []
-    },
-    {
-        "id": "5bba9896c74b429b",
-        "type": "function",
-        "z": "943e204f81529182",
-        "name": "/radar1569/numberOfOccupants",
-        "func": "let newmsg = {\n    topic: \"/radar1569/numberOfOccupants\",\n            payload: msg.payload.numberOfOccupants};\nreturn newmsg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 3140,
-        "wires": [
-            [
-                "f9c083b6e78ed5e2"
-            ]
-        ]
-    },
-    {
-        "id": "ab7c932c0809d8f2",
-        "type": "link out",
-        "z": "943e204f81529182",
-        "name": "/radar1569/numberOfOccupants",
-        "mode": "link",
+        "id": "4258fdaca81f063f",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/screeen/text",
         "links": [
-            "68c2629504ca0b28",
-            "b00b5206398fc5d3",
-            "58da5b866b432383",
-            "cfce5eec5e17f20b"
+            "08bafefb1501b332"
         ],
-        "x": 1235,
-        "y": 3140,
-        "wires": []
-    },
-    {
-        "id": "3399925de9437443",
-        "type": "comment",
-        "z": "943e204f81529182",
-        "name": "/radar1569/numberOfOccupants",
-        "info": "",
-        "x": 1390,
-        "y": 3140,
-        "wires": []
-    },
-    {
-        "id": "301795b72be3851a",
-        "type": "function",
-        "z": "943e204f81529182",
-        "name": "is it numberOfOccupants?",
-        "func": "if(msg.payload.numberOfOccupants){\n    return msg;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 3140,
-        "wires": [
-            [
-                "5bba9896c74b429b"
-            ]
-        ]
-    },
-    {
-        "id": "f9c083b6e78ed5e2",
-        "type": "rbe",
-        "z": "943e204f81529182",
-        "name": "changed?",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1120,
-        "y": 3140,
-        "wires": [
-            [
-                "ab7c932c0809d8f2"
-            ]
-        ]
-    },
-    {
-        "id": "0970b33e6d276c43",
-        "type": "switch",
-        "z": "943e204f81529182",
-        "name": "",
-        "property": "payload.transmitterId",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "e76432071406",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1590,
+        "x": 165,
         "y": 200,
         "wires": [
             [
-                "d9d4dd74cbc4f92b"
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "34d565b7ee371175",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "set payload.text",
+        "func": "let data = JSON.stringify({text : msg.payload});\n\nmsg.topic = \"/screen/text\";\nmsg.payload = data;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "6fbef8808b48fef2"
+            ]
+        ]
+    },
+    {
+        "id": "08bafefb1501b332",
+        "type": "link out",
+        "z": "5fedcf3335946691",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "4258fdaca81f063f"
+        ],
+        "x": 495,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "68123b41a0aaea31",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "my new text",
+        "payloadType": "str",
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "08bafefb1501b332"
             ]
         ]
     }
