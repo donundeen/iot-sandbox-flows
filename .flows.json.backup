@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "5fedcf3335946691",
+        "type": "tab",
+        "label": "DisplayScreen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d286a10585a73e58",
         "type": "tab",
         "label": "UI Generator",
@@ -59,14 +67,6 @@
         "id": "a3efac045c708839",
         "type": "tab",
         "label": "Graveyard",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "5fedcf3335946691",
-        "type": "tab",
-        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -4428,7 +4428,9 @@
         "x": 1330,
         "y": 240,
         "wires": [
-            [],
+            [
+                "c2894d8c81135ed7"
+            ],
             [],
             []
         ]
@@ -4925,4 +4927,2663 @@
         "wires": []
     },
     {
-<<<<<<< HEAD
+        "id": "7a4e41fb34ad5813",
+        "type": "pareto-anywhere-socketio",
+        "z": "943e204f81529182",
+        "uri": "http://localhost:3001/devices/c30000131569/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 140,
+        "y": 3140,
+        "wires": [
+            [],
+            [
+                "2125c7e4e0df9920"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e3a38da8247ce216",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "assign a device ID here",
+        "info": "",
+        "x": 140,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "2125c7e4e0df9920",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "save to capturedBLE",
+        "func": "let allBLE = global.get(\"capturedBLE\");\nif(!allBLE){\n    allBLE = {};\n}\n\nallBLE[msg.payload.deviceId] = msg.payload;\n\nglobal.set(\"capturedBLE\", allBLE);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 3220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d83c58e162a0942",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/devices/c30000131569/3",
+        "info": "",
+        "x": 140,
+        "y": 3180,
+        "wires": []
+    },
+    {
+        "id": "a40af38034a6c8ef",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "create a topic name, and assign the payload here",
+        "info": "",
+        "x": 920,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "abbeddbb7fe39b3e",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "Confirm the property of the right name exists...",
+        "info": "",
+        "x": 500,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "3ca26a21e5506ff7",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "send via named LinkOut to the Message Switchboard running in another flow on this computer ",
+        "info": "",
+        "x": 1550,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "5bba9896c74b429b",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "func": "let newmsg = {\n    topic: \"/radar1569/numberOfOccupants\",\n            payload: msg.payload.numberOfOccupants};\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 3140,
+        "wires": [
+            [
+                "f9c083b6e78ed5e2"
+            ]
+        ]
+    },
+    {
+        "id": "ab7c932c0809d8f2",
+        "type": "link out",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "mode": "link",
+        "links": [
+            "68c2629504ca0b28",
+            "b00b5206398fc5d3",
+            "58da5b866b432383",
+            "cfce5eec5e17f20b"
+        ],
+        "x": 1235,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "3399925de9437443",
+        "type": "comment",
+        "z": "943e204f81529182",
+        "name": "/radar1569/numberOfOccupants",
+        "info": "",
+        "x": 1390,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "301795b72be3851a",
+        "type": "function",
+        "z": "943e204f81529182",
+        "name": "is it numberOfOccupants?",
+        "func": "if(msg.payload.numberOfOccupants){\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 3140,
+        "wires": [
+            [
+                "5bba9896c74b429b"
+            ]
+        ]
+    },
+    {
+        "id": "f9c083b6e78ed5e2",
+        "type": "rbe",
+        "z": "943e204f81529182",
+        "name": "changed?",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1120,
+        "y": 3140,
+        "wires": [
+            [
+                "ab7c932c0809d8f2"
+            ]
+        ]
+    },
+    {
+        "id": "0970b33e6d276c43",
+        "type": "switch",
+        "z": "943e204f81529182",
+        "name": "",
+        "property": "payload.transmitterId",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "e76432071406",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1590,
+        "y": 200,
+        "wires": [
+            [
+                "d9d4dd74cbc4f92b"
+            ]
+        ]
+    },
+    {
+        "id": "9f33f6c8963e1e03",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "This Flow maps OSC messages to named linkOuts and LinkIns, usually of the same name, or could be simplified. ",
+        "info": "",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "13c54424b5ca53d5",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "This is so the Messages Swithboard looks clean and easy to play with",
+        "info": "",
+        "x": 330,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "900f707651e7b243",
+        "type": "osc",
+        "z": "9d6a628240034869",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "05c6e88af96d8fbf",
+                "b3664aa62511cdcf"
+            ]
+        ]
+    },
+    {
+        "id": "05c6e88af96d8fbf",
+        "type": "debug",
+        "z": "9d6a628240034869",
+        "name": "debug 23",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "287e700b6d46a2a0",
+        "type": "udp in",
+        "z": "9d6a628240034869",
+        "name": "",
+        "iface": "",
+        "port": "7777",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "900f707651e7b243"
+            ]
+        ]
+    },
+    {
+        "id": "1cd3d5b24f25cefe",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "OSC Messages come in here, over port 7777",
+        "info": "",
+        "x": 250,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5865022dfbe01843",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Look in the debug window to see what kind of messages are coming in",
+        "info": "",
+        "x": 630,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b3664aa62511cdcf",
+        "type": "switch",
+        "z": "9d6a628240034869",
+        "name": "/joltd883/buttonPressCount",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/joltd883/buttonPressCount",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 200,
+        "y": 400,
+        "wires": [
+            [
+                "d95291ead096abd9",
+                "e56477c26cb0cacc"
+            ],
+            [
+                "8cc41e8ca166cd4b",
+                "012fd8313d1e7747"
+            ]
+        ]
+    },
+    {
+        "id": "6a7fb0eb03efb21c",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "add INCOMING ROUTES based on the OSC topics",
+        "info": "",
+        "x": 270,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d95291ead096abd9",
+        "type": "debug",
+        "z": "9d6a628240034869",
+        "name": "debug 29",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8cc41e8ca166cd4b",
+        "type": "debug",
+        "z": "9d6a628240034869",
+        "name": "debug 30",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5dcceb5b7c97fbb9",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Top output if it matches",
+        "info": "",
+        "x": 280,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "495e8da81d6f0da4",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "bottom output if it doesn't; pass to the next SWITCH",
+        "info": "",
+        "x": 270,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "012fd8313d1e7747",
+        "type": "switch",
+        "z": "9d6a628240034869",
+        "name": "/next/topic",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/topic/name/here",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f8c47f490b92c220",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Top output if it matches",
+        "info": "",
+        "x": 320,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8cd53727e847c1f2",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "bottom output if it doesn't; pass to the next SWITCH, and so on...",
+        "info": "",
+        "x": 320,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e56477c26cb0cacc",
+        "type": "link out",
+        "z": "9d6a628240034869",
+        "name": "/joltjsd883/buttonPressCount",
+        "mode": "link",
+        "links": [
+            "a991b79e982ec38f",
+            "26017cc35f3e96bf",
+            "b8e0d1ef098a80f6"
+        ],
+        "x": 1005,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d7492a1d84fcb97b",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 1140,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "fd53c2c93801bd9d",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "Pass on to named LinkOut node, to match a LinkIn in the Message Switchboard",
+        "info": "",
+        "x": 1240,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9ae421e5536f7831",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "This Flow sends messages to BLE via EspruinoHub, running on another machine",
+        "info": "This machine needs to have EspruinoHub installed.",
+        "x": 300,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f6b281495b76fde7",
+        "type": "function",
+        "z": "bb01535f48abe2ce",
+        "name": "Add a newline",
+        "func": "msg.payload += \"\\n\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "7943ebafb2ca2e96"
+            ]
+        ]
+    },
+    {
+        "id": "cb70afc7d117c778",
+        "type": "mqtt out",
+        "z": "bb01535f48abe2ce",
+        "name": "mqtt to BLE on EspruinoHub",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "632ec53202999c1c",
+        "x": 1120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "014e6de00a067bc8",
+        "type": "debug",
+        "z": "bb01535f48abe2ce",
+        "name": "debug 33",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cb332d7f29f9638f",
+        "type": "link in",
+        "z": "bb01535f48abe2ce",
+        "name": "/joltjsd883/javascript",
+        "links": [
+            "093e2453d12cd821",
+            "12d7b33aba9f5d4b"
+        ],
+        "x": 135,
+        "y": 320,
+        "wires": [
+            [
+                "c44e45d42a819c43"
+            ]
+        ]
+    },
+    {
+        "id": "d22bd9554f7807d0",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "/joltjsd883/javascript",
+        "info": "",
+        "x": 250,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c44e45d42a819c43",
+        "type": "function",
+        "z": "bb01535f48abe2ce",
+        "name": "set d883 topic",
+        "func": "msg.topic = \"/ble/write/c8:c8:75:1d:d8:83/nus/nus_tx\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "f6b281495b76fde7"
+            ]
+        ]
+    },
+    {
+        "id": "39500dc75d27d485",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "name a link in with an OSC style address, so we can use simplenames in the OSC switchboard",
+        "info": "",
+        "x": 450,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f8fb605f6e78c5a3",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "set the topic to the device ID",
+        "info": "",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "182e3454d1caf7c1",
+        "type": "link in",
+        "z": "bb01535f48abe2ce",
+        "name": "/sendToEspruinoHub",
+        "links": [
+            "7943ebafb2ca2e96"
+        ],
+        "x": 955,
+        "y": 160,
+        "wires": [
+            [
+                "cb70afc7d117c778",
+                "014e6de00a067bc8"
+            ]
+        ]
+    },
+    {
+        "id": "7943ebafb2ca2e96",
+        "type": "link out",
+        "z": "bb01535f48abe2ce",
+        "name": "/sendToEspruinoHub",
+        "mode": "link",
+        "links": [
+            "182e3454d1caf7c1"
+        ],
+        "x": 955,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "657c82024d773bb7",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "get all links to /sendToEspruinoHub ",
+        "info": "",
+        "x": 1080,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e6f9c32fbb9fe219",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "send to sendToEspruinoHub LinkIn",
+        "info": "",
+        "x": 1120,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "387d401d3118970a",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "get all links to /sendToEspruinoHub ",
+        "info": "",
+        "x": 1080,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "015cfaecce74dd97",
+        "type": "comment",
+        "z": "bb01535f48abe2ce",
+        "name": "set EspruinoHub server IP:Port on this node",
+        "info": "",
+        "x": 1430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a13083c37057dc31",
+        "type": "udp out",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "addr": "",
+        "iface": "",
+        "port": "8089",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 1040,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "01fceeccac273092",
+        "type": "osc",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 830,
+        "y": 420,
+        "wires": [
+            [
+                "a13083c37057dc31",
+                "6b94e464e69fd44a"
+            ]
+        ]
+    },
+    {
+        "id": "e1d62e9df7ce9653",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/text",
+        "payload": "{\"text\":\"this is text here\"}",
+        "payloadType": "str",
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "6fbef8808b48fef2"
+            ]
+        ]
+    },
+    {
+        "id": "5cbb37438fab6f8e",
+        "type": "udp in",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "iface": "",
+        "port": "8090",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "fef633d622e3d3ec"
+            ]
+        ]
+    },
+    {
+        "id": "fef633d622e3d3ec",
+        "type": "osc",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "103f894b77334efb"
+            ]
+        ]
+    },
+    {
+        "id": "103f894b77334efb",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "Add to UDPClientList",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n UDPClientList = {};\nif(!UDPClientList){\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.ip] = msg.ip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fbef8808b48fef2",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "send all client IPs",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n\nlet ips = Object.keys(UDPClientList);\n\nnode.log(ips);\n\nfor(let i = 0; i < ips.length; i++){\n    msg.ip = ips[i];\n    node.send(msg);\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "01fceeccac273092",
+                "6f796d4189b8883e"
+            ]
+        ]
+    },
+    {
+        "id": "6b94e464e69fd44a",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 820,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6f796d4189b8883e",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 57",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 520,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4258fdaca81f063f",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/screeen/text",
+        "links": [
+            "08bafefb1501b332"
+        ],
+        "x": 165,
+        "y": 360,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "34d565b7ee371175",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "set payload.text",
+        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "6fbef8808b48fef2"
+            ]
+        ]
+    },
+    {
+        "id": "08bafefb1501b332",
+        "type": "link out",
+        "z": "5fedcf3335946691",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "4258fdaca81f063f"
+        ],
+        "x": 365,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "68123b41a0aaea31",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "my new text",
+        "payloadType": "str",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "08bafefb1501b332"
+            ]
+        ]
+    },
+    {
+        "id": "8c8e80fc5fafacb3",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "testing",
+        "info": "",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a50873ef1db6c9f8",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "store the IP of any new screen that announces itself",
+        "info": "",
+        "x": 330,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5ff6ed84c3269757",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "when text comes in, send it out to all recipients.",
+        "info": "",
+        "x": 400,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9dafd5c8d5c1acdd",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "sending messages to the display screens",
+        "info": "",
+        "x": 300,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "1721ba91ad7ef847",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "different types of messages can have differetn properties, and tell the screen to do different things.",
+        "info": "",
+        "x": 840,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "172d6c8825eaf411",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5",
+        "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "b8e0d1ef098a80f6",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/joltjsd883/buttonPressCount",
+        "links": [
+            "627021b995a2a0ef",
+            "e56477c26cb0cacc"
+        ],
+        "x": 435,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53fc1d4bad7bc041",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/joltjsd883/buttonPressCount",
+        "info": "",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "66ad2bee53eb2ac7",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "THE INPUTS",
+        "info": "",
+        "x": 130,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "da9387dc2680a057",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "link in 2",
+        "links": [
+            "39d6698f6076b1cf"
+        ],
+        "x": 435,
+        "y": 280,
+        "wires": [
+            [
+                "4a7ca3ef113b1e75"
+            ]
+        ]
+    },
+    {
+        "id": "072e7c60dbbfb7b4",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/isMotionDetected [true/false]",
+        "info": "",
+        "x": 240,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "14f24fcceb258547",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/temperature [float]",
+        "info": "",
+        "x": 270,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "622bf26b87eb3ed9",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0",
+            "d7237dea509bc5d8"
+        ],
+        "x": 435,
+        "y": 340,
+        "wires": [
+            [
+                "55dba078f6391338"
+            ]
+        ]
+    },
+    {
+        "id": "09c3ee45296f5cf2",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/illuminance [int]",
+        "info": "",
+        "x": 280,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c1d1dfc74b17a671",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/illuminance",
+        "links": [
+            "0fb34d273a62d5fd"
+        ],
+        "x": 435,
+        "y": 400,
+        "wires": [
+            [
+                "c0f71b6e723f9769"
+            ]
+        ]
+    },
+    {
+        "id": "e8c67115aa626043",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/acceleration [x,y,x]",
+        "info": "",
+        "x": 270,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "34179481a9d37d57",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/acceleration",
+        "links": [
+            "be8df522c0e4f250"
+        ],
+        "x": 435,
+        "y": 460,
+        "wires": [
+            [
+                "6aa13ba8acf73d6d"
+            ]
+        ]
+    },
+    {
+        "id": "25a47a22e68e2028",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/batteryPercentage [int]",
+        "info": "",
+        "x": 260,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "92148f9250905b6b",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/batteryPercentage",
+        "links": [
+            "214448f98c24559e",
+            "002337ab102d4f3a",
+            "4231c54266544aaa",
+            "1993e168718b6344",
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c"
+        ],
+        "x": 435,
+        "y": 520,
+        "wires": [
+            [
+                "a4c1da411cd7ddcc"
+            ]
+        ]
+    },
+    {
+        "id": "25b1bb849b259470",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/realtiveHumidity [float]",
+        "info": "",
+        "x": 260,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "10d09e9ebbae4a39",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/relativeHumidity",
+        "links": [
+            "0be064a2c659c9a6"
+        ],
+        "x": 435,
+        "y": 580,
+        "wires": [
+            [
+                "c6cccff2f14b9711"
+            ]
+        ]
+    },
+    {
+        "id": "d3b5f91d7add3588",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/acceleration [x,y,x]",
+        "info": "",
+        "x": 260,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "68c2629504ca0b28",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/acceleration",
+        "links": [
+            "0ad22c5f1dca0ec8",
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b",
+            "ab7c932c0809d8f2"
+        ],
+        "x": 435,
+        "y": 680,
+        "wires": [
+            [
+                "40f1937eb3d5fc08"
+            ]
+        ]
+    },
+    {
+        "id": "b958dc18d532a5ce",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage [int]",
+        "info": "",
+        "x": 250,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b40fb4c40be74994",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "002337ab102d4f3a"
+        ],
+        "x": 435,
+        "y": 740,
+        "wires": [
+            [
+                "f956aa9e70619c0a"
+            ]
+        ]
+    },
+    {
+        "id": "f3877161e3ba366e",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/isMotionDetected",
+        "links": [
+            "12f3f5b83580a23d",
+            "298b7604e45e2609"
+        ],
+        "x": 435,
+        "y": 800,
+        "wires": [
+            [
+                "04865675a02dc232"
+            ]
+        ]
+    },
+    {
+        "id": "db08e388efd8177f",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/isMotionDetected [true/false]",
+        "info": "",
+        "x": 230,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "8daac43e8d594479",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "Minew E9 Waterproof Beacon https://www.minew.com/product/e9-waterproof-beacon/",
+        "info": "",
+        "x": 360,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "773a6a7ee978c851",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "The Espruino JoltJS https://www.espruino.com/Jolt.js",
+        "info": "",
+        "x": 260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c3ec776166f02b2b",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "MINEW MSP01 Human Body Sensor https://www.minew.com/product/msp01-bluetooth-pir-sensor/",
+        "info": "",
+        "x": 400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "55dba078f6391338",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "10000",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6cccff2f14b9711",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f956aa9e70619c0a",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "b16a71166ef94228",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4c1da411cd7ddcc",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0f71b6e723f9769",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Light Level",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "500",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db2e5205dab51c88",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detected",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "10000",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bb744164f30a793",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "b16a71166ef94228",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detected",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "10000",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a7ca3ef113b1e75",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "true->1, false->0",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}\nelse if(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "db2e5205dab51c88"
+            ]
+        ]
+    },
+    {
+        "id": "04865675a02dc232",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "true->1, false->0",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n} else if(msg.payload === false){\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 800,
+        "wires": [
+            [
+                "8bb744164f30a793"
+            ]
+        ]
+    },
+    {
+        "id": "6aa13ba8acf73d6d",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 460,
+        "wires": [
+            [
+                "a538920c55771b15"
+            ],
+            [
+                "a538920c55771b15"
+            ],
+            [
+                "a538920c55771b15"
+            ]
+        ]
+    },
+    {
+        "id": "a538920c55771b15",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "f8be3fae20759ed0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40f1937eb3d5fc08",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 680,
+        "wires": [
+            [
+                "e2c14abd5156bb4d"
+            ],
+            [
+                "e2c14abd5156bb4d"
+            ],
+            [
+                "e2c14abd5156bb4d"
+            ]
+        ]
+    },
+    {
+        "id": "e2c14abd5156bb4d",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "b16a71166ef94228",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2e1fe13381ea8b0",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "Minew MWC01 Badge Bluetooth Repeater https://www.minewstore.com/product/mwc01-badge-bluetooth-repeater",
+        "info": "",
+        "x": 450,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "fe3706e7e63f6cb6",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/badgeF741/acceleration [x,y,x]",
+        "info": "",
+        "x": 270,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "b00b5206398fc5d3",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/acceleration",
+        "links": [
+            "de8fbc462923dbc9",
+            "6e29a67b8309b49b",
+            "ab7c932c0809d8f2"
+        ],
+        "x": 435,
+        "y": 940,
+        "wires": [
+            [
+                "1f13aa4604873d47"
+            ]
+        ]
+    },
+    {
+        "id": "b8abf3467c02fa94",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/badgeF741/batteryPercentage [int]",
+        "info": "",
+        "x": 260,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "89cd1b5d44963cb4",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "4231c54266544aaa",
+            "1993e168718b6344",
+            "19d4534cec60808e",
+            "4fbb33ab4f5e3d5c"
+        ],
+        "x": 435,
+        "y": 1000,
+        "wires": [
+            [
+                "be7660a8e54363e2"
+            ]
+        ]
+    },
+    {
+        "id": "94d8e42d5c347a79",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/badgeF741/temperature [float]",
+        "info": "",
+        "x": 270,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "c534c42889ea8a46",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/motionE8DA/temperature",
+        "links": [
+            "3f8a8d4cc887a6a0",
+            "d7237dea509bc5d8"
+        ],
+        "x": 435,
+        "y": 1060,
+        "wires": [
+            [
+                "46bca2038cb152b0"
+            ]
+        ]
+    },
+    {
+        "id": "1f13aa4604873d47",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "split into 3",
+        "func": "let msg1 = {};\nlet msg2 = {}; \nlet msg3 = {};\n\nmsg1.topic = \"x\";\nmsg1.payload = msg.payload[0];\nmsg2.topic = \"y\";\nmsg2.payload = msg.payload[1];\nmsg3.topic = \"z\";\nmsg3.payload = msg.payload[2];\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 940,
+        "wires": [
+            [
+                "e8f58ed4c6e2f601"
+            ],
+            [
+                "e8f58ed4c6e2f601"
+            ],
+            [
+                "e8f58ed4c6e2f601"
+            ]
+        ]
+    },
+    {
+        "id": "e8f58ed4c6e2f601",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Movement",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ea0000",
+            "#00c800",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be7660a8e54363e2",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46bca2038cb152b0",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "5326dbd85c698560",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19323ce7f7e17814",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "MSR01 Millimeter Wave Radar Sensor https://www.minew.com/product/msr01-millimeter-wave-radar-sensor/",
+        "info": "",
+        "x": 430,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "a1ef02ba7a1021dd",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/numberOfOccupants [int]",
+        "info": "",
+        "x": 250,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "cfce5eec5e17f20b",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/numberOfOccupants",
+        "links": [
+            "6e29a67b8309b49b",
+            "ab7c932c0809d8f2"
+        ],
+        "x": 435,
+        "y": 1220,
+        "wires": [
+            [
+                "ded640e4a59a3d55",
+                "b3da94412cdfa710"
+            ]
+        ]
+    },
+    {
+        "id": "649b49bbf3c21d43",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "/radar1569/batteryPercentage [int]",
+        "info": "",
+        "x": 260,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "1b47c84cab13a9d8",
+        "type": "link in",
+        "z": "d286a10585a73e58",
+        "name": "/e9beacon5c26/batteryPercentage",
+        "links": [
+            "4fbb33ab4f5e3d5c"
+        ],
+        "x": 435,
+        "y": 1280,
+        "wires": [
+            [
+                "f8f74e8c0f09baad"
+            ]
+        ]
+    },
+    {
+        "id": "f8f74e8c0f09baad",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "e36bbf7bb7e6790e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ded640e4a59a3d55",
+        "type": "ui_chart",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "group": "e36bbf7bb7e6790e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Number Of Occupants",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "waiting on data....",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3da94412cdfa710",
+        "type": "ui_text",
+        "z": "d286a10585a73e58",
+        "group": "e36bbf7bb7e6790e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Currently",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 900,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "e2bc8730ca71a33d",
+        "type": "ui_template",
+        "z": "d286a10585a73e58",
+        "group": "f8acfcf9bb97cb20",
+        "name": "Untracked BLE Devices",
+        "order": 0,
+        "width": "11",
+        "height": "15",
+        "format": "<style>\n    div.tableContainer {\n        display: flex;\n        flex-direction: column;\n        word-wrap: break-word;\n        background-color: #303030;\n        border: 1px solid rgba(0,0,0,0.125);\n        border-radius: 0.25rem;\n        color: white;\n        font-size: 0.75rem;\n    }\n    \n    .table-collapse {\n        border-collapse: collapse;\n        border-spacing: 0;\n        display: flex;\n        height:100%;\n        flex: 0 0 auto;\n        transition: all 0.5s ease-in-out;\n    }\n    \n    .tableContainer table tbody {\n        border-collapse: collapse !important;\n        border: solid #B5B5B5 1px;\n        border-radius: 3px;\n        display: table-row-group;\n        vertical-align: middle;\n        border-color: inherit;\n    }\n    \n    .tableContainer table tr {\n        font-weight: bold;\n        border: none;\n    }\n    \n    .tableContainer table td {\n        vertical-align: top;\n        border: 1px solid #636363;\n        padding: 3px 10px 3px 10px;\n        white-space: nowrap;\n    }\n    \n    .endValue {\n        font-weight: initial;\n    }\n    \n    .expandButton {\n        font-size: 1.5rem;\n        cursor: pointer;\n    }\n    \n    .hidden {\n        height: 0;\n        max-height: 0;\n        opacity: 0;\n        overflow: hidden;\n    }\n    \n    .string {\n        color: rgb(155 185 91);\n    }\n    \n    .notString {\n        color: rgb(101 142 177);\n    }\n</style>\n<script>\nwindow.addEventListener('click', (e) => {\n    if (e.target.classList.contains('expandButton')) {\n        if (e.target.classList.contains('expanded')) {\n            e.target.innerHTML = '+';\n            e.target.classList.toggle(\"expanded\", false);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", true);\n        } else {\n            e.target.innerHTML = '-';\n            e.target.classList.toggle(\"expanded\", true);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", false);\n        }\n    }\n});\n</script>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1970,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfa6f8ae37760595",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "CreateHTMLTableFromJSON",
+        "func": "const checkIfObjectOrArray = (value) =>  (\n    Object.prototype.toString.call(value) === '[object Array]'\n    || Object.prototype.toString.call(value) === '[object Object]'\n);\n\nconst isString = (value) => (typeof value === 'string' || value instanceof String);\n\nconst createTable = (json) => {\n    \n    const tableData = Object.keys(json).map((key) => {\n        \n        const createNewTableIfObjectOrArray = (value) => {\n\n            if(checkIfObjectOrArray(value)) {\n                return `\n                    <tr>\n                        <td>${key}</td>\n                        <td>\n                            <span class=\"expandButton expanded\">-</span>\n                            ${createTable(value)}\n                        </td>\n                    </tr>\n                `;\n            } \n            \n            return `\n                <tr>\n                    <td>${key}</td>\n                    <td class=\"endValue ${(isString(json[key]) ? 'string' : 'notString')}\">${json[key]}</td>\n                </tr>\n            `;\n        }\n        \n        return createNewTableIfObjectOrArray(json[key]);\n    });\n    \n    return `\n        <table class=\"table-collapse\">\n            <tbody>${tableData.join('')}</tbody>\n        </table>\n    `;\n}\n\nmsg.payload = `\n<div class=\"tableContainer\">\n    ${createTable(msg.payload)}\n</div>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 280,
+        "wires": [
+            [
+                "e2bc8730ca71a33d"
+            ]
+        ]
+    },
+    {
+        "id": "b634a06d2f1cf975",
+        "type": "inject",
+        "z": "d286a10585a73e58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"squadName\":\"Super hero squad\",\"homeTown\":\"Metro City\",\"formed\":2016,\"secretBase\":\"Super tower\",\"active\":true,\"members\":[{\"index\":0,\"isActive\":false,\"age\":21,\"eyeColor\":\"blue\",\"name\":\"Bentley Clayton\",\"gender\":\"male\",\"registered\":\"2018-05-02T05:35:41 +04:00\"},{\"index\":1,\"isActive\":false,\"age\":23,\"eyeColor\":\"blue\",\"name\":\"Lela Ramos\",\"gender\":\"female\",\"registered\":\"2014-02-24T03:13:50 +05:00\"},{\"index\":2,\"isActive\":true,\"age\":38,\"eyeColor\":\"green\",\"name\":\"Milagros Becker\",\"gender\":\"female\",\"registered\":\"2016-10-22T12:18:50 +04:00\"},{\"index\":3,\"isActive\":false,\"age\":30,\"eyeColor\":\"brown\",\"name\":\"Mccoy Barrera\",\"gender\":\"male\",\"registered\":\"2016-12-03T03:44:57 +05:00\"},{\"index\":4,\"isActive\":false,\"age\":35,\"eyeColor\":\"brown\",\"name\":\"Morton Bennett\",\"gender\":\"male\",\"registered\":\"2015-10-06T09:48:03 +04:00\"},{\"index\":5,\"isActive\":true,\"age\":20,\"eyeColor\":\"blue\",\"name\":\"Acosta Bird\",\"gender\":\"male\",\"registered\":\"2019-02-11T09:59:58 +05:00\"},{\"index\":6,\"isActive\":false,\"age\":35,\"eyeColor\":\"blue\",\"name\":\"Mcleod Keith\",\"gender\":\"male\",\"registered\":\"2014-04-24T07:50:11 +04:00\"},{\"index\":7,\"isActive\":false,\"age\":27,\"eyeColor\":\"brown\",\"name\":\"Magdalena Burgess\",\"gender\":\"female\",\"registered\":\"2015-03-19T09:28:55 +04:00\"},{\"index\":8,\"isActive\":false,\"age\":37,\"eyeColor\":\"blue\",\"name\":\"Cline Castaneda\",\"gender\":\"male\",\"registered\":\"2016-02-29T09:49:37 +05:00\"},{\"index\":9,\"isActive\":false,\"age\":39,\"eyeColor\":\"green\",\"name\":\"Garcia Baker\",\"gender\":\"male\",\"registered\":\"2018-05-26T02:54:22 +04:00\"},{\"index\":10,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Lenora Keller\",\"gender\":\"female\",\"registered\":\"2017-12-19T05:12:17 +05:00\"},{\"index\":11,\"isActive\":false,\"age\":33,\"eyeColor\":\"green\",\"name\":\"Kathryn Donovan\",\"gender\":\"female\",\"registered\":\"2014-03-21T12:33:36 +04:00\"},{\"index\":12,\"isActive\":true,\"age\":40,\"eyeColor\":\"blue\",\"name\":\"Opal Hinton\",\"gender\":\"female\",\"registered\":\"2014-05-03T02:14:25 +04:00\"},{\"index\":13,\"isActive\":false,\"age\":25,\"eyeColor\":\"green\",\"name\":\"Mayer Gray\",\"gender\":\"male\",\"registered\":\"2016-04-01T05:52:21 +04:00\"},{\"index\":14,\"isActive\":true,\"age\":22,\"eyeColor\":\"green\",\"name\":\"Josefina Quinn\",\"gender\":\"female\",\"registered\":\"2015-02-07T12:04:14 +05:00\"}]}",
+        "payloadType": "json",
+        "x": 1250,
+        "y": 280,
+        "wires": [
+            [
+                "f85b67c47aaa8f66",
+                "ae5170c07ec77cea"
+            ]
+        ]
+    },
+    {
+        "id": "f85b67c47aaa8f66",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "getUNCapturedBLE",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nif(!all){\n    all = {};\n    global.set(\"allBLE\", all);\n}\nif(!captured){\n    captured = {};\n    global.set(\"capturedBLE\", captured);\n}\n\nlet allKeys = Object.keys(all);\nlet capturedKeys = Object.keys(captured);\n\nnode.warn(capturedKeys);\n\nlet uncaptured = {};\n\nfor(let i = 0; i < allKeys.length; i++){\n   let key = allKeys[i];\n    if(!capturedKeys.includes(key)){\n        uncaptured[key] = all[key];\n    }\n}\n\nmsg = {payload: uncaptured};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 280,
+        "wires": [
+            [
+                "dfa6f8ae37760595"
+            ]
+        ]
+    },
+    {
+        "id": "143b391abf3537cd",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "This creates a tab of all UNTRACKED BLE devices",
+        "info": "",
+        "x": 1370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b69ad0e26cb75345",
+        "type": "ui_template",
+        "z": "d286a10585a73e58",
+        "group": "f85a84fa1aa251ff",
+        "name": "Tracked BLE Devices",
+        "order": 0,
+        "width": "11",
+        "height": "15",
+        "format": "<style>\n    div.tableContainer {\n        display: flex;\n        flex-direction: column;\n        word-wrap: break-word;\n        background-color: #303030;\n        border: 1px solid rgba(0,0,0,0.125);\n        border-radius: 0.25rem;\n        color: white;\n        font-size: 0.75rem;\n    }\n    \n    .table-collapse {\n        border-collapse: collapse;\n        border-spacing: 0;\n        display: flex;\n        height:100%;\n        flex: 0 0 auto;\n        transition: all 0.5s ease-in-out;\n    }\n    \n    .tableContainer table tbody {\n        border-collapse: collapse !important;\n        border: solid #B5B5B5 1px;\n        border-radius: 3px;\n        display: table-row-group;\n        vertical-align: middle;\n        border-color: inherit;\n    }\n    \n    .tableContainer table tr {\n        font-weight: bold;\n        border: none;\n    }\n    \n    .tableContainer table td {\n        vertical-align: top;\n        border: 1px solid #636363;\n        padding: 3px 10px 3px 10px;\n        white-space: nowrap;\n    }\n    \n    .endValue {\n        font-weight: initial;\n    }\n    \n    .expandButton {\n        font-size: 1.5rem;\n        cursor: pointer;\n    }\n    \n    .hidden {\n        height: 0;\n        max-height: 0;\n        opacity: 0;\n        overflow: hidden;\n    }\n    \n    .string {\n        color: rgb(155 185 91);\n    }\n    \n    .notString {\n        color: rgb(101 142 177);\n    }\n</style>\n<script>\nwindow.addEventListener('click', (e) => {\n    if (e.target.classList.contains('expandButton')) {\n        if (e.target.classList.contains('expanded')) {\n            e.target.innerHTML = '+';\n            e.target.classList.toggle(\"expanded\", false);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", true);\n        } else {\n            e.target.innerHTML = '-';\n            e.target.classList.toggle(\"expanded\", true);\n            e.target.nextElementSibling.classList.toggle(\"hidden\", false);\n        }\n    }\n});\n</script>\n\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1960,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95ef3439c8d6162c",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "CreateHTMLTableFromJSON",
+        "func": "const checkIfObjectOrArray = (value) =>  (\n    Object.prototype.toString.call(value) === '[object Array]'\n    || Object.prototype.toString.call(value) === '[object Object]'\n);\n\nconst isString = (value) => (typeof value === 'string' || value instanceof String);\n\nconst createTable = (json) => {\n    \n    const tableData = Object.keys(json).map((key) => {\n        \n        const createNewTableIfObjectOrArray = (value) => {\n\n            if(checkIfObjectOrArray(value)) {\n                return `\n                    <tr>\n                        <td>${key}</td>\n                        <td>\n                            <span class=\"expandButton expanded\">-</span>\n                            ${createTable(value)}\n                        </td>\n                    </tr>\n                `;\n            } \n            \n            return `\n                <tr>\n                    <td>${key}</td>\n                    <td class=\"endValue ${(isString(json[key]) ? 'string' : 'notString')}\">${json[key]}</td>\n                </tr>\n            `;\n        }\n        \n        return createNewTableIfObjectOrArray(json[key]);\n    });\n    \n    return `\n        <table class=\"table-collapse\">\n            <tbody>${tableData.join('')}</tbody>\n        </table>\n    `;\n}\n\nmsg.payload = `\n<div class=\"tableContainer\">\n    ${createTable(msg.payload)}\n</div>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 380,
+        "wires": [
+            [
+                "b69ad0e26cb75345"
+            ]
+        ]
+    },
+    {
+        "id": "ae5170c07ec77cea",
+        "type": "function",
+        "z": "d286a10585a73e58",
+        "name": "getCapturedBLE",
+        "func": "let all = global.get(\"allBLE\");\nlet captured = global.get(\"capturedBLE\");\n\nmsg = { payload: captured };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 380,
+        "wires": [
+            [
+                "95ef3439c8d6162c"
+            ]
+        ]
+    },
+    {
+        "id": "1dc171f7dbaebfbd",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "This creates a tab of all UNTRACKED BLE devices",
+        "info": "",
+        "x": 1370,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "96275900a577e922",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "pick your dashboard widget for display. Chart is usually a ood choice :)",
+        "info": "",
+        "x": 1090,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d418e0a4c0eb6b81",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "the inputs below can be copied straight from the inputs in the IoT Playground tab",
+        "info": "",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cd25d0e6559210b2",
+        "type": "comment",
+        "z": "d286a10585a73e58",
+        "name": "the \"BLE Devices\" tab in the dashboard shows you which devices you're tracking, and which ones Pareto sees but you haven't tracked yet",
+        "info": "",
+        "x": 1640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "60a86d3823f3f5db",
+        "type": "comment",
+        "z": "a3efac045c708839",
+        "name": "Old bits I don't want to totally delete. Parking lot.",
+        "info": "",
+        "x": 700,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3ccfd232644d3611",
+        "type": "pareto-anywhere-socketio",
+        "z": "a3efac045c708839",
+        "uri": "http://localhost:3001/devices/c8c8751dd883/3",
+        "deviceid": "",
+        "deviceidtype": "0",
+        "name": "",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "42afc2b2dd0ad3e2"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0ea6cd11bf0d3f51",
+        "type": "red-advlib-ble",
+        "z": "a3efac045c708839",
+        "name": "decrypt each packet",
+        "ignoreProtocolOverheadCheckbox": false,
+        "x": 880,
+        "y": 200,
+        "wires": [
+            [
+                "e72b03d8a82489a0",
+                "943d3a0f98d5e21c"
+            ]
+        ]
+    },
+    {
+        "id": "df65414db9f74cb8",
+        "type": "change",
+        "z": "a3efac045c708839",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload.packets",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "0ea6cd11bf0d3f51"
+            ]
+        ]
+    },
+    {
+        "id": "4204e108516287ef",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 24",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "395d945f07b5fc2b",
+        "type": "split",
+        "z": "a3efac045c708839",
+        "name": "extract packets",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload.packets",
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "df65414db9f74cb8"
+            ]
+        ]
+    },
+    {
+        "id": "e72b03d8a82489a0",
+        "type": "switch",
+        "z": "a3efac045c708839",
+        "name": "is name txCount?",
+        "property": "payload.advDecoded",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "txCount",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "705d8e7f865f600a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "705d8e7f865f600a",
+        "type": "change",
+        "z": "a3efac045c708839",
+        "name": "set payload to just the button value",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.advDecoded.txCount",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 200,
+        "wires": [
+            [
+                "7f9f23fecefd14fe"
+            ]
+        ]
+    },
+    {
+        "id": "943d3a0f98d5e21c",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7f9f23fecefd14fe",
+        "type": "rbe",
+        "z": "a3efac045c708839",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1310,
+        "y": 300,
+        "wires": [
+            [
+                "4204e108516287ef"
+            ]
+        ]
+    },
+    {
+        "id": "42afc2b2dd0ad3e2",
+        "type": "debug",
+        "z": "a3efac045c708839",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2a8f57065fb28b88",
+        "type": "function",
+        "z": "a3efac045c708839",
+        "name": "function 2",
+        "func": "if(Array.isArray(msg.payload.packets)){\n    msg.payload.packets.reverse();\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "395d945f07b5fc2b"
+            ]
+        ]
+    },
+    {
+        "id": "5c685955e288d1ab",
+        "type": "comment",
+        "z": "a3efac045c708839",
+        "name": "removed this connection so things won't happen here.",
+        "info": "",
+        "x": 240,
+        "y": 260,
+        "wires": []
+    }
+]
