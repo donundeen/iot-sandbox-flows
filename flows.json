@@ -7145,5 +7145,40 @@
                 "01fceeccac273092"
             ]
         ]
+    },
+    {
+        "id": "5cbb37438fab6f8e",
+        "type": "udp in",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "iface": "",
+        "port": "8090",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "4d320d23ab941fb2"
+            ]
+        ]
+    },
+    {
+        "id": "4d320d23ab941fb2",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 55",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 560,
+        "wires": []
     }
 ]
