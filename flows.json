@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "5fedcf3335946691",
+        "type": "tab",
+        "label": "DisplayScreen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d286a10585a73e58",
         "type": "tab",
         "label": "UI Generator",
@@ -59,14 +67,6 @@
         "id": "a3efac045c708839",
         "type": "tab",
         "label": "Graveyard",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "5fedcf3335946691",
-        "type": "tab",
-        "label": "DisplayScreen",
         "disabled": false,
         "info": "",
         "env": []
@@ -5597,6 +5597,298 @@
         "wires": []
     },
     {
+        "id": "a13083c37057dc31",
+        "type": "udp out",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "addr": "",
+        "iface": "",
+        "port": "8089",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 1000,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "01fceeccac273092",
+        "type": "osc",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "a13083c37057dc31",
+                "6b94e464e69fd44a"
+            ]
+        ]
+    },
+    {
+        "id": "e1d62e9df7ce9653",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/text",
+        "payload": "{\"text\":\"this is text here\"}",
+        "payloadType": "str",
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "6fbef8808b48fef2"
+            ]
+        ]
+    },
+    {
+        "id": "5cbb37438fab6f8e",
+        "type": "udp in",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "iface": "",
+        "port": "8090",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "fef633d622e3d3ec"
+            ]
+        ]
+    },
+    {
+        "id": "fef633d622e3d3ec",
+        "type": "osc",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "103f894b77334efb"
+            ]
+        ]
+    },
+    {
+        "id": "103f894b77334efb",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "Add to UDPClientList",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n UDPClientList = {};\nif(!UDPClientList){\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.ip] = msg.ip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fbef8808b48fef2",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "send all client IPs",
+        "func": "let UDPClientList = global.get(\"UDPClientList\");\n\nlet ips = Object.keys(UDPClientList);\n\nnode.log(ips);\n\nfor(let i = 0; i < ips.length; i++){\n    msg.ip = ips[i];\n    node.send(msg);\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "01fceeccac273092",
+                "6f796d4189b8883e"
+            ]
+        ]
+    },
+    {
+        "id": "6b94e464e69fd44a",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 780,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6f796d4189b8883e",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 57",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 480,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4258fdaca81f063f",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/screeen/text",
+        "links": [
+            "08bafefb1501b332"
+        ],
+        "x": 125,
+        "y": 360,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "34d565b7ee371175",
+        "type": "function",
+        "z": "5fedcf3335946691",
+        "name": "set payload.text",
+        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 360,
+        "wires": [
+            [
+                "6fbef8808b48fef2"
+            ]
+        ]
+    },
+    {
+        "id": "08bafefb1501b332",
+        "type": "link out",
+        "z": "5fedcf3335946691",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "4258fdaca81f063f"
+        ],
+        "x": 365,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "68123b41a0aaea31",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "my new text",
+        "payloadType": "str",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "08bafefb1501b332"
+            ]
+        ]
+    },
+    {
+        "id": "8c8e80fc5fafacb3",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "testing",
+        "info": "",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a50873ef1db6c9f8",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "store the IP of any new screen that announces itself",
+        "info": "",
+        "x": 350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5ff6ed84c3269757",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "when text comes in, send it out to all recipients.",
+        "info": "",
+        "x": 360,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9dafd5c8d5c1acdd",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "sending messages to the display screens",
+        "info": "",
+        "x": 300,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "1721ba91ad7ef847",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "different types of messages can have differetn properties, and tell the screen to do different things.",
+        "info": "",
+        "x": 840,
+        "y": 20,
+        "wires": []
+    },
+    {
         "id": "b8e0d1ef098a80f6",
         "type": "link in",
         "z": "d286a10585a73e58",
@@ -7263,278 +7555,6 @@
         "info": "",
         "x": 240,
         "y": 260,
-        "wires": []
-    },
-    {
-        "id": "a13083c37057dc31",
-        "type": "udp out",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "addr": "",
-        "iface": "",
-        "port": "8089",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 1000,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "01fceeccac273092",
-        "type": "osc",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 790,
-        "y": 420,
-        "wires": [
-            [
-                "a13083c37057dc31",
-                "6b94e464e69fd44a"
-            ]
-        ]
-    },
-    {
-        "id": "e1d62e9df7ce9653",
-        "type": "inject",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "/screen/text",
-        "payload": "{\"text\":\"this is text here\"}",
-        "payloadType": "str",
-        "x": 290,
-        "y": 420,
-        "wires": [
-            [
-                "6fbef8808b48fef2"
-            ]
-        ]
-    },
-    {
-        "id": "5cbb37438fab6f8e",
-        "type": "udp in",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "iface": "",
-        "port": "8090",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "buffer",
-        "x": 180,
-        "y": 180,
-        "wires": [
-            [
-                "fef633d622e3d3ec"
-            ]
-        ]
-    },
-    {
-        "id": "fef633d622e3d3ec",
-        "type": "osc",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "path": "",
-        "metadata": false,
-        "x": 330,
-        "y": 180,
-        "wires": [
-            [
-                "103f894b77334efb"
-            ]
-        ]
-    },
-    {
-        "id": "103f894b77334efb",
-        "type": "function",
-        "z": "5fedcf3335946691",
-        "name": "Add to UDPClientList",
-        "func": "let UDPClientList = global.get(\"UDPClientList\");\n UDPClientList = {};\nif(!UDPClientList){\n    UDPClientList = {};\n}\nif (msg.fromip){\n    UDPClientList[msg.ip] = msg.ip;\n}\nglobal.set(\"UDPClientList\", UDPClientList);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6fbef8808b48fef2",
-        "type": "function",
-        "z": "5fedcf3335946691",
-        "name": "send all client IPs",
-        "func": "let UDPClientList = global.get(\"UDPClientList\");\n\nlet ips = Object.keys(UDPClientList);\n\nnode.log(ips);\n\nfor(let i = 0; i < ips.length; i++){\n    msg.ip = ips[i];\n    node.send(msg);\n}\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 420,
-        "wires": [
-            [
-                "01fceeccac273092",
-                "6f796d4189b8883e"
-            ]
-        ]
-    },
-    {
-        "id": "6b94e464e69fd44a",
-        "type": "debug",
-        "z": "5fedcf3335946691",
-        "name": "debug 56",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 780,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "6f796d4189b8883e",
-        "type": "debug",
-        "z": "5fedcf3335946691",
-        "name": "debug 57",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 480,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "4258fdaca81f063f",
-        "type": "link in",
-        "z": "5fedcf3335946691",
-        "name": "/screeen/text",
-        "links": [
-            "08bafefb1501b332"
-        ],
-        "x": 125,
-        "y": 360,
-        "wires": [
-            [
-                "34d565b7ee371175"
-            ]
-        ]
-    },
-    {
-        "id": "34d565b7ee371175",
-        "type": "function",
-        "z": "5fedcf3335946691",
-        "name": "set payload.text",
-        "func": "if (typeof msg.payload === 'string' || msg.payload instanceof String)\n{\n    msg.payload =  {text:msg.payload};\n}\nmsg.payload = JSON.stringify(msg.payload);\n\nmsg.topic = \"/screen/text\";\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 360,
-        "wires": [
-            [
-                "6fbef8808b48fef2"
-            ]
-        ]
-    },
-    {
-        "id": "08bafefb1501b332",
-        "type": "link out",
-        "z": "5fedcf3335946691",
-        "name": "link out 5",
-        "mode": "link",
-        "links": [
-            "4258fdaca81f063f"
-        ],
-        "x": 325,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "68123b41a0aaea31",
-        "type": "inject",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "my new text",
-        "payloadType": "str",
-        "x": 190,
-        "y": 60,
-        "wires": [
-            [
-                "08bafefb1501b332"
-            ]
-        ]
-    },
-    {
-        "id": "8c8e80fc5fafacb3",
-        "type": "comment",
-        "z": "5fedcf3335946691",
-        "name": "testing",
-        "info": "",
-        "x": 150,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "a50873ef1db6c9f8",
-        "type": "comment",
-        "z": "5fedcf3335946691",
-        "name": "store the IP of any new screen that announces itself",
-        "info": "",
-        "x": 310,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "5ff6ed84c3269757",
-        "type": "comment",
-        "z": "5fedcf3335946691",
-        "name": "when text comes in, send it out to all recipients.",
-        "info": "",
-        "x": 360,
-        "y": 320,
         "wires": []
     }
 ]
