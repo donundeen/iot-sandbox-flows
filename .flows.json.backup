@@ -72,6 +72,14 @@
         "env": []
     },
     {
+        "id": "f3287aa7364fd4b2",
+        "type": "tab",
+        "label": "Pareto OSC Bridge",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -5792,8 +5800,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 620,
+        "x": 300,
+        "y": 500,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5915,6 +5923,33 @@
             [
                 "34d565b7ee371175"
             ]
+        ]
+    },
+    {
+        "id": "8ef7640cec95a1c6",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5",
+        "payload": "{\"p5json\":[{\"c\":\"fill\",\"args\":[\"green\"]}]}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 640,
+        "wires": [
+            []
         ]
     },
     {
@@ -7585,5 +7620,159 @@
         "x": 240,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "5371274175e33443",
+        "type": "pareto-anywhere-socketio",
+        "z": "f3287aa7364fd4b2",
+        "uri": "http://localhost:3001",
+        "deviceid": "",
+        "deviceidtype": 0,
+        "name": "",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "84c48283e69f737f",
+                "23f44bf7fb60c7fe"
+            ],
+            [
+                "d1777a18be1d3129"
+            ]
+        ]
+    },
+    {
+        "id": "ae1ad96c20d7ca38",
+        "type": "udp out",
+        "z": "f3287aa7364fd4b2",
+        "name": "",
+        "addr": "10.0.0.255",
+        "iface": "",
+        "port": "8089",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": true,
+        "multicast": "broad",
+        "x": 900,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "41e75b384f1986a8",
+        "type": "osc",
+        "z": "f3287aa7364fd4b2",
+        "name": "",
+        "path": "/pareto/raddec",
+        "metadata": false,
+        "x": 670,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "698b7114c0e7f99e",
+        "type": "debug",
+        "z": "f3287aa7364fd4b2",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 500,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "84c48283e69f737f",
+        "type": "debug",
+        "z": "f3287aa7364fd4b2",
+        "name": "debug 59",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 380,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d1777a18be1d3129",
+        "type": "debug",
+        "z": "f3287aa7364fd4b2",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 380,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fb34d0634ce431d2",
+        "type": "osc",
+        "z": "f3287aa7364fd4b2",
+        "name": "",
+        "path": "/pareto/dynamb",
+        "metadata": false,
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "ae1ad96c20d7ca38",
+                "2e3b8c6442665e43"
+            ]
+        ]
+    },
+    {
+        "id": "2e3b8c6442665e43",
+        "type": "debug",
+        "z": "f3287aa7364fd4b2",
+        "name": "debug 61",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "23f44bf7fb60c7fe",
+        "type": "function",
+        "z": "f3287aa7364fd4b2",
+        "name": "function 3",
+        "func": "msg.payload = JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "fb34d0634ce431d2"
+            ]
+        ]
     }
 ]
