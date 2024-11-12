@@ -5964,14 +5964,24 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "/screen/p5",
-        "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
+        "topic": "/screen/p5json",
+        "payload": "{\"p5json\":[{\"f\":\"fill\",\"args\":[\"red\"]},{\"t\":\"textSize(100);\"},{\"f\":\"text\",\"args\":[\"Go Lions!\",50,100]}]}",
         "payloadType": "json",
-        "x": 310,
+        "x": 90,
         "y": 660,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "d9e1f7edab2e01cd",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "https://p5js.org/reference/",
+        "info": "",
+        "x": 610,
+        "y": 100,
+        "wires": []
     },
     {
         "id": "b8e0d1ef098a80f6",
