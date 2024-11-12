@@ -5938,8 +5938,37 @@
         "topic": "/screen/p5",
         "payload": "{\"p5json\":[{\"c\":\"fill\",\"args\":[\"green\"]}]}",
         "payloadType": "json",
-        "x": 130,
-        "y": 640,
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "3370663919202ab7",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5",
+        "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
+        "payloadType": "json",
+        "x": 310,
+        "y": 660,
         "wires": [
             []
         ]
