@@ -5936,7 +5936,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "/screen/p5json",
-        "payload": "{\"p5json\":[{\"f\":\"fill\",\"args\":[\"green\"]}]}",
+        "payload": "{\"p5json\":[{\"f\":\"background\",\"args\":[\"green\"]}]}",
         "payloadType": "json",
         "x": 90,
         "y": 580,
