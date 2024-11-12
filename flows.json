@@ -5935,7 +5935,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "/screen/p5",
+        "topic": "/screen/p5json",
         "payload": "{\"p5json\":[{\"c\":\"fill\",\"args\":[\"green\"]}]}",
         "payloadType": "json",
         "x": 90,
