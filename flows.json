@@ -8080,7 +8080,7 @@
         "type": "function",
         "z": "f72f08f64247f16e",
         "name": "save midi state",
-        "func": "/* track midi state so one object \n gives you access to everthing going on the keyboard at the same time.\n in particular:\n- currentNotesOn (with values)\n- controllerValues\n\nand send events whenever things changed, including\n- full state\n- the thing that changed\n- what it was before \n\nand include ability to reset the state\n*/\n\nreturn msg;",
+        "func": "/* track midi state so one object \n gives you access to everthing going on the keyboard at the same time.\n in particular:\n- currentNotesOn (with values)\n- controllerValues\n\nand send events whenever things changed, including\n- full state\n- the thing that changed\n- what it was before \n\nand include ability to reset the state\n*/\n\nvar portname = msg.payload.portname;\nvar event = msg.payload.event;\nvar params = msg.payload.params;\n\nvar midistate = global.get(\"midistate\");\n\nif(!midistate){\n    midistate = {};\n}\n\nlet thisdevice = {portname: portname,\n                notesOn : {},\n                controlVals : {}};\n\nif(midistate[portname]){\n    thisdevice = midistate[portname];\n}\n\nif(event == \"noteon\"){\n    thisdevice.notesOn[params.note] = params.velocity;\n}\n\nif(event == \"noteoff\"){\n    delete thisdevice.notesOn[params.note];\n}\nif(event == \"cc\"){\n    thisdevice.controlVals[params.controller] = params.value;\n}\n\n\nmidistate[portname] = thisdevice;\n\nvar midistate = global.set(\"midistate\", midistate);\n\nmsg.payload.midistate = midistate;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
