@@ -5407,7 +5407,7 @@
         "id": "ab20872ac76d4b6e",
         "type": "switch",
         "z": "9d6a628240034869",
-        "name": "/next/topic",
+        "name": "/midiosc",
         "property": "topic",
         "propertyType": "msg",
         "rules": [
@@ -5423,7 +5423,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 150,
+        "x": 140,
         "y": 680,
         "wires": [
             [
@@ -5441,7 +5441,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
