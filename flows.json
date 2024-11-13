@@ -5980,7 +5980,7 @@
         "payload": "{\"html\":\"<img     src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGR2N3o1eHhtaXh2ajJrdnk0b2hjdXE3aDVrMmtrMnYzaHM0M2t6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v6aOjy0Qo1fIA/giphy.webp'     style='position: absolute; top:23; left: 90;    transform:scale(0.75);'>\"}",
         "payloadType": "json",
         "x": 90,
-        "y": 680,
+        "y": 620,
         "wires": [
             [
                 "34d565b7ee371175"
