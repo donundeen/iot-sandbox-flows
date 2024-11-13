@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "f72f08f64247f16e",
+        "type": "tab",
+        "label": "keyboard To Screen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -5472,7 +5480,9 @@
         "z": "9d6a628240034869",
         "name": "/midiosc",
         "mode": "link",
-        "links": [],
+        "links": [
+            "0c338c874be5e723"
+        ],
         "x": 515,
         "y": 740,
         "wires": []
@@ -5743,7 +5753,7 @@
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
         "x": 90,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -6074,6 +6084,22 @@
         "payloadType": "json",
         "x": 90,
         "y": 620,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "0a1ba82fe8489080",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/displayscreen",
+        "links": [
+            "a54105a0b1106119"
+        ],
+        "x": 65,
+        "y": 380,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -7926,5 +7952,70 @@
                 "41e75b384f1986a8"
             ]
         ]
+    },
+    {
+        "id": "0c338c874be5e723",
+        "type": "link in",
+        "z": "f72f08f64247f16e",
+        "name": "/midiosc",
+        "links": [
+            "edef63672c129c57"
+        ],
+        "x": 145,
+        "y": 120,
+        "wires": [
+            [
+                "529be68fa95254d7"
+            ]
+        ]
+    },
+    {
+        "id": "a54105a0b1106119",
+        "type": "link out",
+        "z": "f72f08f64247f16e",
+        "name": "/displayscreen",
+        "mode": "link",
+        "links": [
+            "0a1ba82fe8489080"
+        ],
+        "x": 895,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2fa97dc9bf4863a8",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "from /midiosc",
+        "info": "",
+        "x": 70,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "01dd5af6397cd53a",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "to display screen",
+        "info": "",
+        "x": 960,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "529be68fa95254d7",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 40,
+        "wires": []
     }
 ]
