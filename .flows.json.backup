@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "f72f08f64247f16e",
+        "type": "tab",
+        "label": "keyboard To Screen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -5175,10 +5183,10 @@
         "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
+        "tostatus": true,
         "complete": "true",
         "targetType": "full",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
         "x": 520,
         "y": 160,
@@ -5252,7 +5260,8 @@
             ],
             [
                 "8cc41e8ca166cd4b",
-                "012fd8313d1e7747"
+                "012fd8313d1e7747",
+                "ab20872ac76d4b6e"
             ]
         ]
     },
@@ -5353,8 +5362,8 @@
         "z": "9d6a628240034869",
         "name": "Top output if it matches",
         "info": "",
-        "x": 320,
-        "y": 520,
+        "x": 360,
+        "y": 540,
         "wires": []
     },
     {
@@ -5400,6 +5409,92 @@
         "info": "",
         "x": 1240,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ab20872ac76d4b6e",
+        "type": "switch",
+        "z": "9d6a628240034869",
+        "name": "/midiosc",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/midiosc",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "6e9d3453a2907bd6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a7f8dc745b519cfb",
+        "type": "debug",
+        "z": "9d6a628240034869",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6e9d3453a2907bd6",
+        "type": "json",
+        "z": "9d6a628240034869",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 680,
+        "wires": [
+            [
+                "a7f8dc745b519cfb",
+                "edef63672c129c57"
+            ]
+        ]
+    },
+    {
+        "id": "edef63672c129c57",
+        "type": "link out",
+        "z": "9d6a628240034869",
+        "name": "/midiosc",
+        "mode": "link",
+        "links": [
+            "0c338c874be5e723"
+        ],
+        "x": 515,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c6661b6eebbcbdf5",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "/midiosc events",
+        "info": "",
+        "x": 620,
+        "y": 740,
         "wires": []
     },
     {
@@ -5658,7 +5753,7 @@
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
         "x": 90,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5988,7 +6083,23 @@
         "payload": "{\"html\":\"<img     src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGR2N3o1eHhtaXh2ajJrdnk0b2hjdXE3aDVrMmtrMnYzaHM0M2t6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v6aOjy0Qo1fIA/giphy.webp'     style='position: absolute; top:23; left: 90;    transform:scale(0.75);'>\"}",
         "payloadType": "json",
         "x": 90,
-        "y": 680,
+        "y": 620,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "0a1ba82fe8489080",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/displayscreen",
+        "links": [
+            "a54105a0b1106119"
+        ],
+        "x": 65,
+        "y": 380,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -7675,7 +7786,9 @@
         "x": 180,
         "y": 100,
         "wires": [
-            [],
+            [
+                "5d4c41989fb1fb9e"
+            ],
             [
                 "84c48283e69f737f",
                 "23f44bf7fb60c7fe"
@@ -7711,7 +7824,9 @@
         "x": 670,
         "y": 100,
         "wires": [
-            []
+            [
+                "ae1ad96c20d7ca38"
+            ]
         ]
     },
     {
@@ -7817,5 +7932,130 @@
                 "fb34d0634ce431d2"
             ]
         ]
+    },
+    {
+        "id": "5d4c41989fb1fb9e",
+        "type": "function",
+        "z": "f3287aa7364fd4b2",
+        "name": "function 4",
+        "func": "msg.payload = JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "41e75b384f1986a8"
+            ]
+        ]
+    },
+    {
+        "id": "0c338c874be5e723",
+        "type": "link in",
+        "z": "f72f08f64247f16e",
+        "name": "/midiosc",
+        "links": [
+            "edef63672c129c57"
+        ],
+        "x": 145,
+        "y": 120,
+        "wires": [
+            [
+                "529be68fa95254d7",
+                "22c2336d3a94d7d0"
+            ]
+        ]
+    },
+    {
+        "id": "a54105a0b1106119",
+        "type": "link out",
+        "z": "f72f08f64247f16e",
+        "name": "/displayscreen",
+        "mode": "link",
+        "links": [
+            "0a1ba82fe8489080"
+        ],
+        "x": 895,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2fa97dc9bf4863a8",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "from /midiosc",
+        "info": "",
+        "x": 70,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "01dd5af6397cd53a",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "to display screen",
+        "info": "",
+        "x": 960,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "529be68fa95254d7",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "22c2336d3a94d7d0",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "function 5",
+        "func": "if(msg.payload.event == \"noteon\"){\n    var note = msg.payload.params.note;\n    var velocity = msg.payload.params.velocity;\n    var x = Math.floor(scaleValue(note, 48,72, 0,100));\n    var y = Math.floor(scaleValue(velocity, 0,127, 0, 100));\n\n    var jquery =\"$('<div>v</div>').appendTo('.contentDiv')\"\n    +\".css({'position':'absolute',\"\n    +\" 'top': '\"+y+\"%',\"\n    +\" 'left': '\"+x+\"%'});\"\n\n   // var p5 = \"fill('red'); square(\"+x+\",\"+y+\",25);\"\n    msg.topic = \"/screen/p5\"\n    msg.payload = {\"p5\": jquery};\n}\n\n\nfunction scaleValue(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax) {\n    var targetRange = targetRangeMax - targetRangeMin;\n    var sourceRange = sourceRangeMax - sourceRangeMin;\n    return (value - sourceRangeMin) * targetRange / sourceRange + targetRangeMin;\n}\n\n\n\n\nreturn msg;\n\n/*\nmsg.topic = \"/screen/p5\"\nmsg.payload = {\"p5\":\"fill('red'); square(50,100,25);\"}\n*/",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "a54105a0b1106119",
+                "b490568594936b65"
+            ]
+        ]
+    },
+    {
+        "id": "b490568594936b65",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 160,
+        "wires": []
     }
 ]
