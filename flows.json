@@ -8057,5 +8057,40 @@
         "x": 740,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "dbe6f32ef458cdd9",
+        "type": "template",
+        "z": "f72f08f64247f16e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a43bab318c1190c9",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "save midi state",
+        "func": "/* track midi state so one object \n gives you access to everthing going on the keyboard at the same time.\n in particular:\n- currentNotesOn (with values)\n- controllerValues\n\nand send events whenever things changed, including\n- full state\n- the thing that changed\n- what it was before \n\nand include ability to reset the state\n*/\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 280,
+        "wires": [
+            []
+        ]
     }
 ]
