@@ -8036,8 +8036,26 @@
         "y": 120,
         "wires": [
             [
-                "a54105a0b1106119"
+                "a54105a0b1106119",
+                "b490568594936b65"
             ]
         ]
+    },
+    {
+        "id": "b490568594936b65",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 200,
+        "wires": []
     }
 ]
