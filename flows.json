@@ -8017,5 +8017,23 @@
         "x": 300,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "22c2336d3a94d7d0",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "function 5",
+        "func": "if(msg.payload.event == \"noteon\"){\n    var note = msg.payload.params.note;\n    var velocity = msg.payload.params.velocity;\n\n    var p5 = \"fill('red'); square(\"+note+\",\"+velocity+\",25);\"\n    msg.topic = \"/screen/p5\"\n    msg.payload = {\"p5\": p5};\n}\nreturn msg;\n\n/*\nmsg.topic = \"/screen/p5\"\nmsg.payload = {\"p5\":\"fill('red'); square(50,100,25);\"}\n*/",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            []
+        ]
     }
 ]
