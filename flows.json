@@ -5649,8 +5649,8 @@
         "topic": "/screen/text",
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
-        "x": 110,
-        "y": 420,
+        "x": 90,
+        "y": 380,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5687,7 +5687,8 @@
         "y": 240,
         "wires": [
             [
-                "103f894b77334efb"
+                "103f894b77334efb",
+                "db518fd78385f486"
             ]
         ]
     },
@@ -5765,22 +5766,6 @@
         "wires": []
     },
     {
-        "id": "4258fdaca81f063f",
-        "type": "link in",
-        "z": "5fedcf3335946691",
-        "name": "/screeen/text",
-        "links": [
-            "08bafefb1501b332"
-        ],
-        "x": 135,
-        "y": 360,
-        "wires": [
-            [
-                "34d565b7ee371175"
-            ]
-        ]
-    },
-    {
         "id": "34d565b7ee371175",
         "type": "function",
         "z": "5fedcf3335946691",
@@ -5799,54 +5784,6 @@
                 "6fbef8808b48fef2"
             ]
         ]
-    },
-    {
-        "id": "08bafefb1501b332",
-        "type": "link out",
-        "z": "5fedcf3335946691",
-        "name": "link out 5",
-        "mode": "link",
-        "links": [
-            "4258fdaca81f063f"
-        ],
-        "x": 365,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "68123b41a0aaea31",
-        "type": "inject",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "my new text",
-        "payloadType": "str",
-        "x": 230,
-        "y": 120,
-        "wires": [
-            [
-                "08bafefb1501b332"
-            ]
-        ]
-    },
-    {
-        "id": "8c8e80fc5fafacb3",
-        "type": "comment",
-        "z": "5fedcf3335946691",
-        "name": "testing",
-        "info": "",
-        "x": 190,
-        "y": 80,
-        "wires": []
     },
     {
         "id": "a50873ef1db6c9f8",
@@ -5910,7 +5847,7 @@
         "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
         "payloadType": "json",
         "x": 90,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -5939,7 +5876,7 @@
         "payload": "{\"p5json\":[{\"f\":\"background\",\"args\":[\"green\"]}]}",
         "payloadType": "json",
         "x": 90,
-        "y": 580,
+        "y": 520,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -5968,7 +5905,7 @@
         "payload": "{\"p5json\":[{\"f\":\"fill\",\"args\":[\"red\"]},{\"t\":\"textSize(100);\"},{\"f\":\"text\",\"args\":[\"Go Lions!\",50,100]}]}",
         "payloadType": "json",
         "x": 90,
-        "y": 660,
+        "y": 560,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -5984,6 +5921,71 @@
         "x": 610,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "81bdfcf158be8692",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "use a json object to define the code you want to run",
+        "info": "",
+        "x": 410,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ea171bfc161d81fb",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "click on me for an example",
+        "info": "{\n    \"p5json\": [\n        {\n            \"f\": \"fill\", // this is function name\n            \"args\": [  // this is array of arguments\n                \"red\" \n            ]\n        },\n        {\n            \"t\": \"textSize(100);\" // or use t and send full javascript text\n        },\n        {\n            \"f\": \"text\",\n            \"args\": [\n                \"Go Lions!\",\n                50,\n                100\n            ]\n        }\n    ]\n}",
+        "x": 330,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "db518fd78385f486",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2f394a3e305210d6",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/html",
+        "payload": "{\"html\":\"<img     src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGR2N3o1eHhtaXh2ajJrdnk0b2hjdXE3aDVrMmtrMnYzaHM0M2t6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v6aOjy0Qo1fIA/giphy.webp'     style='position: absolute; top:23; left: 90;    transform:scale(0.75);'>\"}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 680,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
     },
     {
         "id": "b8e0d1ef098a80f6",
