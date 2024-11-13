@@ -5172,7 +5172,7 @@
         "type": "debug",
         "z": "9d6a628240034869",
         "name": "debug 23",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -5445,8 +5445,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 660,
+        "x": 460,
+        "y": 680,
         "wires": []
     },
     {
@@ -5457,13 +5457,35 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 370,
-        "y": 760,
+        "x": 310,
+        "y": 680,
         "wires": [
             [
-                "a7f8dc745b519cfb"
+                "a7f8dc745b519cfb",
+                "edef63672c129c57"
             ]
         ]
+    },
+    {
+        "id": "edef63672c129c57",
+        "type": "link out",
+        "z": "9d6a628240034869",
+        "name": "/midiosc",
+        "mode": "link",
+        "links": [],
+        "x": 515,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c6661b6eebbcbdf5",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "/midiosc events",
+        "info": "",
+        "x": 620,
+        "y": 740,
+        "wires": []
     },
     {
         "id": "9ae421e5536f7831",
