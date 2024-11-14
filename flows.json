@@ -8084,7 +8084,7 @@
         "type": "function",
         "z": "f72f08f64247f16e",
         "name": "prep values",
-        "func": "var htmlstring = `\n<style>\np:{\n    color: green;\n}\n</style>\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n\n`\n\n\nvar js = `\nconsole.log(\"how abot this?\");\n`;\n\n\n\n\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;",
+        "func": "var htmlstring = `\n<style>\np {\n    color: green;\n    \n}\n</style>\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n\n`\n\n\nvar js = `\nconsole.log(\"how abot this?\");\n`;\n\n\n\n\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
