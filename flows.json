@@ -8055,7 +8055,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 740,
-        "y": 180,
+        "y": 240,
         "wires": []
     },
     {
@@ -8087,8 +8087,47 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 280,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "6fe220bc7e376d03"
+            ]
+        ]
+    },
+    {
+        "id": "6fe220bc7e376d03",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "prep values",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "c4cca7515b092d0e"
+            ]
+        ]
+    },
+    {
+        "id": "c4cca7515b092d0e",
+        "type": "template",
+        "z": "f72f08f64247f16e",
+        "name": "generate html to send",
+        "field": "payload.html",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 480,
+        "y": 440,
         "wires": [
             [
                 "b490568594936b65"
