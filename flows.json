@@ -8101,7 +8101,7 @@
         "type": "function",
         "z": "f72f08f64247f16e",
         "name": "prep values",
-        "func": "var htmlstring = `\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n`\nmsg.payload.html = htmlstring;\nreturn msg;",
+        "func": "var htmlstring = `\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n`\nmsg.topic = \"/screen/html\"\nmsg.payload.html = htmlstring;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
