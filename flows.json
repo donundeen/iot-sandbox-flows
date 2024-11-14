@@ -8060,23 +8060,6 @@
         "wires": []
     },
     {
-        "id": "dbe6f32ef458cdd9",
-        "type": "template",
-        "z": "f72f08f64247f16e",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "This is the payload: {{payload}} !",
-        "output": "str",
-        "x": 360,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "a43bab318c1190c9",
         "type": "function",
         "z": "f72f08f64247f16e",
@@ -8088,8 +8071,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 320,
+        "x": 220,
+        "y": 440,
         "wires": [
             [
                 "6fe220bc7e376d03"
@@ -8101,7 +8084,7 @@
         "type": "function",
         "z": "f72f08f64247f16e",
         "name": "prep values",
-        "func": "var htmlstring = `\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n`\nvar js = `\nconsole.log(\"how abot this?\");\n`;\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;",
+        "func": "var htmlstring = `\n<style>\np:{\n    color: green;\n}\n</style>\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n\n`\n\n\nvar js = `\nconsole.log(\"how abot this?\");\n`;\n\n\n\n\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
