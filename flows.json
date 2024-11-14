@@ -8084,7 +8084,7 @@
         "type": "function",
         "z": "f72f08f64247f16e",
         "name": "prep values",
-        "func": "var htmlstring = `\n<style>\n@keyframes myAnim {\n\t0%,\n\t50%,\n\t100% {\n\t\topacity: 1;\n\t}\n\n\t25%,\n\t75% {\n\t\topacity: 0;\n\t}\n}\np {\n    color: green;\nanimation: myAnim 2s ease 0s 1 normal forwards;\n\n    \n}\n</style>\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n\n`\n\n\nvar js = `\nconsole.log(\"how abot this?\");\n`;\n\n\n\n\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;",
+        "func": "if(msg.payload.event == \"noteon\"){\n\nvar rate = scaleValue(msg.payload.params.velocity, 0, 127,5,.1);\n\nvar htmlstring = `\n<style>\n@keyframes myAnim {\n\t0%,\n\t50%,\n\t100% {\n\t\topacity: 1;\n\t}\n\n\t25%,\n\t75% {\n\t\topacity: 0;\n\t}\n}\np {\n    color: green;\nanimation: myAnim ${rate}s ease 0s infinite normal forwards;\n\n    \n}\n</style>\n<p style=\"position:absolute; top:100; left 200\">add this<p>\n\n`\n\n\nvar js = `\nconsole.log(\"how abot this?\");\n`;\n\n\n\n\nmsg.topic = \"/screen/htmljs\"\nmsg.payload.html = htmlstring;\nmsg.payload.js = js;\nreturn msg;\n\n\n\n\tfunction scaleValue(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax) {\n\t\tvar targetRange = targetRangeMax - targetRangeMin;\n\t\tvar sourceRange = sourceRangeMax - sourceRangeMin;\n\t\treturn (value - sourceRangeMin) * targetRange / sourceRange + targetRangeMin;\n\t}\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
