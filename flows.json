@@ -7633,7 +7633,8 @@
         "y": 100,
         "wires": [
             [
-                "5d4c41989fb1fb9e"
+                "5d4c41989fb1fb9e",
+                "698b7114c0e7f99e"
             ],
             [
                 "84c48283e69f737f",
@@ -7688,8 +7689,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 500,
-        "y": 60,
+        "x": 400,
+        "y": 40,
         "wires": []
     },
     {

@@ -5780,7 +5780,7 @@
         "links": [
             "08bafefb1501b332"
         ],
-        "x": 165,
+        "x": 135,
         "y": 360,
         "wires": [
             [
@@ -7632,7 +7632,9 @@
         "x": 180,
         "y": 100,
         "wires": [
-            [],
+            [
+                "5d4c41989fb1fb9e"
+            ],
             [
                 "84c48283e69f737f",
                 "23f44bf7fb60c7fe"
@@ -7668,7 +7670,9 @@
         "x": 670,
         "y": 100,
         "wires": [
-            []
+            [
+                "ae1ad96c20d7ca38"
+            ]
         ]
     },
     {
@@ -7772,6 +7776,26 @@
         "wires": [
             [
                 "fb34d0634ce431d2"
+            ]
+        ]
+    },
+    {
+        "id": "5d4c41989fb1fb9e",
+        "type": "function",
+        "z": "f3287aa7364fd4b2",
+        "name": "function 4",
+        "func": "msg.payload = JSON.stringify(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "41e75b384f1986a8"
             ]
         ]
     }
