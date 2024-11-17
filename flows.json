@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "f72f08f64247f16e",
+        "type": "tab",
+        "label": "keyboard To Screen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "4ecaa01218566e73",
         "type": "serial-port",
         "name": "",
@@ -5175,10 +5183,10 @@
         "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
+        "tostatus": true,
         "complete": "true",
         "targetType": "full",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
         "x": 520,
         "y": 160,
@@ -5252,7 +5260,8 @@
             ],
             [
                 "8cc41e8ca166cd4b",
-                "012fd8313d1e7747"
+                "012fd8313d1e7747",
+                "ab20872ac76d4b6e"
             ]
         ]
     },
@@ -5353,8 +5362,8 @@
         "z": "9d6a628240034869",
         "name": "Top output if it matches",
         "info": "",
-        "x": 320,
-        "y": 520,
+        "x": 360,
+        "y": 540,
         "wires": []
     },
     {
@@ -5400,6 +5409,92 @@
         "info": "",
         "x": 1240,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ab20872ac76d4b6e",
+        "type": "switch",
+        "z": "9d6a628240034869",
+        "name": "/midiosc",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/midiosc",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "6e9d3453a2907bd6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a7f8dc745b519cfb",
+        "type": "debug",
+        "z": "9d6a628240034869",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6e9d3453a2907bd6",
+        "type": "json",
+        "z": "9d6a628240034869",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 680,
+        "wires": [
+            [
+                "a7f8dc745b519cfb",
+                "edef63672c129c57"
+            ]
+        ]
+    },
+    {
+        "id": "edef63672c129c57",
+        "type": "link out",
+        "z": "9d6a628240034869",
+        "name": "/midiosc",
+        "mode": "link",
+        "links": [
+            "0c338c874be5e723"
+        ],
+        "x": 515,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c6661b6eebbcbdf5",
+        "type": "comment",
+        "z": "9d6a628240034869",
+        "name": "/midiosc events",
+        "info": "",
+        "x": 620,
+        "y": 740,
         "wires": []
     },
     {
@@ -5657,8 +5752,8 @@
         "topic": "/screen/text",
         "payload": "{\"text\":\"this is text here\"}",
         "payloadType": "str",
-        "x": 110,
-        "y": 420,
+        "x": 90,
+        "y": 440,
         "wires": [
             [
                 "6fbef8808b48fef2"
@@ -5695,7 +5790,8 @@
         "y": 240,
         "wires": [
             [
-                "103f894b77334efb"
+                "103f894b77334efb",
+                "db518fd78385f486"
             ]
         ]
     },
@@ -5773,22 +5869,6 @@
         "wires": []
     },
     {
-        "id": "4258fdaca81f063f",
-        "type": "link in",
-        "z": "5fedcf3335946691",
-        "name": "/screeen/text",
-        "links": [
-            "08bafefb1501b332"
-        ],
-        "x": 135,
-        "y": 360,
-        "wires": [
-            [
-                "34d565b7ee371175"
-            ]
-        ]
-    },
-    {
         "id": "34d565b7ee371175",
         "type": "function",
         "z": "5fedcf3335946691",
@@ -5807,54 +5887,6 @@
                 "6fbef8808b48fef2"
             ]
         ]
-    },
-    {
-        "id": "08bafefb1501b332",
-        "type": "link out",
-        "z": "5fedcf3335946691",
-        "name": "link out 5",
-        "mode": "link",
-        "links": [
-            "4258fdaca81f063f"
-        ],
-        "x": 365,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "68123b41a0aaea31",
-        "type": "inject",
-        "z": "5fedcf3335946691",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "my new text",
-        "payloadType": "str",
-        "x": 230,
-        "y": 120,
-        "wires": [
-            [
-                "08bafefb1501b332"
-            ]
-        ]
-    },
-    {
-        "id": "8c8e80fc5fafacb3",
-        "type": "comment",
-        "z": "5fedcf3335946691",
-        "name": "testing",
-        "info": "",
-        "x": 190,
-        "y": 80,
-        "wires": []
     },
     {
         "id": "a50873ef1db6c9f8",
@@ -5914,11 +5946,11 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "/screen/p5",
-        "payload": "{\"p5\":\"fill('red'); square(50,100,25);\"}",
+        "topic": "/screen/p5/",
+        "payload": "{\"js\":\"fill('red'); square(50,100,25);\"}",
         "payloadType": "json",
         "x": 90,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "34d565b7ee371175"
@@ -5943,13 +5975,135 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "/screen/p5",
-        "payload": "{\"p5json\":[{\"c\":\"fill\",\"args\":[\"green\"]}]}",
+        "topic": "/screen/p5json/",
+        "payload": "{\"p5json\":[{\"f\":\"background\",\"args\":[\"green\"]}]}",
         "payloadType": "json",
-        "x": 130,
-        "y": 640,
+        "x": 90,
+        "y": 520,
         "wires": [
-            []
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "3370663919202ab7",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/p5json/",
+        "payload": "{\"p5json\":[{\"f\":\"fill\",\"args\":[\"red\"]},{\"t\":\"textSize(100);\"},{\"f\":\"text\",\"args\":[\"Go Lions!\",50,100]}]}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "d9e1f7edab2e01cd",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "https://p5js.org/reference/",
+        "info": "",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "81bdfcf158be8692",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "use a json object to define the code you want to run",
+        "info": "",
+        "x": 410,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ea171bfc161d81fb",
+        "type": "comment",
+        "z": "5fedcf3335946691",
+        "name": "click on me for an example",
+        "info": "{\n    \"p5json\": [\n        {\n            \"f\": \"fill\", // this is function name\n            \"args\": [  // this is array of arguments\n                \"red\" \n            ]\n        },\n        {\n            \"t\": \"textSize(100);\" // or use t and send full javascript text\n        },\n        {\n            \"f\": \"text\",\n            \"args\": [\n                \"Go Lions!\",\n                50,\n                100\n            ]\n        }\n    ]\n}",
+        "x": 330,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "db518fd78385f486",
+        "type": "debug",
+        "z": "5fedcf3335946691",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2f394a3e305210d6",
+        "type": "inject",
+        "z": "5fedcf3335946691",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/screen/html/",
+        "payload": "{\"html\":\"<img     src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGR2N3o1eHhtaXh2ajJrdnk0b2hjdXE3aDVrMmtrMnYzaHM0M2t6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v6aOjy0Qo1fIA/giphy.webp'     style='position: absolute; top:23; left: 90;    transform:scale(0.75);'>\"}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 620,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
+        "id": "0a1ba82fe8489080",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/displayscreen",
+        "links": [
+            "a54105a0b1106119"
+        ],
+        "x": 65,
+        "y": 380,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
         ]
     },
     {
@@ -7797,6 +7951,151 @@
         "wires": [
             [
                 "41e75b384f1986a8"
+            ]
+        ]
+    },
+    {
+        "id": "0c338c874be5e723",
+        "type": "link in",
+        "z": "f72f08f64247f16e",
+        "name": "/midiosc",
+        "links": [
+            "edef63672c129c57"
+        ],
+        "x": 145,
+        "y": 120,
+        "wires": [
+            [
+                "529be68fa95254d7",
+                "a43bab318c1190c9"
+            ]
+        ]
+    },
+    {
+        "id": "a54105a0b1106119",
+        "type": "link out",
+        "z": "f72f08f64247f16e",
+        "name": "/displayscreen",
+        "mode": "link",
+        "links": [
+            "0a1ba82fe8489080"
+        ],
+        "x": 895,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2fa97dc9bf4863a8",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "from /midiosc",
+        "info": "",
+        "x": 70,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "01dd5af6397cd53a",
+        "type": "comment",
+        "z": "f72f08f64247f16e",
+        "name": "to display screen",
+        "info": "",
+        "x": 960,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "529be68fa95254d7",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "22c2336d3a94d7d0",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "function 5",
+        "func": "if(msg.payload.event == \"noteon\"){\n    var note = msg.payload.params.note;\n    var velocity = msg.payload.params.velocity;\n    var x = Math.floor(scaleValue(note, 48,72, 0,100));\n    var y = Math.floor(scaleValue(velocity, 0,127, 0, 100));\n\n    var jquery =\"$('<div>v</div>').appendTo('.contentDiv')\"\n    +\".css({'position':'absolute',\"\n    +\" 'top': '\"+y+\"%',\"\n    +\" 'left': '\"+x+\"%'});\"\n\n   // var p5 = \"fill('red'); square(\"+x+\",\"+y+\",25);\"\n    msg.topic = \"/screen/p5\"\n    msg.payload = {\"p5\": jquery};\n}\n\n\nfunction scaleValue(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax) {\n    var targetRange = targetRangeMax - targetRangeMin;\n    var sourceRange = sourceRangeMax - sourceRangeMin;\n    return (value - sourceRangeMin) * targetRange / sourceRange + targetRangeMin;\n}\n\n\n\n\nreturn msg;\n\n/*\nmsg.topic = \"/screen/p5\"\nmsg.payload = {\"p5\":\"fill('red'); square(50,100,25);\"}\n*/",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "a54105a0b1106119"
+            ]
+        ]
+    },
+    {
+        "id": "b490568594936b65",
+        "type": "debug",
+        "z": "f72f08f64247f16e",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a43bab318c1190c9",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "save midi state",
+        "func": "/* track midi state so one object \n gives you access to everthing going on the keyboard at the same time.\n in particular:\n- currentNotesOn (with values)\n- controllerValues\n\nand send events whenever things changed, including\n- full state\n- the thing that changed\n- what it was before \n\nand include ability to reset the state\n*/\n\nvar portname = msg.payload.portname; // goign to ignore portname (the device) and merge all messages onto one port\nvar event = msg.payload.event;\nvar params = msg.payload.params;\n\nvar midistate = global.get(\"midistate\");\n\nif(!midistate){\n    midistate = {};\n}\n\nlet thisdevice = {\n                notesOn : {},\n                controlVals : {}};\n\nif(midistate){\n    thisdevice = midistate;\n}\n\nif(event == \"noteon\"){\n    thisdevice.notesOn[params.note] = params.velocity;\n}\n\nif(event == \"noteoff\"){\n    delete thisdevice.notesOn[params.note];\n}\nif(event == \"cc\"){\n    thisdevice.controlVals[params.controller] = params.value;\n}\n\n\nmidistate = thisdevice;\n\nglobal.set(\"midistate\", midistate);\n\nmsg.payload.midistate = midistate;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 440,
+        "wires": [
+            [
+                "6fe220bc7e376d03"
+            ]
+        ]
+    },
+    {
+        "id": "6fe220bc7e376d03",
+        "type": "function",
+        "z": "f72f08f64247f16e",
+        "name": "prep values",
+        "func": "\n\nif(msg.payload.event == \"cc\"){\n\n\t// depending on controller knob values, do different things.\n\tvar controller = msg.payload.params.controller;\n\tvar value = msg.payload.params.value;\n\tvar allnotes = msg.payload.midistate.notesOn;\n\tvar id = \"controller\"+controller;\n\tvar htmlstring = false;\n\tvar noteids = [];\n\n\tfor(const notenum in allnotes){\n\t\tvar velocity = allnotes[notenum];\n\t\tvar noteid = \"#noteshape\"+notenum;\n\t\tnoteids.push(noteid);\n\t}\n\n\tvar notesselector = noteids.join(\", \");\n\n\t// knob layout\n\t// 48 49 50 51\n\t// 52 53 54 55\n\t// \n\tvar controllerjs = false;\n\tswitch(controller){\n\t\tcase 48:\n\t\t\tbreak;\n\t\tcase 49:\n\t\t\tbreak;\n\t\tcase 50:\n\t\t\tbreak;\n\t\tcase 51:\n\t\t\tbreak;\n\t\tcase 52:\n\t\t\tbreak;\n\t\tcase 453:\n\t\t\tbreak;\n\t\tcase 54:\n\t\t\tbreak;\n\t\tcase 55:\n\t\t\tbreak;\n\t}\n\n\n\n\tmsg.topic = \"/screen/htmljs/\"\n\tif(htmlstring){\n\t\tmsg.payload.html = htmlstring;\n\t}\n\tif(js){\n\t\tmsg.payload.js = js;\n\t}\n\treturn msg;\n}\n\n\n\nif(msg.payload.event == \"noteon\"){\n\n\tvar note = msg.payload.params.note;\n\tvar id = \"noteshape\"+note;\n\tvar htmlstring = false;\n\n\tvar js = `\nconsole.log(\"how abot this?\");\nif(!$(\"#${id}\").length){\n\tlet elem = $(\"<p>Look at me</p>\").appendTo(\".contentdiv\").attr(\"id\",\"${id}\");\n\t$(elem).css({position: \"absolute\",\n\t\t\t\ttop: \"505\",\n\t\t\t\tleft: \"50%\"});\n}else{\n\t$(\"#${id}\").show();\n}\n`;\n\n\tmsg.topic = \"/screen/htmljs/\"\n\tif(htmlstring){\n\t\tmsg.payload.html = htmlstring;\n\t}\n\tif(js){\n\t\tmsg.payload.js = js;\n\t}\n\treturn msg;\n}\n\nif(msg.payload.event == \"noteoff\"){\n\n\tvar note = msg.payload.params.note;\n\tvar id = \"noteshape\"+note;\n\tvar htmlstring = false;\n\n\tvar js = `\n\t$(\"#${id}\").hide();\n`;\n\n\tmsg.topic = \"/screen/htmljs/\"\n\tif(htmlstring){\n\t\tmsg.payload.html = htmlstring;\n\t}\n\tif(js){\n\t\tmsg.payload.js = js;\n\t}\n\treturn msg;\n}\n\n\n\n\n\tfunction scaleValue(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax) {\n\t\tvar targetRange = targetRangeMax - targetRangeMin;\n\t\tvar sourceRange = sourceRangeMax - sourceRangeMin;\n\t\treturn (value - sourceRangeMin) * targetRange / sourceRange + targetRangeMin;\n\t}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [
+                "a54105a0b1106119",
+                "b490568594936b65"
             ]
         ]
     }
