@@ -5869,6 +5869,22 @@
         "wires": []
     },
     {
+        "id": "4258fdaca81f063f",
+        "type": "link in",
+        "z": "5fedcf3335946691",
+        "name": "/screeen/text",
+        "links": [
+            "08bafefb1501b332"
+        ],
+        "x": 135,
+        "y": 360,
+        "wires": [
+            [
+                "34d565b7ee371175"
+            ]
+        ]
+    },
+    {
         "id": "34d565b7ee371175",
         "type": "function",
         "z": "5fedcf3335946691",
